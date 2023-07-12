@@ -1,0 +1,10 @@
+
+ROTALAMA SERVÝSÝ YAPILACAKLAR
+
+GET ÝÇÝN
+-- Gidecek olan parametrelerin tamamýný al
+-- Bu parametreleri url e ekle 
+-- Gelen responsedan sonuçlarý alýyorum zaten bunlar içerisinden enlem boylamý alýp vt ye kayýt ediyor
+-- Latlong lar boþ deðilse vt ye statusü true olacak þekilde kayýt ettir.
+-- Boþsa tüm sýnýflarda dönecek bir hata mesajý belirle ve bu hata mesajýný dön
+-- HTTP Client ýn kullanýmýnda neden interface veremiyorum araþtýr

@@ -1,0 +1,27 @@
+2023-05-25 11:56:13.044 +03:00 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-25 11:56:13.172 +03:00 [INF] Now listening on: http://localhost:5000
+2023-05-25 11:56:13.174 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-25 11:56:13.175 +03:00 [INF] Hosting environment: Development
+2023-05-25 11:56:13.175 +03:00 [INF] Content root path: C:\Users\User\Desktop\current_2\current\AllrideApi\
+2023-05-25 11:56:13.969 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - -
+2023-05-25 11:56:14.240 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 273.2398ms
+2023-05-25 11:56:14.265 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink - -
+2023-05-25 11:56:14.266 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - -
+2023-05-25 11:56:14.279 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 11.3713ms
+2023-05-25 11:56:14.311 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 46.1131ms
+2023-05-25 11:56:14.378 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - -
+2023-05-25 11:56:14.392 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - -
+2023-05-25 11:56:14.401 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-05-25 11:56:14.401 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - - - 200 628 image/png 8.9007ms
+2023-05-25 11:56:14.482 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 103.7893ms
+2023-05-25 13:17:27.496 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - -
+2023-05-25 13:17:27.502 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 7.2282ms
+2023-05-25 13:17:27.580 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico - -
+2023-05-25 13:18:32.749 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at AllrideApi.Middleware.HttpLoggingApiMiddleware.InvokeAsync(HttpContext httpContext, ILogApiService _logApi) in C:\Users\User\Desktop\current_2\current\AllrideApi\Middleware\HttpLoggingApiMiddleware.cs:line 56
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at JwtMiddleware.Invoke(HttpContext context) in C:\Users\User\Desktop\current_2\current\AllrideApi\Middleware\JwtMiddleware.cs:line 133
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-05-25 13:18:32.805 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.ico - - - 500 0 application/json;+charset=utf-8 65225.0772ms

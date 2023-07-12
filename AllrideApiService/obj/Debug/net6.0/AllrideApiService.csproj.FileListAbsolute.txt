@@ -1,0 +1,643 @@
+C:\Users\User\Desktop\allrideBackend\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+C:\Users\User\Desktop\allrideBackend\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+C:\Users\User\Desktop\allrideBackend\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+C:\Users\User\Desktop\allrideBackend\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+C:\Users\User\Desktop\allrideBackend\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+C:\Users\User\Desktop\allrideBackend\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\allrideBackend\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\allrideBackend\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\allrideBackend\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+C:\Users\User\Desktop\allrideBackend\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\allrideBackend\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+C:\Users\User\Desktop\allrideBackend\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend\allrideBackend\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend\allrideBackend\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+C:\Users\User\Desktop\CALISMA\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+C:\Users\User\Desktop\CALISMA\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\CALISMA\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\CALISMA\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+C:\Users\User\Desktop\CALISMA\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+C:\Users\User\Desktop\CALISMA\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+C:\Users\User\Desktop\CALISMA\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+C:\Users\User\Desktop\CALISMA\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\CALISMA\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\CALISMA\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\CALISMA\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+C:\Users\User\Desktop\CALISMA\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\CALISMA\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+C:\Users\User\Desktop\CALISMA\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\CALISMA\allrideBackend\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+C:\Users\User\Desktop\CALISMA\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\CALISMA\allrideBackend\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+C:\Users\User\Desktop\Touride\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+C:\Users\User\Desktop\Touride\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\Touride\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\Touride\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+C:\Users\User\Desktop\Touride\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+C:\Users\User\Desktop\Touride\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+C:\Users\User\Desktop\Touride\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+C:\Users\User\Desktop\Touride\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Touride\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Touride\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Touride\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+C:\Users\User\Desktop\Touride\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Touride\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+C:\Users\User\Desktop\Touride\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\Touride\allrideBackend\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+C:\Users\User\Desktop\Touride\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\Touride\allrideBackend\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+C:\Users\User\Desktop\Touride_\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+C:\Users\User\Desktop\Touride_\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\Touride_\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\Touride_\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+C:\Users\User\Desktop\Touride_\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+C:\Users\User\Desktop\Touride_\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+C:\Users\User\Desktop\Touride_\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+C:\Users\User\Desktop\Touride_\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Touride_\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Touride_\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Touride_\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+C:\Users\User\Desktop\Touride_\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Touride_\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+C:\Users\User\Desktop\Touride_\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\Touride_\allrideBackend\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+C:\Users\User\Desktop\Touride_\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\Touride_\allrideBackend\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+D:\Work\touride\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+D:\Work\touride\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+D:\Work\touride\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+D:\Work\touride\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+D:\Work\touride\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+D:\Work\touride\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+D:\Work\touride\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+D:\Work\touride\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+D:\Work\touride\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+D:\Work\touride\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+D:\Work\touride\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+D:\Work\touride\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+D:\Work\touride\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+D:\Work\touride\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+D:\Work\touride\allrideBackend\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+D:\Work\touride\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+D:\Work\touride\allrideBackend\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+C:\Users\User\Desktop\TourideBackend_14_MART\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+C:\Users\User\Desktop\TourideBackend_14_MART\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\TourideBackend_14_MART\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\TourideBackend_14_MART\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+C:\Users\User\Desktop\TourideBackend_14_MART\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+C:\Users\User\Desktop\TourideBackend_14_MART\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+C:\Users\User\Desktop\TourideBackend_14_MART\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+C:\Users\User\Desktop\TourideBackend_14_MART\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\TourideBackend_14_MART\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\TourideBackend_14_MART\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\TourideBackend_14_MART\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+C:\Users\User\Desktop\TourideBackend_14_MART\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\TourideBackend_14_MART\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+C:\Users\User\Desktop\TourideBackend_14_MART\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\TourideBackend_14_MART\allrideBackend\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+C:\Users\User\Desktop\TourideBackend_14_MART\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\TourideBackend_14_MART\allrideBackend\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+C:\Users\User\Desktop\TourideBackend_14_MART\allrideBackend\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.dll
+C:\Users\User\Desktop\TourideBackend_14_MART\allrideBackend\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.pdb
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_15_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_15_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_15_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_15_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_15_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_15_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_15_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_15_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_15_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_15_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_15_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_15_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_15_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_15_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.dll
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_15_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_15_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.pdb
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_15_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_15_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_15_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+C:\Users\User\Desktop\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+C:\Users\User\Desktop\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+C:\Users\User\Desktop\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.dll
+C:\Users\User\Desktop\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+C:\Users\User\Desktop\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.pdb
+C:\Users\User\Desktop\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+C:\Users\User\Desktop\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+C:\Users\User\Desktop\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+C:\Users\User\Desktop\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_17_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\allrideBackend_17_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\allrideBackend_17_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\allrideBackend_17_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+C:\Users\User\Desktop\allrideBackend_17_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\allrideBackend_17_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_17_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_17_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend_17_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+C:\Users\User\Desktop\allrideBackend_17_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_17_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend_17_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+C:\Users\User\Desktop\allrideBackend_17_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+C:\Users\User\Desktop\allrideBackend_17_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.dll
+C:\Users\User\Desktop\allrideBackend_17_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+C:\Users\User\Desktop\allrideBackend_17_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.pdb
+C:\Users\User\Desktop\allrideBackend_17_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+C:\Users\User\Desktop\allrideBackend_17_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+C:\Users\User\Desktop\allrideBackend_17_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+C:\Users\User\Desktop\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+C:\Users\User\Desktop\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+C:\Users\User\Desktop\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.dll
+C:\Users\User\Desktop\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+C:\Users\User\Desktop\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.pdb
+C:\Users\User\Desktop\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+C:\Users\User\Desktop\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+C:\Users\User\Desktop\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+C:\Users\User\Desktop\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_18_Mart\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_18_Mart\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_18_Mart\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_18_Mart\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_18_Mart\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_18_Mart\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_18_Mart\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_18_Mart\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_18_Mart\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_18_Mart\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_18_Mart\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_18_Mart\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_18_Mart\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_18_Mart\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.dll
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_18_Mart\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_18_Mart\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.pdb
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_18_Mart\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_18_Mart\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_18_Mart\allrideBackend_18_Mart\allrideBackend_16_Mart\allrideBackend_16_Mart\allrideBackend\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_26_Mart\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\allrideBackend_26_Mart\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\allrideBackend_26_Mart\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\allrideBackend_26_Mart\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+C:\Users\User\Desktop\allrideBackend_26_Mart\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\allrideBackend_26_Mart\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_26_Mart\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_26_Mart\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend_26_Mart\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+C:\Users\User\Desktop\allrideBackend_26_Mart\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_26_Mart\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend_26_Mart\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+C:\Users\User\Desktop\allrideBackend_26_Mart\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+C:\Users\User\Desktop\allrideBackend_26_Mart\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.dll
+C:\Users\User\Desktop\allrideBackend_26_Mart\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+C:\Users\User\Desktop\allrideBackend_26_Mart\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.pdb
+C:\Users\User\Desktop\allrideBackend_26_Mart\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+C:\Users\User\Desktop\allrideBackend_26_Mart\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+C:\Users\User\Desktop\allrideBackend_26_Mart\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_27_Mart_Yedek\allrideBackend_27_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_27_Mart_Yedek\allrideBackend_27_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_27_Mart_Yedek\allrideBackend_27_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_27_Mart_Yedek\allrideBackend_27_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_27_Mart_Yedek\allrideBackend_27_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_27_Mart_Yedek\allrideBackend_27_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.dll
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_27_Mart_Yedek\allrideBackend_27_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_27_Mart_Yedek\allrideBackend_27_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.pdb
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_27_Mart_Yedek\allrideBackend_27_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_27_Mart_Yedek\allrideBackend_27_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_27_Mart_Yedek\allrideBackend_27_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_27_Mart_Yedek\allrideBackend_27_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_27_Mart_Yedek\allrideBackend_27_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_27_Mart_Yedek\allrideBackend_27_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_27_Mart_Yedek\allrideBackend_27_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_27_Mart_Yedek\allrideBackend_27_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_27_Mart_Yedek\allrideBackend_27_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_27_Mart_Yedek\allrideBackend_27_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+C:\Users\dinle\OneDrive - erciyes.edu.tr\Masaüstü\allrideBackend_27_Mart_Yedek\allrideBackend_27_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_28_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\allrideBackend_28_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\allrideBackend_28_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\allrideBackend_28_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+C:\Users\User\Desktop\allrideBackend_28_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\allrideBackend_28_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+C:\Users\User\Desktop\allrideBackend_28_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_28_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend_28_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+C:\Users\User\Desktop\allrideBackend_28_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+C:\Users\User\Desktop\allrideBackend_28_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.dll
+C:\Users\User\Desktop\allrideBackend_28_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+C:\Users\User\Desktop\allrideBackend_28_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.pdb
+C:\Users\User\Desktop\allrideBackend_28_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+C:\Users\User\Desktop\allrideBackend_28_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+C:\Users\User\Desktop\allrideBackend_28_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_28_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_28_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend_28_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.dll
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.pdb
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\allrideBackend_28_Mart_Yedek\allrideBackend_26_Mart\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.dll
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.pdb
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend_29_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+D:\Work\touride\busra\allrideBackend_30_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+D:\Work\touride\busra\allrideBackend_30_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+D:\Work\touride\busra\allrideBackend_30_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+D:\Work\touride\busra\allrideBackend_30_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+D:\Work\touride\busra\allrideBackend_30_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+D:\Work\touride\busra\allrideBackend_30_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.dll
+D:\Work\touride\busra\allrideBackend_30_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+D:\Work\touride\busra\allrideBackend_30_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.pdb
+D:\Work\touride\busra\allrideBackend_30_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+D:\Work\touride\busra\allrideBackend_30_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+D:\Work\touride\busra\allrideBackend_30_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+D:\Work\touride\busra\allrideBackend_30_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+D:\Work\touride\busra\allrideBackend_30_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+D:\Work\touride\busra\allrideBackend_30_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+D:\Work\touride\busra\allrideBackend_30_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+D:\Work\touride\busra\allrideBackend_30_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+D:\Work\touride\busra\allrideBackend_30_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+D:\Work\touride\busra\allrideBackend_30_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+D:\Work\touride\busra\allrideBackend_30_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\allrideBackend_31_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\allrideBackend_31_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\allrideBackend_31_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\allrideBackend_31_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\allrideBackend_31_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\allrideBackend_31_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.dll
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\allrideBackend_31_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\allrideBackend_31_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.pdb
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\allrideBackend_31_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\allrideBackend_31_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\allrideBackend_31_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\allrideBackend_31_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\allrideBackend_31_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\allrideBackend_31_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\allrideBackend_31_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\allrideBackend_31_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\allrideBackend_31_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\allrideBackend_31_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\allrideBackend_31_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.dll
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.pdb
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend_31_Mart_Yedek\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_7_NİSAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+C:\Users\User\Desktop\allrideBackend_7_NİSAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_7_NİSAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend_7_NİSAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+C:\Users\User\Desktop\allrideBackend_7_NİSAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+C:\Users\User\Desktop\allrideBackend_7_NİSAN_Yedek\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.dll
+C:\Users\User\Desktop\allrideBackend_7_NİSAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+C:\Users\User\Desktop\allrideBackend_7_NİSAN_Yedek\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.pdb
+C:\Users\User\Desktop\allrideBackend_7_NİSAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+C:\Users\User\Desktop\allrideBackend_7_NİSAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\allrideBackend_7_NİSAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\allrideBackend_7_NİSAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\allrideBackend_7_NİSAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+C:\Users\User\Desktop\allrideBackend_7_NİSAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\allrideBackend_7_NİSAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+C:\Users\User\Desktop\allrideBackend_7_NİSAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_7_NİSAN_Yedek\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_7_NİSAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend_7_NİSAN_Yedek\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_10_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+C:\Users\User\Desktop\allrideBackend_10_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_10_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend_10_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+C:\Users\User\Desktop\allrideBackend_10_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+C:\Users\User\Desktop\allrideBackend_10_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.dll
+C:\Users\User\Desktop\allrideBackend_10_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\SMSApi.dll
+C:\Users\User\Desktop\allrideBackend_10_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+C:\Users\User\Desktop\allrideBackend_10_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.pdb
+C:\Users\User\Desktop\allrideBackend_10_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\SMSApi.pdb
+C:\Users\User\Desktop\allrideBackend_10_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+C:\Users\User\Desktop\allrideBackend_10_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\allrideBackend_10_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\allrideBackend_10_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\allrideBackend_10_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+C:\Users\User\Desktop\allrideBackend_10_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\allrideBackend_10_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+C:\Users\User\Desktop\allrideBackend_10_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_10_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_10_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend_10_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.dll
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\SMSApi.dll
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.pdb
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\SMSApi.pdb
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.dll
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\SMSApi.dll
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.pdb
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\SMSApi.pdb
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.dll
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\SMSApi.dll
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.pdb
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\SMSApi.pdb
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+D:\Work\touride\current\allrideBackend_14_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+D:\Work\touride\current\allrideBackend_14_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+D:\Work\touride\current\allrideBackend_14_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+D:\Work\touride\current\allrideBackend_14_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+D:\Work\touride\current\allrideBackend_14_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+D:\Work\touride\current\allrideBackend_14_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+D:\Work\touride\current\allrideBackend_14_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+D:\Work\touride\current\allrideBackend_14_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+D:\Work\touride\current\allrideBackend_14_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+D:\Work\touride\current\allrideBackend_14_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+D:\Work\touride\current\allrideBackend_14_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+D:\Work\touride\current\allrideBackend_14_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+D:\Work\touride\current\allrideBackend_14_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+D:\Work\touride\current\allrideBackend_14_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.dll
+D:\Work\touride\current\allrideBackend_14_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\SMSApi.dll
+D:\Work\touride\current\allrideBackend_14_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+D:\Work\touride\current\allrideBackend_14_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.pdb
+D:\Work\touride\current\allrideBackend_14_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\SMSApi.pdb
+D:\Work\touride\current\allrideBackend_14_NISAN_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+D:\Work\touride\current\allrideBackend_14_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+D:\Work\touride\current\allrideBackend_14_NISAN_Yedek\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+D:\Work\touride\current\current\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+D:\Work\touride\current\current\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+D:\Work\touride\current\current\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+D:\Work\touride\current\current\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+D:\Work\touride\current\current\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+D:\Work\touride\current\current\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.dll
+D:\Work\touride\current\current\AllrideApiService\bin\Debug\net6.0\SMSApi.dll
+D:\Work\touride\current\current\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+D:\Work\touride\current\current\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.pdb
+D:\Work\touride\current\current\AllrideApiService\bin\Debug\net6.0\SMSApi.pdb
+D:\Work\touride\current\current\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+D:\Work\touride\current\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+D:\Work\touride\current\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+D:\Work\touride\current\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+D:\Work\touride\current\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+D:\Work\touride\current\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+D:\Work\touride\current\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+D:\Work\touride\current\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+D:\Work\touride\current\current\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+D:\Work\touride\current\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+D:\Work\touride\current\current\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+D:\Work\touride\current\allride_26_Nisan_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+D:\Work\touride\current\allride_26_Nisan_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+D:\Work\touride\current\allride_26_Nisan_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+D:\Work\touride\current\allride_26_Nisan_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+D:\Work\touride\current\allride_26_Nisan_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+D:\Work\touride\current\allride_26_Nisan_Yedek\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.dll
+D:\Work\touride\current\allride_26_Nisan_Yedek\AllrideApiService\bin\Debug\net6.0\SMSApi.dll
+D:\Work\touride\current\allride_26_Nisan_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+D:\Work\touride\current\allride_26_Nisan_Yedek\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.pdb
+D:\Work\touride\current\allride_26_Nisan_Yedek\AllrideApiService\bin\Debug\net6.0\SMSApi.pdb
+D:\Work\touride\current\allride_26_Nisan_Yedek\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+D:\Work\touride\current\allride_26_Nisan_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+D:\Work\touride\current\allride_26_Nisan_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+D:\Work\touride\current\allride_26_Nisan_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+D:\Work\touride\current\allride_26_Nisan_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+D:\Work\touride\current\allride_26_Nisan_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+D:\Work\touride\current\allride_26_Nisan_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+D:\Work\touride\current\allride_26_Nisan_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+D:\Work\touride\current\allride_26_Nisan_Yedek\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+D:\Work\touride\current\allride_26_Nisan_Yedek\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+D:\Work\touride\current\allride_26_Nisan_Yedek\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+C:\Users\User\Desktop\current (2)\current\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+C:\Users\User\Desktop\current (2)\current\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\current (2)\current\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\current (2)\current\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+C:\Users\User\Desktop\current (2)\current\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+C:\Users\User\Desktop\current (2)\current\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.dll
+C:\Users\User\Desktop\current (2)\current\AllrideApiService\bin\Debug\net6.0\SMSApi.dll
+C:\Users\User\Desktop\current (2)\current\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+C:\Users\User\Desktop\current (2)\current\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.pdb
+C:\Users\User\Desktop\current (2)\current\AllrideApiService\bin\Debug\net6.0\SMSApi.pdb
+C:\Users\User\Desktop\current (2)\current\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+C:\Users\User\Desktop\current (2)\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\current (2)\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\current (2)\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\current (2)\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+C:\Users\User\Desktop\current (2)\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\current (2)\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+C:\Users\User\Desktop\current (2)\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\current (2)\current\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+C:\Users\User\Desktop\current (2)\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\current (2)\current\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+C:\Users\abdullah\Desktop\moto\SOFTWARE\Backend\current\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+C:\Users\abdullah\Desktop\moto\SOFTWARE\Backend\current\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+C:\Users\abdullah\Desktop\moto\SOFTWARE\Backend\current\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+C:\Users\abdullah\Desktop\moto\SOFTWARE\Backend\current\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+C:\Users\abdullah\Desktop\moto\SOFTWARE\Backend\current\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+C:\Users\abdullah\Desktop\moto\SOFTWARE\Backend\current\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.dll
+C:\Users\abdullah\Desktop\moto\SOFTWARE\Backend\current\AllrideApiService\bin\Debug\net6.0\SMSApi.dll
+C:\Users\abdullah\Desktop\moto\SOFTWARE\Backend\current\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+C:\Users\abdullah\Desktop\moto\SOFTWARE\Backend\current\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.pdb
+C:\Users\abdullah\Desktop\moto\SOFTWARE\Backend\current\AllrideApiService\bin\Debug\net6.0\SMSApi.pdb
+C:\Users\abdullah\Desktop\moto\SOFTWARE\Backend\current\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+C:\Users\abdullah\Desktop\moto\SOFTWARE\Backend\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+C:\Users\abdullah\Desktop\moto\SOFTWARE\Backend\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\abdullah\Desktop\moto\SOFTWARE\Backend\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+C:\Users\abdullah\Desktop\moto\SOFTWARE\Backend\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+C:\Users\abdullah\Desktop\moto\SOFTWARE\Backend\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+C:\Users\abdullah\Desktop\moto\SOFTWARE\Backend\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+C:\Users\abdullah\Desktop\moto\SOFTWARE\Backend\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+C:\Users\abdullah\Desktop\moto\SOFTWARE\Backend\current\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+C:\Users\abdullah\Desktop\moto\SOFTWARE\Backend\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+C:\Users\abdullah\Desktop\moto\SOFTWARE\Backend\current\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+C:\Users\User\Downloads\current_2\current\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+C:\Users\User\Downloads\current_2\current\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Downloads\current_2\current\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Downloads\current_2\current\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+C:\Users\User\Downloads\current_2\current\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+C:\Users\User\Downloads\current_2\current\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.dll
+C:\Users\User\Downloads\current_2\current\AllrideApiService\bin\Debug\net6.0\SMSApi.dll
+C:\Users\User\Downloads\current_2\current\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+C:\Users\User\Downloads\current_2\current\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.pdb
+C:\Users\User\Downloads\current_2\current\AllrideApiService\bin\Debug\net6.0\SMSApi.pdb
+C:\Users\User\Downloads\current_2\current\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+C:\Users\User\Downloads\current_2\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+C:\Users\User\Downloads\current_2\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Downloads\current_2\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+C:\Users\User\Downloads\current_2\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+C:\Users\User\Downloads\current_2\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+C:\Users\User\Downloads\current_2\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+C:\Users\User\Downloads\current_2\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Downloads\current_2\current\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+C:\Users\User\Downloads\current_2\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Downloads\current_2\current\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+C:\Users\User\Desktop\current_2\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\current_2\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\current_2\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\current_2\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+C:\Users\User\Desktop\current_2\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\current_2\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\current_2\current\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+C:\Users\User\Desktop\current_2\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\current_2\current\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+C:\Users\User\Desktop\current_2\current\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\current_2\current\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\current_2\current\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+C:\Users\User\Desktop\current_2\current\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+C:\Users\User\Desktop\current_2\current\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.dll
+C:\Users\User\Desktop\current_2\current\AllrideApiService\bin\Debug\net6.0\SMSApi.dll
+C:\Users\User\Desktop\current_2\current\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+C:\Users\User\Desktop\current_2\current\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.pdb
+C:\Users\User\Desktop\current_2\current\AllrideApiService\bin\Debug\net6.0\SMSApi.pdb
+C:\Users\User\Desktop\current_2\current\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+C:\Users\User\Desktop\current_2\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+C:\Users\User\Desktop\current_2\current\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+D:\Work\touride\current\current\current\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+D:\Work\touride\current\current\current\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+D:\Work\touride\current\current\current\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+D:\Work\touride\current\current\current\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+D:\Work\touride\current\current\current\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+D:\Work\touride\current\current\current\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.dll
+D:\Work\touride\current\current\current\AllrideApiService\bin\Debug\net6.0\SMSApi.dll
+D:\Work\touride\current\current\current\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+D:\Work\touride\current\current\current\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.pdb
+D:\Work\touride\current\current\current\AllrideApiService\bin\Debug\net6.0\SMSApi.pdb
+D:\Work\touride\current\current\current\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+D:\Work\touride\current\current\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+D:\Work\touride\current\current\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+D:\Work\touride\current\current\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+D:\Work\touride\current\current\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+D:\Work\touride\current\current\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+D:\Work\touride\current\current\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+D:\Work\touride\current\current\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+D:\Work\touride\current\current\current\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+D:\Work\touride\current\current\current\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+D:\Work\touride\current\current\current\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll
+C:\Users\User\Desktop\Backend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.deps.json
+C:\Users\User\Desktop\Backend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\Backend\AllrideApiService\bin\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\Backend\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.dll
+C:\Users\User\Desktop\Backend\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.dll
+C:\Users\User\Desktop\Backend\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.dll
+C:\Users\User\Desktop\Backend\AllrideApiService\bin\Debug\net6.0\SMSApi.dll
+C:\Users\User\Desktop\Backend\AllrideApiService\bin\Debug\net6.0\AllrideApiRepository.pdb
+C:\Users\User\Desktop\Backend\AllrideApiService\bin\Debug\net6.0\FlexiblePolyline.pdb
+C:\Users\User\Desktop\Backend\AllrideApiService\bin\Debug\net6.0\SMSApi.pdb
+C:\Users\User\Desktop\Backend\AllrideApiService\bin\Debug\net6.0\AllrideApiCore.pdb
+C:\Users\User\Desktop\Backend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Backend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Backend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Backend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.AssemblyInfo.cs
+C:\Users\User\Desktop\Backend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Backend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.csproj.CopyComplete
+C:\Users\User\Desktop\Backend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.dll
+C:\Users\User\Desktop\Backend\AllrideApiService\obj\Debug\net6.0\refint\AllrideApiService.dll
+C:\Users\User\Desktop\Backend\AllrideApiService\obj\Debug\net6.0\AllrideApiService.pdb
+C:\Users\User\Desktop\Backend\AllrideApiService\obj\Debug\net6.0\ref\AllrideApiService.dll

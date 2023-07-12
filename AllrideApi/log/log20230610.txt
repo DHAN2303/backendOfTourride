@@ -1,0 +1,1243 @@
+2023-06-10 10:01:50.815 +03:00 [INF] User profile is available. Using 'C:\Users\omera\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-06-10 10:01:50.942 +03:00 [INF] Now listening on: http://localhost:5000
+2023-06-10 10:01:50.946 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-10 10:01:50.947 +03:00 [INF] Hosting environment: Development
+2023-06-10 10:01:50.949 +03:00 [INF] Content root path: D:\Work\touride\current\current\current\AllrideApi\
+2023-06-10 10:01:54.154 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - -
+2023-06-10 10:01:54.608 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 457.1752ms
+2023-06-10 10:01:54.707 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink - -
+2023-06-10 10:01:54.708 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - -
+2023-06-10 10:01:54.714 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 5.8353ms
+2023-06-10 10:01:54.781 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 73.8546ms
+2023-06-10 10:01:54.868 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - -
+2023-06-10 10:01:55.089 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 221.4066ms
+2023-06-10 10:08:44.580 +03:00 [INF] Request starting HTTP/1.1 POST http://10.0.2.2:5000/api/Login/login application/json;+charset=utf-8 50
+2023-06-10 10:08:46.353 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.User.LoginController.Login (AllrideApi)'
+2023-06-10 10:08:46.383 +03:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(DTO.Select.LoginUserDto) on controller AllrideApi.Controllers.Version_1.User.LoginController (AllrideApi).
+2023-06-10 10:08:48.839 +03:00 [INF] Executed DbCommand (84ms) [Parameters=[@__user_Email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.active_user, u.apple_id, u.created_date, u.deleted_date, u.email, u.facebook_id, u.google_id, u.instagram_id, u."RefreshToken", u."ResfreshTokenEndDate", u.updated_date, u.verified_member, u.user_type, u0.id, u0.created_date, u0.hash_pass, u0.salt_pass, u0.updated_date, u0.user_id
+FROM "user" AS u
+LEFT JOIN user_password AS u0 ON u.id = u0.user_id
+WHERE u.email = @__user_Email_0
+LIMIT 2
+2023-06-10 10:08:49.302 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.country, u.created_date, u.date_of_birth, u.gender, u.language, u.lastname, u.name, u.phone, u.pp_path, u.updated_date, u.user_id, u.vehicle_type, u.status
+FROM user_detail AS u
+WHERE u.user_id = @__user_Id_0
+LIMIT 2
+2023-06-10 10:08:49.323 +03:00 [INF] ----------------Token Oluşturuldu-------------------:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJlbWFpbCI6Im9tZXJAZ21haWwuY29tIiwibmJmIjoxNjg2MzgwOTI5LCJleHAiOjE2ODg5NzI5MjksImlhdCI6MTY4NjM4MDkyOX0.xRRGcztKUvNypqozHvo6I2LEYslnWgb-jwIK-5fdMN8
+2023-06-10 10:08:49.332 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 10:08:49.360 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.User.LoginController.Login (AllrideApi) in 2969.7573ms
+2023-06-10 10:08:49.364 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.User.LoginController.Login (AllrideApi)'
+2023-06-10 10:08:49.510 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 10:08:49.563 +03:00 [INF] Request finished HTTP/1.1 POST http://10.0.2.2:5000/api/Login/login application/json;+charset=utf-8 50 - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 4984.3041ms
+2023-06-10 10:08:49.631 +03:00 [INF] Request starting HTTP/1.1 POST http://10.0.2.2:5000/ChatHubs/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0
+2023-06-10 10:08:49.633 +03:00 [INF] Executing endpoint '/chatHubs/negotiate'
+2023-06-10 10:08:49.654 +03:00 [INF] Executed endpoint '/chatHubs/negotiate'
+2023-06-10 10:08:49.672 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 10:08:49.676 +03:00 [INF] Request finished HTTP/1.1 POST http://10.0.2.2:5000/ChatHubs/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0 - 200 316 application/json 44.6989ms
+2023-06-10 10:08:50.221 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/ChatHubs?id=QcrnPiOATdG3rGjQ6Aq7uA - -
+2023-06-10 10:08:50.226 +03:00 [INF] Executing endpoint '/chatHubs'
+2023-06-10 10:08:51.830 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO online_users ("userId")
+VALUES (@p0)
+RETURNING "Id";
+2023-06-10 10:09:02.285 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/FetchMessages/fetchMessages application/json -
+2023-06-10 10:09:02.286 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/allMemberedGroupsByUser application/json -
+2023-06-10 10:09:02.375 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi)'
+2023-06-10 10:09:02.375 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi)'
+2023-06-10 10:09:02.377 +03:00 [INF] Route matched with {action = "GetAllMemberedGroupsByUser", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllMemberedGroupsByUser() on controller AllrideApi.Controllers.Version_1.Chat.Group.GroupsController (AllrideApi).
+2023-06-10 10:09:02.378 +03:00 [INF] Route matched with {action = "fetchMessages", controller = "FetchMessages"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult fetchMessages(AllrideApiCore.Dtos.Chat.OldMessages) on controller AllrideApi.Controllers.FetchMessages (AllrideApi).
+2023-06-10 10:09:02.392 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT g0.id, g0.created_date, g0.description, g0.group_rank, g0.image_path, g0.name, g0.type, g0.updated_date
+FROM group_member AS g
+INNER JOIN "group" AS g0 ON g.group_id = g0.id
+WHERE g.user_id = @__userId_0
+2023-06-10 10:09:02.408 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 10:09:02.413 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi) in 34.7081ms
+2023-06-10 10:09:02.414 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi)'
+2023-06-10 10:09:02.419 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 10:09:02.421 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/allMemberedGroupsByUser application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 135.1311ms
+2023-06-10 10:09:02.428 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT m.id, m.content_type, m.created_at, m.message_content, m.recipient_id, m.sender_id
+FROM messages AS m
+WHERE m.sender_id = @__userId_0 OR m.recipient_id = @__userId_0
+2023-06-10 10:09:02.464 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT u.user_id AS "UserId", u.name AS "Name", u.lastname AS "LastName"
+FROM messages AS m
+INNER JOIN user_detail AS u ON CASE
+    WHEN m.sender_id = @__userId_0 THEN m.recipient_id
+    ELSE m.sender_id
+END = u.user_id
+WHERE m.sender_id = @__userId_0 OR m.recipient_id = @__userId_0
+2023-06-10 10:09:02.466 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 10:09:02.476 +03:00 [INF] Executed action AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi) in 96.7861ms
+2023-06-10 10:09:02.478 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi)'
+2023-06-10 10:09:02.482 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 10:09:02.484 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/FetchMessages/fetchMessages application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 198.6766ms
+2023-06-10 10:09:04.359 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/getGroupUser?GroupId=1 application/json -
+2023-06-10 10:09:04.361 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/FetchGroupMessages/fetchMessages?group_id=1 application/json -
+2023-06-10 10:09:04.364 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetGroupUserDetail (AllrideApi)'
+2023-06-10 10:09:04.364 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.FetchGroupMessages.fetchGroupMessages (AllrideApi)'
+2023-06-10 10:09:04.366 +03:00 [INF] Route matched with {action = "GetGroupUserDetail", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetGroupUserDetail(Int32) on controller AllrideApi.Controllers.Version_1.Chat.Group.GroupsController (AllrideApi).
+2023-06-10 10:09:04.368 +03:00 [INF] Route matched with {action = "fetchGroupMessages", controller = "FetchGroupMessages"}. Executing controller action with signature AllrideApiService.Response.CustomResponse`1[System.Object] fetchGroupMessages(Int32) on controller AllrideApi.Controllers.Version_1.Chat.Group.FetchGroupMessages (AllrideApi).
+2023-06-10 10:09:04.383 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__groupId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT g.id, g.content_type, g.created_at, g.group_id, g.message_content, g.sender_id
+FROM group_messages AS g
+WHERE g.group_id = @__groupId_0
+2023-06-10 10:09:04.390 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__GroupId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "group" AS g
+    WHERE g.id = @__GroupId_0)
+2023-06-10 10:09:04.393 +03:00 [INF] Executing ObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 10:09:04.400 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.Chat.Group.FetchGroupMessages.fetchGroupMessages (AllrideApi) in 30.2778ms
+2023-06-10 10:09:04.402 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.FetchGroupMessages.fetchGroupMessages (AllrideApi)'
+2023-06-10 10:09:04.403 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__GroupId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id AS "Id", u.name AS "Name", u.lastname AS "LastName", u.date_of_birth AS "DateOfBirth", u.gender AS "Gender", u.phone AS "Phone", u.country AS "Country", u.language AS "Language", u.pp_path AS "PpPath"
+FROM group_member AS g
+INNER JOIN user_detail AS u ON g.user_id = u.id
+WHERE g.group_id = @__GroupId_0
+2023-06-10 10:09:04.406 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 10:09:04.407 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 10:09:04.410 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetGroupUserDetail (AllrideApi) in 41.7992ms
+2023-06-10 10:09:04.410 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/FetchGroupMessages/fetchMessages?group_id=1 application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 48.5273ms
+2023-06-10 10:09:04.411 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetGroupUserDetail (AllrideApi)'
+2023-06-10 10:09:04.414 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 10:09:04.416 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/getGroupUser?GroupId=1 application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 57.0866ms
+2023-06-10 10:09:15.403 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/FetchGroupMessages/fetchMessages?group_id=1 application/json -
+2023-06-10 10:09:15.404 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.FetchGroupMessages.fetchGroupMessages (AllrideApi)'
+2023-06-10 10:09:15.405 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/getGroupUser?GroupId=1 application/json -
+2023-06-10 10:09:15.405 +03:00 [INF] Route matched with {action = "fetchGroupMessages", controller = "FetchGroupMessages"}. Executing controller action with signature AllrideApiService.Response.CustomResponse`1[System.Object] fetchGroupMessages(Int32) on controller AllrideApi.Controllers.Version_1.Chat.Group.FetchGroupMessages (AllrideApi).
+2023-06-10 10:09:15.406 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetGroupUserDetail (AllrideApi)'
+2023-06-10 10:09:15.408 +03:00 [INF] Route matched with {action = "GetGroupUserDetail", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetGroupUserDetail(Int32) on controller AllrideApi.Controllers.Version_1.Chat.Group.GroupsController (AllrideApi).
+2023-06-10 10:09:15.410 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__groupId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT g.id, g.content_type, g.created_at, g.group_id, g.message_content, g.sender_id
+FROM group_messages AS g
+WHERE g.group_id = @__groupId_0
+2023-06-10 10:09:15.411 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__GroupId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "group" AS g
+    WHERE g.id = @__GroupId_0)
+2023-06-10 10:09:15.412 +03:00 [INF] Executing ObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 10:09:15.415 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.Chat.Group.FetchGroupMessages.fetchGroupMessages (AllrideApi) in 7.8269ms
+2023-06-10 10:09:15.416 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.FetchGroupMessages.fetchGroupMessages (AllrideApi)'
+2023-06-10 10:09:15.416 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__GroupId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id AS "Id", u.name AS "Name", u.lastname AS "LastName", u.date_of_birth AS "DateOfBirth", u.gender AS "Gender", u.phone AS "Phone", u.country AS "Country", u.language AS "Language", u.pp_path AS "PpPath"
+FROM group_member AS g
+INNER JOIN user_detail AS u ON g.user_id = u.id
+WHERE g.group_id = @__GroupId_0
+2023-06-10 10:09:15.418 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 10:09:15.418 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 10:09:15.420 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetGroupUserDetail (AllrideApi) in 11.2806ms
+2023-06-10 10:09:15.422 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/FetchGroupMessages/fetchMessages?group_id=1 application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 19.6969ms
+2023-06-10 10:09:15.423 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetGroupUserDetail (AllrideApi)'
+2023-06-10 10:09:15.425 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 10:09:15.427 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/getGroupUser?GroupId=1 application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 21.5327ms
+2023-06-10 10:09:26.456 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?', @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO group_messages (content_type, created_at, group_id, message_content, sender_id)
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING id;
+2023-06-10 10:47:23.400 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?', @p3='?' (DbType = Int32), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO messages (content_type, created_at, message_content, recipient_id, sender_id)
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING id;
+2023-06-10 10:47:29.621 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/getGroupUser?GroupId=1 application/json -
+2023-06-10 10:47:29.623 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetGroupUserDetail (AllrideApi)'
+2023-06-10 10:47:29.623 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/FetchGroupMessages/fetchMessages?group_id=1 application/json -
+2023-06-10 10:47:29.624 +03:00 [INF] Route matched with {action = "GetGroupUserDetail", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetGroupUserDetail(Int32) on controller AllrideApi.Controllers.Version_1.Chat.Group.GroupsController (AllrideApi).
+2023-06-10 10:47:29.625 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.FetchGroupMessages.fetchGroupMessages (AllrideApi)'
+2023-06-10 10:47:29.626 +03:00 [INF] Route matched with {action = "fetchGroupMessages", controller = "FetchGroupMessages"}. Executing controller action with signature AllrideApiService.Response.CustomResponse`1[System.Object] fetchGroupMessages(Int32) on controller AllrideApi.Controllers.Version_1.Chat.Group.FetchGroupMessages (AllrideApi).
+2023-06-10 10:47:29.628 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__GroupId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "group" AS g
+    WHERE g.id = @__GroupId_0)
+2023-06-10 10:47:29.634 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__GroupId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.user_id AS "Id", u.name AS "Name", u.lastname AS "LastName", u.date_of_birth AS "DateOfBirth", u.gender AS "Gender", u.phone AS "Phone", u.country AS "Country", u.language AS "Language", u.pp_path AS "PpPath"
+FROM group_member AS g
+INNER JOIN user_detail AS u ON g.user_id = u.id
+WHERE g.group_id = @__GroupId_0
+2023-06-10 10:47:29.635 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 10:47:29.639 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetGroupUserDetail (AllrideApi) in 13.3161ms
+2023-06-10 10:47:29.640 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetGroupUserDetail (AllrideApi)'
+2023-06-10 10:47:29.644 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 10:47:29.646 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/getGroupUser?GroupId=1 application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 24.6403ms
+2023-06-10 10:47:29.669 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__groupId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT g.id, g.content_type, g.created_at, g.group_id, g.message_content, g.sender_id
+FROM group_messages AS g
+WHERE g.group_id = @__groupId_0
+2023-06-10 10:47:29.673 +03:00 [INF] Executing ObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 10:47:29.674 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.Chat.Group.FetchGroupMessages.fetchGroupMessages (AllrideApi) in 46.4947ms
+2023-06-10 10:47:29.675 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.FetchGroupMessages.fetchGroupMessages (AllrideApi)'
+2023-06-10 10:47:29.677 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 10:47:29.679 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/FetchGroupMessages/fetchMessages?group_id=1 application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 55.7302ms
+2023-06-10 10:47:35.127 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?', @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO group_messages (content_type, created_at, group_id, message_content, sender_id)
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING id;
+2023-06-10 10:49:54.533 +03:00 [INF] Executed endpoint '/chatHubs'
+2023-06-10 10:49:54.536 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 10:49:54.540 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/ChatHubs?id=QcrnPiOATdG3rGjQ6Aq7uA - - - 101 - - 2464468.8872ms
+2023-06-10 10:59:44.080 +03:00 [INF] User profile is available. Using 'C:\Users\omera\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-06-10 10:59:44.199 +03:00 [INF] Now listening on: http://localhost:5000
+2023-06-10 10:59:44.203 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-10 10:59:44.205 +03:00 [INF] Hosting environment: Development
+2023-06-10 10:59:44.206 +03:00 [INF] Content root path: D:\Work\touride\current\current\current\AllrideApi\
+2023-06-10 10:59:44.809 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - -
+2023-06-10 10:59:45.204 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 398.1424ms
+2023-06-10 10:59:45.301 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink - -
+2023-06-10 10:59:45.303 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - -
+2023-06-10 10:59:45.312 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 8.1976ms
+2023-06-10 10:59:45.333 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 32.3123ms
+2023-06-10 10:59:45.434 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - -
+2023-06-10 10:59:45.658 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 224.2493ms
+2023-06-10 10:59:50.043 +03:00 [INF] Request starting HTTP/1.1 POST http://10.0.2.2:5000/api/Login/login application/json;+charset=utf-8 50
+2023-06-10 10:59:51.207 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.User.LoginController.Login (AllrideApi)'
+2023-06-10 10:59:51.236 +03:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(DTO.Select.LoginUserDto) on controller AllrideApi.Controllers.Version_1.User.LoginController (AllrideApi).
+2023-06-10 10:59:53.735 +03:00 [INF] Executed DbCommand (84ms) [Parameters=[@__user_Email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.active_user, u.apple_id, u.created_date, u.deleted_date, u.email, u.facebook_id, u.google_id, u.instagram_id, u."RefreshToken", u."ResfreshTokenEndDate", u.updated_date, u.verified_member, u.user_type, u0.id, u0.created_date, u0.hash_pass, u0.salt_pass, u0.updated_date, u0.user_id
+FROM "user" AS u
+LEFT JOIN user_password AS u0 ON u.id = u0.user_id
+WHERE u.email = @__user_Email_0
+LIMIT 2
+2023-06-10 10:59:54.218 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.country, u.created_date, u.date_of_birth, u.gender, u.language, u.lastname, u.name, u.phone, u.pp_path, u.updated_date, u.user_id, u.vehicle_type, u.status
+FROM user_detail AS u
+WHERE u.user_id = @__user_Id_0
+LIMIT 2
+2023-06-10 10:59:54.239 +03:00 [INF] ----------------Token Oluşturuldu-------------------:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJlbWFpbCI6Im9tZXJAZ21haWwuY29tIiwibmJmIjoxNjg2MzgzOTk0LCJleHAiOjE2ODg5NzU5OTMsImlhdCI6MTY4NjM4Mzk5NH0.zRXVLTVRDpY9g5qoY-IAiPJOlu3BTyrndaQArzNlOU0
+2023-06-10 10:59:54.249 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 10:59:54.278 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.User.LoginController.Login (AllrideApi) in 3034.7915ms
+2023-06-10 10:59:54.281 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.User.LoginController.Login (AllrideApi)'
+2023-06-10 10:59:54.428 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 10:59:54.472 +03:00 [INF] Request finished HTTP/1.1 POST http://10.0.2.2:5000/api/Login/login application/json;+charset=utf-8 50 - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 4429.6112ms
+2023-06-10 10:59:54.578 +03:00 [INF] Request starting HTTP/1.1 POST http://10.0.2.2:5000/ChatHubs/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0
+2023-06-10 10:59:54.582 +03:00 [INF] Executing endpoint '/chatHubs/negotiate'
+2023-06-10 10:59:54.604 +03:00 [INF] Executed endpoint '/chatHubs/negotiate'
+2023-06-10 10:59:54.610 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 10:59:54.613 +03:00 [INF] Request finished HTTP/1.1 POST http://10.0.2.2:5000/ChatHubs/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0 - 200 316 application/json 34.3579ms
+2023-06-10 10:59:55.137 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/ChatHubs?id=W4zzO1nhiW7b7x1LbeWi0Q - -
+2023-06-10 10:59:55.141 +03:00 [INF] Executing endpoint '/chatHubs'
+2023-06-10 10:59:55.498 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO online_users ("userId")
+VALUES (@p0)
+RETURNING "Id";
+2023-06-10 11:00:00.252 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/FetchMessages/fetchMessages application/json -
+2023-06-10 11:00:00.253 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/allMemberedGroupsByUser application/json -
+2023-06-10 11:00:00.401 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi)'
+2023-06-10 11:00:00.401 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi)'
+2023-06-10 11:00:00.403 +03:00 [INF] Route matched with {action = "GetAllMemberedGroupsByUser", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllMemberedGroupsByUser() on controller AllrideApi.Controllers.Version_1.Chat.Group.GroupsController (AllrideApi).
+2023-06-10 11:00:00.404 +03:00 [INF] Route matched with {action = "fetchMessages", controller = "FetchMessages"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult fetchMessages(AllrideApiCore.Dtos.Chat.OldMessages) on controller AllrideApi.Controllers.FetchMessages (AllrideApi).
+2023-06-10 11:00:00.422 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT m.id, m.content_type, m.created_at, m.message_content, m.recipient_id, m.sender_id
+FROM messages AS m
+WHERE m.sender_id = @__userId_0 OR m.recipient_id = @__userId_0
+2023-06-10 11:00:00.472 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT g0.id, g0.created_date, g0.description, g0.group_rank, g0.image_path, g0.name, g0.type, g0.updated_date
+FROM group_member AS g
+INNER JOIN "group" AS g0 ON g.group_id = g0.id
+WHERE g.user_id = @__userId_0
+2023-06-10 11:00:00.475 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT u.user_id AS "UserId", u.name AS "Name", u.lastname AS "LastName"
+FROM messages AS m
+INNER JOIN user_detail AS u ON CASE
+    WHEN m.sender_id = @__userId_0 THEN m.recipient_id
+    ELSE m.sender_id
+END = u.user_id
+WHERE m.sender_id = @__userId_0 OR m.recipient_id = @__userId_0
+2023-06-10 11:00:00.477 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:00:00.483 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:00:00.487 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi) in 82.4688ms
+2023-06-10 11:00:00.488 +03:00 [INF] Executed action AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi) in 82.0835ms
+2023-06-10 11:00:00.488 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi)'
+2023-06-10 11:00:00.489 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi)'
+2023-06-10 11:00:00.495 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:00:00.497 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:00:00.497 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/FetchMessages/fetchMessages application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 245.3197ms
+2023-06-10 11:00:00.499 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/allMemberedGroupsByUser application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 245.6587ms
+2023-06-10 11:00:11.766 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/FetchMessages/fetchMessages application/json -
+2023-06-10 11:00:11.767 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/allMemberedGroupsByUser application/json -
+2023-06-10 11:00:11.768 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi)'
+2023-06-10 11:00:11.769 +03:00 [INF] Route matched with {action = "fetchMessages", controller = "FetchMessages"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult fetchMessages(AllrideApiCore.Dtos.Chat.OldMessages) on controller AllrideApi.Controllers.FetchMessages (AllrideApi).
+2023-06-10 11:00:11.769 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi)'
+2023-06-10 11:00:11.771 +03:00 [INF] Route matched with {action = "GetAllMemberedGroupsByUser", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllMemberedGroupsByUser() on controller AllrideApi.Controllers.Version_1.Chat.Group.GroupsController (AllrideApi).
+2023-06-10 11:00:11.774 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT m.id, m.content_type, m.created_at, m.message_content, m.recipient_id, m.sender_id
+FROM messages AS m
+WHERE m.sender_id = @__userId_0 OR m.recipient_id = @__userId_0
+2023-06-10 11:00:11.774 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT g0.id, g0.created_date, g0.description, g0.group_rank, g0.image_path, g0.name, g0.type, g0.updated_date
+FROM group_member AS g
+INNER JOIN "group" AS g0 ON g.group_id = g0.id
+WHERE g.user_id = @__userId_0
+2023-06-10 11:00:11.777 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:00:11.778 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi) in 5.4661ms
+2023-06-10 11:00:11.778 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT u.user_id AS "UserId", u.name AS "Name", u.lastname AS "LastName"
+FROM messages AS m
+INNER JOIN user_detail AS u ON CASE
+    WHEN m.sender_id = @__userId_0 THEN m.recipient_id
+    ELSE m.sender_id
+END = u.user_id
+WHERE m.sender_id = @__userId_0 OR m.recipient_id = @__userId_0
+2023-06-10 11:00:11.779 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi)'
+2023-06-10 11:00:11.781 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:00:11.782 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:00:11.782 +03:00 [INF] Executed action AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi) in 12.1683ms
+2023-06-10 11:00:11.785 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/allMemberedGroupsByUser application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 17.8964ms
+2023-06-10 11:00:11.785 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi)'
+2023-06-10 11:00:11.788 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:00:11.791 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/FetchMessages/fetchMessages application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 25.1631ms
+2023-06-10 11:00:19.312 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/SocialMediaPosts/fetchPost application/json -
+2023-06-10 11:00:19.314 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.SocialMedia.SocialMediaPostsController.SocialMediaFetchPost (AllrideApi)'
+2023-06-10 11:00:19.322 +03:00 [INF] Route matched with {action = "SocialMediaFetchPost", controller = "SocialMediaPosts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SocialMediaFetchPost() on controller AllrideApi.Controllers.Version_1.SocialMedia.SocialMediaPostsController (AllrideApi).
+2023-06-10 11:00:19.345 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__ToInt32_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s.id, s."LikedByUsers", s.caption, s.comments_count, s.created_at, s.likes_count, s.location_info, s.media_url, s.updated_at, s.user_id
+FROM social_media_posts AS s
+WHERE s.user_id = @__ToInt32_0 OR EXISTS (
+    SELECT 1
+    FROM social_media_follows AS s0
+    WHERE s0.followed_id = s.user_id AND s0.follower_id = @__ToInt32_0)
+ORDER BY s.created_at DESC
+2023-06-10 11:00:19.369 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s.id, s."LikedByUsers", s.caption, s.comments_count, s.created_at, s.likes_count, s.location_info, s.media_url, s.updated_at, s.user_id
+FROM social_media_posts AS s
+WHERE s.user_id = @__userId_0 OR EXISTS (
+    SELECT 1
+    FROM social_media_follows AS s0
+    WHERE s0.followed_id = s.user_id AND s0.follower_id = @__userId_0)
+ORDER BY s.created_at DESC
+2023-06-10 11:00:19.392 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:00:19.399 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.SocialMedia.SocialMediaPostsController.SocialMediaFetchPost (AllrideApi) in 75.1672ms
+2023-06-10 11:00:19.400 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.SocialMedia.SocialMediaPostsController.SocialMediaFetchPost (AllrideApi)'
+2023-06-10 11:00:19.408 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:00:19.410 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/SocialMediaPosts/fetchPost application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 98.1975ms
+2023-06-10 11:00:19.439 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/SocialMediaPosts/fetchPost application/json -
+2023-06-10 11:00:19.441 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.SocialMedia.SocialMediaPostsController.SocialMediaFetchPost (AllrideApi)'
+2023-06-10 11:00:19.443 +03:00 [INF] Route matched with {action = "SocialMediaFetchPost", controller = "SocialMediaPosts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SocialMediaFetchPost() on controller AllrideApi.Controllers.Version_1.SocialMedia.SocialMediaPostsController (AllrideApi).
+2023-06-10 11:00:19.445 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s.id, s."LikedByUsers", s.caption, s.comments_count, s.created_at, s.likes_count, s.location_info, s.media_url, s.updated_at, s.user_id
+FROM social_media_posts AS s
+WHERE s.user_id = @__userId_0 OR EXISTS (
+    SELECT 1
+    FROM social_media_follows AS s0
+    WHERE s0.followed_id = s.user_id AND s0.follower_id = @__userId_0)
+ORDER BY s.created_at DESC
+2023-06-10 11:00:19.447 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:00:19.449 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.SocialMedia.SocialMediaPostsController.SocialMediaFetchPost (AllrideApi) in 4.87ms
+2023-06-10 11:00:19.450 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.SocialMedia.SocialMediaPostsController.SocialMediaFetchPost (AllrideApi)'
+2023-06-10 11:00:19.452 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:00:19.455 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/SocialMediaPosts/fetchPost application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 15.7935ms
+2023-06-10 11:00:20.133 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/FetchMessages/fetchMessages application/json -
+2023-06-10 11:00:20.135 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi)'
+2023-06-10 11:00:20.135 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/allMemberedGroupsByUser application/json -
+2023-06-10 11:00:20.136 +03:00 [INF] Route matched with {action = "fetchMessages", controller = "FetchMessages"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult fetchMessages(AllrideApiCore.Dtos.Chat.OldMessages) on controller AllrideApi.Controllers.FetchMessages (AllrideApi).
+2023-06-10 11:00:20.137 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi)'
+2023-06-10 11:00:20.139 +03:00 [INF] Route matched with {action = "GetAllMemberedGroupsByUser", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllMemberedGroupsByUser() on controller AllrideApi.Controllers.Version_1.Chat.Group.GroupsController (AllrideApi).
+2023-06-10 11:00:20.142 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT m.id, m.content_type, m.created_at, m.message_content, m.recipient_id, m.sender_id
+FROM messages AS m
+WHERE m.sender_id = @__userId_0 OR m.recipient_id = @__userId_0
+2023-06-10 11:00:20.145 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT g0.id, g0.created_date, g0.description, g0.group_rank, g0.image_path, g0.name, g0.type, g0.updated_date
+FROM group_member AS g
+INNER JOIN "group" AS g0 ON g.group_id = g0.id
+WHERE g.user_id = @__userId_0
+2023-06-10 11:00:20.148 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT u.user_id AS "UserId", u.name AS "Name", u.lastname AS "LastName"
+FROM messages AS m
+INNER JOIN user_detail AS u ON CASE
+    WHEN m.sender_id = @__userId_0 THEN m.recipient_id
+    ELSE m.sender_id
+END = u.user_id
+WHERE m.sender_id = @__userId_0 OR m.recipient_id = @__userId_0
+2023-06-10 11:00:20.148 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:00:20.152 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:00:20.154 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi) in 13.4325ms
+2023-06-10 11:00:20.155 +03:00 [INF] Executed action AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi) in 17.2404ms
+2023-06-10 11:00:20.156 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi)'
+2023-06-10 11:00:20.157 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi)'
+2023-06-10 11:00:20.159 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:00:20.160 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:00:20.161 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/allMemberedGroupsByUser application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 26.3848ms
+2023-06-10 11:00:20.163 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/FetchMessages/fetchMessages application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 29.7306ms
+2023-06-10 11:01:13.311 +03:00 [INF] Executed endpoint '/chatHubs'
+2023-06-10 11:01:13.314 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:01:13.318 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/ChatHubs?id=W4zzO1nhiW7b7x1LbeWi0Q - - - 101 - - 78181.0016ms
+2023-06-10 11:01:45.712 +03:00 [INF] Request starting HTTP/1.1 POST http://10.0.2.2:5000/api/Login/login application/json;+charset=utf-8 50
+2023-06-10 11:01:45.718 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.User.LoginController.Login (AllrideApi)'
+2023-06-10 11:01:45.718 +03:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(DTO.Select.LoginUserDto) on controller AllrideApi.Controllers.Version_1.User.LoginController (AllrideApi).
+2023-06-10 11:01:45.723 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_Email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.active_user, u.apple_id, u.created_date, u.deleted_date, u.email, u.facebook_id, u.google_id, u.instagram_id, u."RefreshToken", u."ResfreshTokenEndDate", u.updated_date, u.verified_member, u.user_type, u0.id, u0.created_date, u0.hash_pass, u0.salt_pass, u0.updated_date, u0.user_id
+FROM "user" AS u
+LEFT JOIN user_password AS u0 ON u.id = u0.user_id
+WHERE u.email = @__user_Email_0
+LIMIT 2
+2023-06-10 11:01:45.726 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.country, u.created_date, u.date_of_birth, u.gender, u.language, u.lastname, u.name, u.phone, u.pp_path, u.updated_date, u.user_id, u.vehicle_type, u.status
+FROM user_detail AS u
+WHERE u.user_id = @__user_Id_0
+LIMIT 2
+2023-06-10 11:01:45.728 +03:00 [INF] ----------------Token Oluşturuldu-------------------:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJlbWFpbCI6Im9tZXJAZ21haWwuY29tIiwibmJmIjoxNjg2Mzg0MTA1LCJleHAiOjE2ODg5NzYxMDUsImlhdCI6MTY4NjM4NDEwNX0.rVsKqBmdsfSF13XMmbFNxNLA8l63GeiOwClUOR4xM-o
+2023-06-10 11:01:45.728 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:01:45.729 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.User.LoginController.Login (AllrideApi) in 9.8884ms
+2023-06-10 11:01:45.730 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.User.LoginController.Login (AllrideApi)'
+2023-06-10 11:01:45.732 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:01:45.734 +03:00 [INF] Request finished HTTP/1.1 POST http://10.0.2.2:5000/api/Login/login application/json;+charset=utf-8 50 - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 21.5613ms
+2023-06-10 11:01:45.816 +03:00 [INF] Request starting HTTP/1.1 POST http://10.0.2.2:5000/ChatHubs/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0
+2023-06-10 11:01:45.817 +03:00 [INF] Executing endpoint '/chatHubs/negotiate'
+2023-06-10 11:01:45.818 +03:00 [INF] Executed endpoint '/chatHubs/negotiate'
+2023-06-10 11:01:45.820 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:01:45.822 +03:00 [INF] Request finished HTTP/1.1 POST http://10.0.2.2:5000/ChatHubs/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0 - 200 316 application/json 6.4081ms
+2023-06-10 11:01:45.865 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/ChatHubs?id=ukxVnmWgjfjVOLgetR2Zag - -
+2023-06-10 11:01:45.866 +03:00 [INF] Executing endpoint '/chatHubs'
+2023-06-10 11:01:45.933 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO online_users ("userId")
+VALUES (@p0)
+RETURNING "Id";
+2023-06-10 11:01:58.461 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/FetchMessages/fetchMessages application/json -
+2023-06-10 11:01:58.462 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/allMemberedGroupsByUser application/json -
+2023-06-10 11:01:58.462 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi)'
+2023-06-10 11:01:58.463 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi)'
+2023-06-10 11:01:58.463 +03:00 [INF] Route matched with {action = "fetchMessages", controller = "FetchMessages"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult fetchMessages(AllrideApiCore.Dtos.Chat.OldMessages) on controller AllrideApi.Controllers.FetchMessages (AllrideApi).
+2023-06-10 11:01:58.464 +03:00 [INF] Route matched with {action = "GetAllMemberedGroupsByUser", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllMemberedGroupsByUser() on controller AllrideApi.Controllers.Version_1.Chat.Group.GroupsController (AllrideApi).
+2023-06-10 11:01:58.466 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT m.id, m.content_type, m.created_at, m.message_content, m.recipient_id, m.sender_id
+FROM messages AS m
+WHERE m.sender_id = @__userId_0 OR m.recipient_id = @__userId_0
+2023-06-10 11:01:58.467 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT g0.id, g0.created_date, g0.description, g0.group_rank, g0.image_path, g0.name, g0.type, g0.updated_date
+FROM group_member AS g
+INNER JOIN "group" AS g0 ON g.group_id = g0.id
+WHERE g.user_id = @__userId_0
+2023-06-10 11:01:58.469 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT u.user_id AS "UserId", u.name AS "Name", u.lastname AS "LastName"
+FROM messages AS m
+INNER JOIN user_detail AS u ON CASE
+    WHEN m.sender_id = @__userId_0 THEN m.recipient_id
+    ELSE m.sender_id
+END = u.user_id
+WHERE m.sender_id = @__userId_0 OR m.recipient_id = @__userId_0
+2023-06-10 11:01:58.469 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:01:58.471 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:01:58.472 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi) in 5.088ms
+2023-06-10 11:01:58.472 +03:00 [INF] Executed action AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi) in 7.3188ms
+2023-06-10 11:01:58.473 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi)'
+2023-06-10 11:01:58.474 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi)'
+2023-06-10 11:01:58.476 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:01:58.476 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:01:58.477 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/allMemberedGroupsByUser application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 15.2533ms
+2023-06-10 11:01:58.479 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/FetchMessages/fetchMessages application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 17.9729ms
+2023-06-10 11:02:26.902 +03:00 [INF] Executed endpoint '/chatHubs'
+2023-06-10 11:02:26.904 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:02:26.906 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/ChatHubs?id=ukxVnmWgjfjVOLgetR2Zag - - - 101 - - 41040.9325ms
+2023-06-10 11:02:30.806 +03:00 [INF] User profile is available. Using 'C:\Users\omera\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-06-10 11:02:30.922 +03:00 [INF] Now listening on: http://localhost:5000
+2023-06-10 11:02:30.925 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-10 11:02:30.926 +03:00 [INF] Hosting environment: Development
+2023-06-10 11:02:30.927 +03:00 [INF] Content root path: D:\Work\touride\current\current\current\AllrideApi\
+2023-06-10 11:02:31.854 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - -
+2023-06-10 11:02:32.241 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 390.8474ms
+2023-06-10 11:02:32.357 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - -
+2023-06-10 11:02:32.361 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink - -
+2023-06-10 11:02:32.379 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 21.6566ms
+2023-06-10 11:02:32.403 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 41.5030ms
+2023-06-10 11:02:32.517 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - -
+2023-06-10 11:02:32.733 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 216.1055ms
+2023-06-10 11:02:35.781 +03:00 [INF] Request starting HTTP/1.1 POST http://10.0.2.2:5000/api/Login/login application/json;+charset=utf-8 50
+2023-06-10 11:02:36.069 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.User.LoginController.Login (AllrideApi)'
+2023-06-10 11:02:36.093 +03:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(DTO.Select.LoginUserDto) on controller AllrideApi.Controllers.Version_1.User.LoginController (AllrideApi).
+2023-06-10 11:02:38.663 +03:00 [INF] Executed DbCommand (81ms) [Parameters=[@__user_Email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.active_user, u.apple_id, u.created_date, u.deleted_date, u.email, u.facebook_id, u.google_id, u.instagram_id, u."RefreshToken", u."ResfreshTokenEndDate", u.updated_date, u.verified_member, u.user_type, u0.id, u0.created_date, u0.hash_pass, u0.salt_pass, u0.updated_date, u0.user_id
+FROM "user" AS u
+LEFT JOIN user_password AS u0 ON u.id = u0.user_id
+WHERE u.email = @__user_Email_0
+LIMIT 2
+2023-06-10 11:02:39.000 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.country, u.created_date, u.date_of_birth, u.gender, u.language, u.lastname, u.name, u.phone, u.pp_path, u.updated_date, u.user_id, u.vehicle_type, u.status
+FROM user_detail AS u
+WHERE u.user_id = @__user_Id_0
+LIMIT 2
+2023-06-10 11:02:39.022 +03:00 [INF] ----------------Token Oluşturuldu-------------------:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJlbWFpbCI6Im9tZXJAZ21haWwuY29tIiwibmJmIjoxNjg2Mzg0MTU4LCJleHAiOjE2ODg5NzYxNTgsImlhdCI6MTY4NjM4NDE1OH0.fleENm-RWtzGPaRHlgVCi6tZ4flyY5ks0IscR0vK46o
+2023-06-10 11:02:39.033 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:02:39.064 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.User.LoginController.Login (AllrideApi) in 2964.1947ms
+2023-06-10 11:02:39.066 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.User.LoginController.Login (AllrideApi)'
+2023-06-10 11:02:39.228 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:02:39.276 +03:00 [INF] Request finished HTTP/1.1 POST http://10.0.2.2:5000/api/Login/login application/json;+charset=utf-8 50 - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 3495.3089ms
+2023-06-10 11:02:39.640 +03:00 [INF] Request starting HTTP/1.1 POST http://10.0.2.2:5000/ChatHubs/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0
+2023-06-10 11:02:39.643 +03:00 [INF] Executing endpoint '/chatHubs/negotiate'
+2023-06-10 11:02:39.661 +03:00 [INF] Executed endpoint '/chatHubs/negotiate'
+2023-06-10 11:02:39.671 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:02:39.678 +03:00 [INF] Request finished HTTP/1.1 POST http://10.0.2.2:5000/ChatHubs/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0 - 200 316 application/json 38.0876ms
+2023-06-10 11:02:45.686 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/ChatHubs?id=PJixZJzKamZwkLae9lu-Rg - -
+2023-06-10 11:02:45.690 +03:00 [INF] Executing endpoint '/chatHubs'
+2023-06-10 11:02:45.846 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO online_users ("userId")
+VALUES (@p0)
+RETURNING "Id";
+2023-06-10 11:02:51.167 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/allMemberedGroupsByUser application/json -
+2023-06-10 11:02:51.170 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/FetchMessages/fetchMessages application/json -
+2023-06-10 11:02:51.298 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi)'
+2023-06-10 11:02:51.298 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi)'
+2023-06-10 11:02:51.300 +03:00 [INF] Route matched with {action = "GetAllMemberedGroupsByUser", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllMemberedGroupsByUser() on controller AllrideApi.Controllers.Version_1.Chat.Group.GroupsController (AllrideApi).
+2023-06-10 11:02:51.301 +03:00 [INF] Route matched with {action = "fetchMessages", controller = "FetchMessages"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult fetchMessages(AllrideApiCore.Dtos.Chat.OldMessages) on controller AllrideApi.Controllers.FetchMessages (AllrideApi).
+2023-06-10 11:02:51.325 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT g0.id, g0.created_date, g0.description, g0.group_rank, g0.image_path, g0.name, g0.type, g0.updated_date
+FROM group_member AS g
+INNER JOIN "group" AS g0 ON g.group_id = g0.id
+WHERE g.user_id = @__userId_0
+2023-06-10 11:02:51.341 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:02:51.344 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi) in 42.8004ms
+2023-06-10 11:02:51.346 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi)'
+2023-06-10 11:02:51.354 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:02:51.361 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/allMemberedGroupsByUser application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 193.5622ms
+2023-06-10 11:02:51.374 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT m.id, m.content_type, m.created_at, m.message_content, m.recipient_id, m.sender_id
+FROM messages AS m
+WHERE m.sender_id = @__userId_0 OR m.recipient_id = @__userId_0
+2023-06-10 11:02:51.425 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT u.user_id AS "UserId", u.name AS "Name", u.lastname AS "LastName"
+FROM messages AS m
+INNER JOIN user_detail AS u ON CASE
+    WHEN m.sender_id = @__userId_0 THEN m.recipient_id
+    ELSE m.sender_id
+END = u.user_id
+WHERE m.sender_id = @__userId_0 OR m.recipient_id = @__userId_0
+2023-06-10 11:02:51.427 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:02:51.435 +03:00 [INF] Executed action AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi) in 131.3349ms
+2023-06-10 11:02:51.436 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi)'
+2023-06-10 11:02:51.442 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:02:51.444 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/FetchMessages/fetchMessages application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 274.7189ms
+2023-06-10 11:06:15.597 +03:00 [INF] Executed endpoint '/chatHubs'
+2023-06-10 11:06:15.601 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:06:15.606 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/ChatHubs?id=PJixZJzKamZwkLae9lu-Rg - - - 101 - - 209919.7606ms
+2023-06-10 11:06:23.220 +03:00 [INF] User profile is available. Using 'C:\Users\omera\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-06-10 11:06:23.323 +03:00 [INF] Now listening on: http://localhost:5000
+2023-06-10 11:06:23.327 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-10 11:06:23.328 +03:00 [INF] Hosting environment: Development
+2023-06-10 11:06:23.328 +03:00 [INF] Content root path: D:\Work\touride\current\current\current\AllrideApi\
+2023-06-10 11:06:23.840 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - -
+2023-06-10 11:06:24.325 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 487.4544ms
+2023-06-10 11:06:24.428 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - -
+2023-06-10 11:06:24.429 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink - -
+2023-06-10 11:06:24.441 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 11.9364ms
+2023-06-10 11:06:24.466 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 37.5836ms
+2023-06-10 11:06:24.553 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - -
+2023-06-10 11:06:24.829 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 276.5108ms
+2023-06-10 11:06:27.877 +03:00 [INF] Request starting HTTP/1.1 POST http://10.0.2.2:5000/api/Login/login application/json;+charset=utf-8 50
+2023-06-10 11:06:28.130 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.User.LoginController.Login (AllrideApi)'
+2023-06-10 11:06:28.155 +03:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(DTO.Select.LoginUserDto) on controller AllrideApi.Controllers.Version_1.User.LoginController (AllrideApi).
+2023-06-10 11:06:30.355 +03:00 [INF] Executed DbCommand (87ms) [Parameters=[@__user_Email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.active_user, u.apple_id, u.created_date, u.deleted_date, u.email, u.facebook_id, u.google_id, u.instagram_id, u."RefreshToken", u."ResfreshTokenEndDate", u.updated_date, u.verified_member, u.user_type, u0.id, u0.created_date, u0.hash_pass, u0.salt_pass, u0.updated_date, u0.user_id
+FROM "user" AS u
+LEFT JOIN user_password AS u0 ON u.id = u0.user_id
+WHERE u.email = @__user_Email_0
+LIMIT 2
+2023-06-10 11:06:30.660 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.country, u.created_date, u.date_of_birth, u.gender, u.language, u.lastname, u.name, u.phone, u.pp_path, u.updated_date, u.user_id, u.vehicle_type, u.status
+FROM user_detail AS u
+WHERE u.user_id = @__user_Id_0
+LIMIT 2
+2023-06-10 11:06:30.683 +03:00 [INF] ----------------Token Oluşturuldu-------------------:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJlbWFpbCI6Im9tZXJAZ21haWwuY29tIiwibmJmIjoxNjg2Mzg0MzkwLCJleHAiOjE2ODg5NzYzOTAsImlhdCI6MTY4NjM4NDM5MH0.wBCrC5hpIKcN2DJSlmy5phT9Bo0E1dgWyVWWfSdnDBw
+2023-06-10 11:06:30.691 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:06:30.718 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.User.LoginController.Login (AllrideApi) in 2557.3219ms
+2023-06-10 11:06:30.719 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.User.LoginController.Login (AllrideApi)'
+2023-06-10 11:06:30.868 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:06:30.916 +03:00 [INF] Request finished HTTP/1.1 POST http://10.0.2.2:5000/api/Login/login application/json;+charset=utf-8 50 - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 3039.3044ms
+2023-06-10 11:06:31.296 +03:00 [INF] Request starting HTTP/1.1 POST http://10.0.2.2:5000/ChatHubs/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0
+2023-06-10 11:06:31.298 +03:00 [INF] Executing endpoint '/chatHubs/negotiate'
+2023-06-10 11:06:31.316 +03:00 [INF] Executed endpoint '/chatHubs/negotiate'
+2023-06-10 11:06:31.330 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:06:31.335 +03:00 [INF] Request finished HTTP/1.1 POST http://10.0.2.2:5000/ChatHubs/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0 - 200 316 application/json 38.4527ms
+2023-06-10 11:06:49.129 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/ChatHubs?id=o7ysOqPGvLb4lSONMntQNg - -
+2023-06-10 11:06:49.132 +03:00 [INF] Executing endpoint '/chatHubs'
+2023-06-10 11:06:49.295 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO online_users ("userId")
+VALUES (@p0)
+RETURNING "Id";
+2023-06-10 11:07:17.007 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/FetchMessages/fetchMessages application/json -
+2023-06-10 11:07:17.008 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/allMemberedGroupsByUser application/json -
+2023-06-10 11:07:17.089 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi)'
+2023-06-10 11:07:17.089 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi)'
+2023-06-10 11:07:17.092 +03:00 [INF] Route matched with {action = "GetAllMemberedGroupsByUser", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllMemberedGroupsByUser() on controller AllrideApi.Controllers.Version_1.Chat.Group.GroupsController (AllrideApi).
+2023-06-10 11:07:17.092 +03:00 [INF] Route matched with {action = "fetchMessages", controller = "FetchMessages"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult fetchMessages(AllrideApiCore.Dtos.Chat.OldMessages) on controller AllrideApi.Controllers.FetchMessages (AllrideApi).
+2023-06-10 11:07:17.108 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT g0.id, g0.created_date, g0.description, g0.group_rank, g0.image_path, g0.name, g0.type, g0.updated_date
+FROM group_member AS g
+INNER JOIN "group" AS g0 ON g.group_id = g0.id
+WHERE g.user_id = @__userId_0
+2023-06-10 11:07:17.126 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:07:17.131 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi) in 38.1378ms
+2023-06-10 11:07:17.133 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi)'
+2023-06-10 11:07:17.138 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:07:17.140 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/allMemberedGroupsByUser application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 131.9764ms
+2023-06-10 11:07:17.147 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT m.id, m.content_type, m.created_at, m.message_content, m.recipient_id, m.sender_id
+FROM messages AS m
+WHERE m.sender_id = @__userId_0 OR m.recipient_id = @__userId_0
+2023-06-10 11:07:17.199 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT u.user_id AS "UserId", u.name AS "Name", u.lastname AS "LastName"
+FROM messages AS m
+INNER JOIN user_detail AS u ON CASE
+    WHEN m.sender_id = @__userId_0 THEN m.recipient_id
+    ELSE m.sender_id
+END = u.user_id
+WHERE m.sender_id = @__userId_0 OR m.recipient_id = @__userId_0
+2023-06-10 11:07:17.201 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:07:17.209 +03:00 [INF] Executed action AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi) in 115.0697ms
+2023-06-10 11:07:17.211 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi)'
+2023-06-10 11:07:17.217 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:07:17.219 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/FetchMessages/fetchMessages application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 212.6124ms
+2023-06-10 11:10:00.689 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/FetchMessages/fetchMessages application/json -
+2023-06-10 11:10:00.694 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/allMemberedGroupsByUser application/json -
+2023-06-10 11:10:00.700 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi)'
+2023-06-10 11:10:00.701 +03:00 [INF] Route matched with {action = "fetchMessages", controller = "FetchMessages"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult fetchMessages(AllrideApiCore.Dtos.Chat.OldMessages) on controller AllrideApi.Controllers.FetchMessages (AllrideApi).
+2023-06-10 11:10:00.702 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi)'
+2023-06-10 11:10:00.702 +03:00 [INF] Route matched with {action = "GetAllMemberedGroupsByUser", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllMemberedGroupsByUser() on controller AllrideApi.Controllers.Version_1.Chat.Group.GroupsController (AllrideApi).
+2023-06-10 11:10:00.719 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT m.id, m.content_type, m.created_at, m.message_content, m.recipient_id, m.sender_id
+FROM messages AS m
+WHERE m.sender_id = @__userId_0 OR m.recipient_id = @__userId_0
+2023-06-10 11:10:00.721 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT g0.id, g0.created_date, g0.description, g0.group_rank, g0.image_path, g0.name, g0.type, g0.updated_date
+FROM group_member AS g
+INNER JOIN "group" AS g0 ON g.group_id = g0.id
+WHERE g.user_id = @__userId_0
+2023-06-10 11:10:00.723 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:10:00.723 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT u.user_id AS "UserId", u.name AS "Name", u.lastname AS "LastName"
+FROM messages AS m
+INNER JOIN user_detail AS u ON CASE
+    WHEN m.sender_id = @__userId_0 THEN m.recipient_id
+    ELSE m.sender_id
+END = u.user_id
+WHERE m.sender_id = @__userId_0 OR m.recipient_id = @__userId_0
+2023-06-10 11:10:00.724 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi) in 19.9454ms
+2023-06-10 11:10:00.726 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:10:00.727 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi)'
+2023-06-10 11:10:00.728 +03:00 [INF] Executed action AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi) in 25.9247ms
+2023-06-10 11:10:00.730 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:10:00.731 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi)'
+2023-06-10 11:10:00.734 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/allMemberedGroupsByUser application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 40.7488ms
+2023-06-10 11:10:00.736 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:10:00.737 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/FetchMessages/fetchMessages application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 48.7596ms
+2023-06-10 11:10:17.112 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/FetchMessages/fetchMessages application/json -
+2023-06-10 11:10:17.117 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/allMemberedGroupsByUser application/json -
+2023-06-10 11:10:17.118 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi)'
+2023-06-10 11:10:17.119 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi)'
+2023-06-10 11:10:17.120 +03:00 [INF] Route matched with {action = "fetchMessages", controller = "FetchMessages"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult fetchMessages(AllrideApiCore.Dtos.Chat.OldMessages) on controller AllrideApi.Controllers.FetchMessages (AllrideApi).
+2023-06-10 11:10:17.120 +03:00 [INF] Route matched with {action = "GetAllMemberedGroupsByUser", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllMemberedGroupsByUser() on controller AllrideApi.Controllers.Version_1.Chat.Group.GroupsController (AllrideApi).
+2023-06-10 11:10:17.126 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT m.id, m.content_type, m.created_at, m.message_content, m.recipient_id, m.sender_id
+FROM messages AS m
+WHERE m.sender_id = @__userId_0 OR m.recipient_id = @__userId_0
+2023-06-10 11:10:17.128 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT g0.id, g0.created_date, g0.description, g0.group_rank, g0.image_path, g0.name, g0.type, g0.updated_date
+FROM group_member AS g
+INNER JOIN "group" AS g0 ON g.group_id = g0.id
+WHERE g.user_id = @__userId_0
+2023-06-10 11:10:17.133 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:10:17.134 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi) in 10.2212ms
+2023-06-10 11:10:17.134 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT u.user_id AS "UserId", u.name AS "Name", u.lastname AS "LastName"
+FROM messages AS m
+INNER JOIN user_detail AS u ON CASE
+    WHEN m.sender_id = @__userId_0 THEN m.recipient_id
+    ELSE m.sender_id
+END = u.user_id
+WHERE m.sender_id = @__userId_0 OR m.recipient_id = @__userId_0
+2023-06-10 11:10:17.135 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi)'
+2023-06-10 11:10:17.137 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:10:17.139 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:10:17.139 +03:00 [INF] Executed action AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi) in 16.9451ms
+2023-06-10 11:10:17.142 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/allMemberedGroupsByUser application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 24.7557ms
+2023-06-10 11:10:17.143 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi)'
+2023-06-10 11:10:17.145 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:10:17.148 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/FetchMessages/fetchMessages application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 35.4299ms
+2023-06-10 11:11:03.672 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/FetchMessages/fetchMessages application/json -
+2023-06-10 11:11:03.673 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi)'
+2023-06-10 11:11:03.674 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/allMemberedGroupsByUser application/json -
+2023-06-10 11:11:03.674 +03:00 [INF] Route matched with {action = "fetchMessages", controller = "FetchMessages"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult fetchMessages(AllrideApiCore.Dtos.Chat.OldMessages) on controller AllrideApi.Controllers.FetchMessages (AllrideApi).
+2023-06-10 11:11:03.678 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi)'
+2023-06-10 11:11:03.680 +03:00 [INF] Route matched with {action = "GetAllMemberedGroupsByUser", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllMemberedGroupsByUser() on controller AllrideApi.Controllers.Version_1.Chat.Group.GroupsController (AllrideApi).
+2023-06-10 11:11:03.680 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT m.id, m.content_type, m.created_at, m.message_content, m.recipient_id, m.sender_id
+FROM messages AS m
+WHERE m.sender_id = @__userId_0 OR m.recipient_id = @__userId_0
+2023-06-10 11:11:03.683 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT g0.id, g0.created_date, g0.description, g0.group_rank, g0.image_path, g0.name, g0.type, g0.updated_date
+FROM group_member AS g
+INNER JOIN "group" AS g0 ON g.group_id = g0.id
+WHERE g.user_id = @__userId_0
+2023-06-10 11:11:03.684 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT u.user_id AS "UserId", u.name AS "Name", u.lastname AS "LastName"
+FROM messages AS m
+INNER JOIN user_detail AS u ON CASE
+    WHEN m.sender_id = @__userId_0 THEN m.recipient_id
+    ELSE m.sender_id
+END = u.user_id
+WHERE m.sender_id = @__userId_0 OR m.recipient_id = @__userId_0
+2023-06-10 11:11:03.685 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:11:03.686 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:11:03.687 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi) in 5.6708ms
+2023-06-10 11:11:03.688 +03:00 [INF] Executed action AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi) in 8.6808ms
+2023-06-10 11:11:03.689 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi)'
+2023-06-10 11:11:03.689 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi)'
+2023-06-10 11:11:03.691 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:11:03.692 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:11:03.693 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/allMemberedGroupsByUser application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 19.7826ms
+2023-06-10 11:11:03.696 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/FetchMessages/fetchMessages application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 23.9753ms
+2023-06-10 11:13:08.963 +03:00 [INF] Executed endpoint '/chatHubs'
+2023-06-10 11:13:09.029 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:13:09.036 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/ChatHubs?id=o7ysOqPGvLb4lSONMntQNg - - - 101 - - 379906.8564ms
+2023-06-10 11:13:49.398 +03:00 [INF] User profile is available. Using 'C:\Users\omera\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-06-10 11:13:49.518 +03:00 [INF] Now listening on: http://localhost:5000
+2023-06-10 11:13:49.522 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-10 11:13:49.522 +03:00 [INF] Hosting environment: Development
+2023-06-10 11:13:49.523 +03:00 [INF] Content root path: D:\Work\touride\current\current\current\AllrideApi\
+2023-06-10 11:13:50.226 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - -
+2023-06-10 11:13:50.591 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 368.2208ms
+2023-06-10 11:13:50.688 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink - -
+2023-06-10 11:13:50.700 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - -
+2023-06-10 11:13:50.710 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 9.5963ms
+2023-06-10 11:13:50.739 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 51.2025ms
+2023-06-10 11:13:50.833 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - -
+2023-06-10 11:13:51.025 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 192.0444ms
+2023-06-10 11:13:56.869 +03:00 [INF] Request starting HTTP/1.1 POST http://10.0.2.2:5000/api/Login/login application/json;+charset=utf-8 50
+2023-06-10 11:13:57.850 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.User.LoginController.Login (AllrideApi)'
+2023-06-10 11:13:57.874 +03:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(DTO.Select.LoginUserDto) on controller AllrideApi.Controllers.Version_1.User.LoginController (AllrideApi).
+2023-06-10 11:14:00.487 +03:00 [INF] Executed DbCommand (77ms) [Parameters=[@__user_Email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.active_user, u.apple_id, u.created_date, u.deleted_date, u.email, u.facebook_id, u.google_id, u.instagram_id, u."RefreshToken", u."ResfreshTokenEndDate", u.updated_date, u.verified_member, u.user_type, u0.id, u0.created_date, u0.hash_pass, u0.salt_pass, u0.updated_date, u0.user_id
+FROM "user" AS u
+LEFT JOIN user_password AS u0 ON u.id = u0.user_id
+WHERE u.email = @__user_Email_0
+LIMIT 2
+2023-06-10 11:14:01.059 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.country, u.created_date, u.date_of_birth, u.gender, u.language, u.lastname, u.name, u.phone, u.pp_path, u.updated_date, u.user_id, u.vehicle_type, u.status
+FROM user_detail AS u
+WHERE u.user_id = @__user_Id_0
+LIMIT 2
+2023-06-10 11:14:01.080 +03:00 [INF] ----------------Token Oluşturuldu-------------------:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJlbWFpbCI6Im9tZXJAZ21haWwuY29tIiwibmJmIjoxNjg2Mzg0ODQwLCJleHAiOjE2ODg5NzY4NDAsImlhdCI6MTY4NjM4NDg0MH0.z7FjYpqESEb6FF456GpxknRy4lUBxIzTtjm57GT6Yd0
+2023-06-10 11:14:01.089 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:14:01.120 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.User.LoginController.Login (AllrideApi) in 3238.5346ms
+2023-06-10 11:14:01.125 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.User.LoginController.Login (AllrideApi)'
+2023-06-10 11:14:01.313 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:14:01.370 +03:00 [INF] Request finished HTTP/1.1 POST http://10.0.2.2:5000/api/Login/login application/json;+charset=utf-8 50 - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 4500.8010ms
+2023-06-10 11:14:01.827 +03:00 [INF] Request starting HTTP/1.1 POST http://10.0.2.2:5000/ChatHubs/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0
+2023-06-10 11:14:01.830 +03:00 [INF] Executing endpoint '/chatHubs/negotiate'
+2023-06-10 11:14:01.853 +03:00 [INF] Executed endpoint '/chatHubs/negotiate'
+2023-06-10 11:14:01.862 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:14:01.866 +03:00 [INF] Request finished HTTP/1.1 POST http://10.0.2.2:5000/ChatHubs/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0 - 200 316 application/json 39.7186ms
+2023-06-10 11:14:06.370 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/FetchMessages/fetchMessages application/json -
+2023-06-10 11:14:06.371 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/allMemberedGroupsByUser application/json -
+2023-06-10 11:14:06.482 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi)'
+2023-06-10 11:14:06.482 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi)'
+2023-06-10 11:14:06.485 +03:00 [INF] Route matched with {action = "GetAllMemberedGroupsByUser", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllMemberedGroupsByUser() on controller AllrideApi.Controllers.Version_1.Chat.Group.GroupsController (AllrideApi).
+2023-06-10 11:14:06.486 +03:00 [INF] Route matched with {action = "fetchMessages", controller = "FetchMessages"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult fetchMessages(AllrideApiCore.Dtos.Chat.OldMessages) on controller AllrideApi.Controllers.FetchMessages (AllrideApi).
+2023-06-10 11:14:06.542 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT m.id, m.content_type, m.created_at, m.message_content, m.recipient_id, m.sender_id
+FROM messages AS m
+WHERE m.sender_id = @__userId_0 OR m.recipient_id = @__userId_0
+2023-06-10 11:14:06.583 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT u.user_id AS "UserId", u.name AS "Name", u.lastname AS "LastName"
+FROM messages AS m
+INNER JOIN user_detail AS u ON CASE
+    WHEN m.sender_id = @__userId_0 THEN m.recipient_id
+    ELSE m.sender_id
+END = u.user_id
+WHERE m.sender_id = @__userId_0 OR m.recipient_id = @__userId_0
+2023-06-10 11:14:06.584 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT g0.id, g0.created_date, g0.description, g0.group_rank, g0.image_path, g0.name, g0.type, g0.updated_date
+FROM group_member AS g
+INNER JOIN "group" AS g0 ON g.group_id = g0.id
+WHERE g.user_id = @__userId_0
+2023-06-10 11:14:06.585 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:14:06.594 +03:00 [INF] Executed action AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi) in 107.0825ms
+2023-06-10 11:14:06.596 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:14:06.597 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi)'
+2023-06-10 11:14:06.599 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi) in 112.9718ms
+2023-06-10 11:14:06.600 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi)'
+2023-06-10 11:14:06.640 +03:00 [INF] Executed DbCommand (37ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:14:06.641 +03:00 [INF] Executed DbCommand (37ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:14:06.642 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/FetchMessages/fetchMessages application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 272.1089ms
+2023-06-10 11:14:06.643 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/allMemberedGroupsByUser application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 272.3562ms
+2023-06-10 11:14:08.071 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/ChatHubs?id=pM4-eSUOTJBLHX8s9xKnIg - -
+2023-06-10 11:14:08.072 +03:00 [INF] Executing endpoint '/chatHubs'
+2023-06-10 11:14:08.200 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO online_users ("userId")
+VALUES (@p0)
+RETURNING "Id";
+2023-06-10 11:21:56.143 +03:00 [INF] Executed endpoint '/chatHubs'
+2023-06-10 11:21:56.182 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:21:56.187 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/ChatHubs?id=pM4-eSUOTJBLHX8s9xKnIg - - - 101 - - 468115.7780ms
+2023-06-10 11:22:05.588 +03:00 [INF] User profile is available. Using 'C:\Users\omera\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-06-10 11:22:05.695 +03:00 [INF] Now listening on: http://localhost:5000
+2023-06-10 11:22:05.699 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-10 11:22:05.701 +03:00 [INF] Hosting environment: Development
+2023-06-10 11:22:05.701 +03:00 [INF] Content root path: D:\Work\touride\current\current\current\AllrideApi\
+2023-06-10 11:22:06.479 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - -
+2023-06-10 11:22:06.877 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 400.9859ms
+2023-06-10 11:22:07.003 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink - -
+2023-06-10 11:22:07.007 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - -
+2023-06-10 11:22:07.013 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 4.8221ms
+2023-06-10 11:22:07.035 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 31.9528ms
+2023-06-10 11:22:07.120 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - -
+2023-06-10 11:22:07.322 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 201.6259ms
+2023-06-10 11:22:11.915 +03:00 [INF] Request starting HTTP/1.1 POST http://10.0.2.2:5000/api/Login/login application/json;+charset=utf-8 50
+2023-06-10 11:22:12.185 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.User.LoginController.Login (AllrideApi)'
+2023-06-10 11:22:12.220 +03:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(DTO.Select.LoginUserDto) on controller AllrideApi.Controllers.Version_1.User.LoginController (AllrideApi).
+2023-06-10 11:22:14.582 +03:00 [INF] Executed DbCommand (87ms) [Parameters=[@__user_Email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.active_user, u.apple_id, u.created_date, u.deleted_date, u.email, u.facebook_id, u.google_id, u.instagram_id, u."RefreshToken", u."ResfreshTokenEndDate", u.updated_date, u.verified_member, u.user_type, u0.id, u0.created_date, u0.hash_pass, u0.salt_pass, u0.updated_date, u0.user_id
+FROM "user" AS u
+LEFT JOIN user_password AS u0 ON u.id = u0.user_id
+WHERE u.email = @__user_Email_0
+LIMIT 2
+2023-06-10 11:22:14.896 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.country, u.created_date, u.date_of_birth, u.gender, u.language, u.lastname, u.name, u.phone, u.pp_path, u.updated_date, u.user_id, u.vehicle_type, u.status
+FROM user_detail AS u
+WHERE u.user_id = @__user_Id_0
+LIMIT 2
+2023-06-10 11:22:14.920 +03:00 [INF] ----------------Token Oluşturuldu-------------------:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJlbWFpbCI6Im9tZXJAZ21haWwuY29tIiwibmJmIjoxNjg2Mzg1MzM0LCJleHAiOjE2ODg5NzczMzQsImlhdCI6MTY4NjM4NTMzNH0.ECGi6A3-V8EIHsifUFiIvolhDoyu0H1LiRdDRjhEUJ0
+2023-06-10 11:22:14.929 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:22:14.969 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.User.LoginController.Login (AllrideApi) in 2742.3473ms
+2023-06-10 11:22:14.972 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.User.LoginController.Login (AllrideApi)'
+2023-06-10 11:22:15.126 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:22:15.178 +03:00 [INF] Request finished HTTP/1.1 POST http://10.0.2.2:5000/api/Login/login application/json;+charset=utf-8 50 - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 3262.9676ms
+2023-06-10 11:22:15.249 +03:00 [INF] Request starting HTTP/1.1 POST http://10.0.2.2:5000/ChatHubs/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0
+2023-06-10 11:22:15.251 +03:00 [INF] Executing endpoint '/chatHubs/negotiate'
+2023-06-10 11:22:15.268 +03:00 [INF] Executed endpoint '/chatHubs/negotiate'
+2023-06-10 11:22:15.276 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:22:15.278 +03:00 [INF] Request finished HTTP/1.1 POST http://10.0.2.2:5000/ChatHubs/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0 - 200 316 application/json 29.3603ms
+2023-06-10 11:22:20.197 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/FetchMessages/fetchMessages application/json -
+2023-06-10 11:22:20.198 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/allMemberedGroupsByUser application/json -
+2023-06-10 11:22:20.285 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi)'
+2023-06-10 11:22:20.285 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi)'
+2023-06-10 11:22:20.287 +03:00 [INF] Route matched with {action = "GetAllMemberedGroupsByUser", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllMemberedGroupsByUser() on controller AllrideApi.Controllers.Version_1.Chat.Group.GroupsController (AllrideApi).
+2023-06-10 11:22:20.288 +03:00 [INF] Route matched with {action = "fetchMessages", controller = "FetchMessages"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult fetchMessages(AllrideApiCore.Dtos.Chat.OldMessages) on controller AllrideApi.Controllers.FetchMessages (AllrideApi).
+2023-06-10 11:22:20.351 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT m.id, m.content_type, m.created_at, m.message_content, m.recipient_id, m.sender_id
+FROM messages AS m
+WHERE m.sender_id = @__userId_0 OR m.recipient_id = @__userId_0
+2023-06-10 11:22:20.401 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT u.user_id AS "UserId", u.name AS "Name", u.lastname AS "LastName"
+FROM messages AS m
+INNER JOIN user_detail AS u ON CASE
+    WHEN m.sender_id = @__userId_0 THEN m.recipient_id
+    ELSE m.sender_id
+END = u.user_id
+WHERE m.sender_id = @__userId_0 OR m.recipient_id = @__userId_0
+2023-06-10 11:22:20.403 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:22:20.407 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT g0.id, g0.created_date, g0.description, g0.group_rank, g0.image_path, g0.name, g0.type, g0.updated_date
+FROM group_member AS g
+INNER JOIN "group" AS g0 ON g.group_id = g0.id
+WHERE g.user_id = @__userId_0
+2023-06-10 11:22:20.414 +03:00 [INF] Executed action AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi) in 124.1431ms
+2023-06-10 11:22:20.416 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi)'
+2023-06-10 11:22:20.422 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:22:20.425 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:22:20.426 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi) in 137.0924ms
+2023-06-10 11:22:20.429 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/FetchMessages/fetchMessages application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 231.4506ms
+2023-06-10 11:22:20.429 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi)'
+2023-06-10 11:22:20.435 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:22:20.437 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/allMemberedGroupsByUser application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 238.9331ms
+2023-06-10 11:22:21.494 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/ChatHubs?id=p8HfpwM0HrxdLJoltbPcEg - -
+2023-06-10 11:22:21.495 +03:00 [INF] Executing endpoint '/chatHubs'
+2023-06-10 11:22:21.591 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO online_users ("userId")
+VALUES (@p0)
+RETURNING "Id";
+2023-06-10 11:29:07.396 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/FetchMessages/fetchMessages application/json -
+2023-06-10 11:29:07.398 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/allMemberedGroupsByUser application/json -
+2023-06-10 11:29:07.399 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi)'
+2023-06-10 11:29:07.401 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi)'
+2023-06-10 11:29:07.401 +03:00 [INF] Route matched with {action = "fetchMessages", controller = "FetchMessages"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult fetchMessages(AllrideApiCore.Dtos.Chat.OldMessages) on controller AllrideApi.Controllers.FetchMessages (AllrideApi).
+2023-06-10 11:29:07.402 +03:00 [INF] Route matched with {action = "GetAllMemberedGroupsByUser", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllMemberedGroupsByUser() on controller AllrideApi.Controllers.Version_1.Chat.Group.GroupsController (AllrideApi).
+2023-06-10 11:29:07.469 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT m.id, m.content_type, m.created_at, m.message_content, m.recipient_id, m.sender_id
+FROM messages AS m
+WHERE m.sender_id = @__userId_0 OR m.recipient_id = @__userId_0
+2023-06-10 11:29:07.476 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT g0.id, g0.created_date, g0.description, g0.group_rank, g0.image_path, g0.name, g0.type, g0.updated_date
+FROM group_member AS g
+INNER JOIN "group" AS g0 ON g.group_id = g0.id
+WHERE g.user_id = @__userId_0
+2023-06-10 11:29:07.478 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT u.user_id AS "UserId", u.name AS "Name", u.lastname AS "LastName"
+FROM messages AS m
+INNER JOIN user_detail AS u ON CASE
+    WHEN m.sender_id = @__userId_0 THEN m.recipient_id
+    ELSE m.sender_id
+END = u.user_id
+WHERE m.sender_id = @__userId_0 OR m.recipient_id = @__userId_0
+2023-06-10 11:29:07.478 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:29:07.480 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:29:07.481 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi) in 76.7968ms
+2023-06-10 11:29:07.483 +03:00 [INF] Executed action AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi) in 80.1544ms
+2023-06-10 11:29:07.484 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi)'
+2023-06-10 11:29:07.485 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi)'
+2023-06-10 11:29:07.490 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:29:07.491 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:29:07.492 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/allMemberedGroupsByUser application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 94.1619ms
+2023-06-10 11:29:07.494 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/FetchMessages/fetchMessages application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 97.6659ms
+2023-06-10 11:29:11.881 +03:00 [INF] Executed endpoint '/chatHubs'
+2023-06-10 11:29:11.884 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:29:11.889 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/ChatHubs?id=p8HfpwM0HrxdLJoltbPcEg - - - 101 - - 410394.5778ms
+2023-06-10 11:29:19.476 +03:00 [INF] User profile is available. Using 'C:\Users\omera\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-06-10 11:29:19.576 +03:00 [INF] Now listening on: http://localhost:5000
+2023-06-10 11:29:19.580 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-10 11:29:19.581 +03:00 [INF] Hosting environment: Development
+2023-06-10 11:29:19.582 +03:00 [INF] Content root path: D:\Work\touride\current\current\current\AllrideApi\
+2023-06-10 11:29:19.936 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - -
+2023-06-10 11:29:20.314 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 381.4055ms
+2023-06-10 11:29:20.408 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - -
+2023-06-10 11:29:20.411 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink - -
+2023-06-10 11:29:20.417 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 8.6102ms
+2023-06-10 11:29:20.447 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 36.6029ms
+2023-06-10 11:29:20.545 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - -
+2023-06-10 11:29:20.743 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 198.7965ms
+2023-06-10 11:30:49.805 +03:00 [INF] Request starting HTTP/1.1 POST http://10.0.2.2:5000/api/Login/login application/json;+charset=utf-8 50
+2023-06-10 11:30:50.109 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.User.LoginController.Login (AllrideApi)'
+2023-06-10 11:30:50.134 +03:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(DTO.Select.LoginUserDto) on controller AllrideApi.Controllers.Version_1.User.LoginController (AllrideApi).
+2023-06-10 11:30:52.633 +03:00 [INF] Executed DbCommand (83ms) [Parameters=[@__user_Email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.active_user, u.apple_id, u.created_date, u.deleted_date, u.email, u.facebook_id, u.google_id, u.instagram_id, u."RefreshToken", u."ResfreshTokenEndDate", u.updated_date, u.verified_member, u.user_type, u0.id, u0.created_date, u0.hash_pass, u0.salt_pass, u0.updated_date, u0.user_id
+FROM "user" AS u
+LEFT JOIN user_password AS u0 ON u.id = u0.user_id
+WHERE u.email = @__user_Email_0
+LIMIT 2
+2023-06-10 11:30:52.953 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.country, u.created_date, u.date_of_birth, u.gender, u.language, u.lastname, u.name, u.phone, u.pp_path, u.updated_date, u.user_id, u.vehicle_type, u.status
+FROM user_detail AS u
+WHERE u.user_id = @__user_Id_0
+LIMIT 2
+2023-06-10 11:30:52.974 +03:00 [INF] ----------------Token Oluşturuldu-------------------:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJlbWFpbCI6Im9tZXJAZ21haWwuY29tIiwibmJmIjoxNjg2Mzg1ODUyLCJleHAiOjE2ODg5Nzc4NTIsImlhdCI6MTY4NjM4NTg1Mn0.AS5xwqkLX-qm0lvd9a5Vc7_GXMQ-qrof9Z9KjrrDo-w
+2023-06-10 11:30:52.985 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:30:53.017 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.User.LoginController.Login (AllrideApi) in 2875.7844ms
+2023-06-10 11:30:53.019 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.User.LoginController.Login (AllrideApi)'
+2023-06-10 11:30:53.169 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:30:53.225 +03:00 [INF] Request finished HTTP/1.1 POST http://10.0.2.2:5000/api/Login/login application/json;+charset=utf-8 50 - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 3419.9609ms
+2023-06-10 11:30:53.286 +03:00 [INF] Request starting HTTP/1.1 POST http://10.0.2.2:5000/ChatHubs/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0
+2023-06-10 11:30:53.288 +03:00 [INF] Executing endpoint '/chatHubs/negotiate'
+2023-06-10 11:30:53.306 +03:00 [INF] Executed endpoint '/chatHubs/negotiate'
+2023-06-10 11:30:53.318 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:30:53.320 +03:00 [INF] Request finished HTTP/1.1 POST http://10.0.2.2:5000/ChatHubs/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0 - 200 316 application/json 33.9837ms
+2023-06-10 11:30:53.728 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/ChatHubs?id=ye4j_pnvZnJGa_ySQ3VI-w - -
+2023-06-10 11:30:53.731 +03:00 [INF] Executing endpoint '/chatHubs'
+2023-06-10 11:30:55.098 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO online_users ("userId")
+VALUES (@p0)
+RETURNING "Id";
+2023-06-10 11:30:55.965 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/SocialMediaPosts/fetchPost application/json -
+2023-06-10 11:30:56.006 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__ToInt32_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s.id, s."LikedByUsers", s.caption, s.comments_count, s.created_at, s.likes_count, s.location_info, s.media_url, s.updated_at, s.user_id
+FROM social_media_posts AS s
+WHERE s.user_id = @__ToInt32_0 OR EXISTS (
+    SELECT 1
+    FROM social_media_follows AS s0
+    WHERE s0.followed_id = s.user_id AND s0.follower_id = @__ToInt32_0)
+ORDER BY s.created_at DESC
+2023-06-10 11:30:56.059 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.SocialMedia.SocialMediaPostsController.SocialMediaFetchPost (AllrideApi)'
+2023-06-10 11:30:56.063 +03:00 [INF] Route matched with {action = "SocialMediaFetchPost", controller = "SocialMediaPosts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SocialMediaFetchPost() on controller AllrideApi.Controllers.Version_1.SocialMedia.SocialMediaPostsController (AllrideApi).
+2023-06-10 11:30:56.071 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/SocialMediaPosts/fetchPost application/json -
+2023-06-10 11:30:56.071 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s.id, s."LikedByUsers", s.caption, s.comments_count, s.created_at, s.likes_count, s.location_info, s.media_url, s.updated_at, s.user_id
+FROM social_media_posts AS s
+WHERE s.user_id = @__userId_0 OR EXISTS (
+    SELECT 1
+    FROM social_media_follows AS s0
+    WHERE s0.followed_id = s.user_id AND s0.follower_id = @__userId_0)
+ORDER BY s.created_at DESC
+2023-06-10 11:30:56.073 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.SocialMedia.SocialMediaPostsController.SocialMediaFetchPost (AllrideApi)'
+2023-06-10 11:30:56.074 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:30:56.074 +03:00 [INF] Route matched with {action = "SocialMediaFetchPost", controller = "SocialMediaPosts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SocialMediaFetchPost() on controller AllrideApi.Controllers.Version_1.SocialMedia.SocialMediaPostsController (AllrideApi).
+2023-06-10 11:30:56.076 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.SocialMedia.SocialMediaPostsController.SocialMediaFetchPost (AllrideApi) in 11.4866ms
+2023-06-10 11:30:56.077 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.SocialMedia.SocialMediaPostsController.SocialMediaFetchPost (AllrideApi)'
+2023-06-10 11:30:56.079 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT s.id, s."LikedByUsers", s.caption, s.comments_count, s.created_at, s.likes_count, s.location_info, s.media_url, s.updated_at, s.user_id
+FROM social_media_posts AS s
+WHERE s.user_id = @__userId_0 OR EXISTS (
+    SELECT 1
+    FROM social_media_follows AS s0
+    WHERE s0.followed_id = s.user_id AND s0.follower_id = @__userId_0)
+ORDER BY s.created_at DESC
+2023-06-10 11:30:56.082 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:30:56.083 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.SocialMedia.SocialMediaPostsController.SocialMediaFetchPost (AllrideApi) in 7.0802ms
+2023-06-10 11:30:56.085 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.SocialMedia.SocialMediaPostsController.SocialMediaFetchPost (AllrideApi)'
+2023-06-10 11:30:56.089 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:30:56.091 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/SocialMediaPosts/fetchPost application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 19.7467ms
+2023-06-10 11:30:56.126 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:30:56.127 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/SocialMediaPosts/fetchPost application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 161.9191ms
+2023-06-10 11:30:56.968 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/FetchMessages/fetchMessages application/json -
+2023-06-10 11:30:56.970 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/allMemberedGroupsByUser application/json -
+2023-06-10 11:30:56.971 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi)'
+2023-06-10 11:30:56.972 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi)'
+2023-06-10 11:30:56.974 +03:00 [INF] Route matched with {action = "GetAllMemberedGroupsByUser", controller = "Groups"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllMemberedGroupsByUser() on controller AllrideApi.Controllers.Version_1.Chat.Group.GroupsController (AllrideApi).
+2023-06-10 11:30:56.974 +03:00 [INF] Route matched with {action = "fetchMessages", controller = "FetchMessages"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult fetchMessages(AllrideApiCore.Dtos.Chat.OldMessages) on controller AllrideApi.Controllers.FetchMessages (AllrideApi).
+2023-06-10 11:30:56.990 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT m.id, m.content_type, m.created_at, m.message_content, m.recipient_id, m.sender_id
+FROM messages AS m
+WHERE m.sender_id = @__userId_0 OR m.recipient_id = @__userId_0
+2023-06-10 11:30:56.994 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT g0.id, g0.created_date, g0.description, g0.group_rank, g0.image_path, g0.name, g0.type, g0.updated_date
+FROM group_member AS g
+INNER JOIN "group" AS g0 ON g.group_id = g0.id
+WHERE g.user_id = @__userId_0
+2023-06-10 11:30:57.007 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:30:57.010 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi) in 33.6566ms
+2023-06-10 11:30:57.011 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.Chat.Group.GroupsController.GetAllMemberedGroupsByUser (AllrideApi)'
+2023-06-10 11:30:57.016 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:30:57.019 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/Groups/allMemberedGroupsByUser application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 48.3275ms
+2023-06-10 11:30:57.040 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT u.user_id AS "UserId", u.name AS "Name", u.lastname AS "LastName"
+FROM messages AS m
+INNER JOIN user_detail AS u ON CASE
+    WHEN m.sender_id = @__userId_0 THEN m.recipient_id
+    ELSE m.sender_id
+END = u.user_id
+WHERE m.sender_id = @__userId_0 OR m.recipient_id = @__userId_0
+2023-06-10 11:30:57.042 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 11:30:57.052 +03:00 [INF] Executed action AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi) in 74.2103ms
+2023-06-10 11:30:57.053 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.FetchMessages.fetchMessages (AllrideApi)'
+2023-06-10 11:30:57.056 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 11:30:57.058 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/api/FetchMessages/fetchMessages application/json - - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 90.1732ms
+2023-06-10 12:07:14.717 +03:00 [INF] Executed endpoint '/chatHubs'
+2023-06-10 12:07:14.816 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 12:07:14.826 +03:00 [INF] Request finished HTTP/1.1 GET http://10.0.2.2:5000/ChatHubs?id=ye4j_pnvZnJGa_ySQ3VI-w - - - 101 - - 2181098.3990ms
+2023-06-10 23:43:27.833 +03:00 [INF] User profile is available. Using 'C:\Users\omera\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-06-10 23:43:28.117 +03:00 [INF] Now listening on: http://localhost:5000
+2023-06-10 23:43:28.123 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-10 23:43:28.125 +03:00 [INF] Hosting environment: Development
+2023-06-10 23:43:28.125 +03:00 [INF] Content root path: D:\Work\touride\current\current\current\AllrideApi\
+2023-06-10 23:43:28.954 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - -
+2023-06-10 23:43:29.462 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 507.1187ms
+2023-06-10 23:43:29.558 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - -
+2023-06-10 23:43:29.560 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink - -
+2023-06-10 23:43:29.565 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 6.9169ms
+2023-06-10 23:43:29.658 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 98.3374ms
+2023-06-10 23:43:29.765 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - -
+2023-06-10 23:43:29.977 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 212.1125ms
+2023-06-10 23:44:06.834 +03:00 [INF] Request starting HTTP/1.1 POST http://10.0.2.2:5000/api/Login/login application/json;+charset=utf-8 50
+2023-06-10 23:44:08.000 +03:00 [INF] Executing endpoint 'AllrideApi.Controllers.Version_1.User.LoginController.Login (AllrideApi)'
+2023-06-10 23:44:08.033 +03:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(DTO.Select.LoginUserDto) on controller AllrideApi.Controllers.Version_1.User.LoginController (AllrideApi).
+2023-06-10 23:44:11.291 +03:00 [INF] Executed DbCommand (91ms) [Parameters=[@__user_Email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.active_user, u.apple_id, u.created_date, u.deleted_date, u.email, u.facebook_id, u.google_id, u.instagram_id, u."RefreshToken", u."ResfreshTokenEndDate", u.updated_date, u.verified_member, u.user_type, u0.id, u0.created_date, u0.hash_pass, u0.salt_pass, u0.updated_date, u0.user_id
+FROM "user" AS u
+LEFT JOIN user_password AS u0 ON u.id = u0.user_id
+WHERE u.email = @__user_Email_0
+LIMIT 2
+2023-06-10 23:44:11.830 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.country, u.created_date, u.date_of_birth, u.gender, u.language, u.lastname, u.name, u.phone, u.pp_path, u.updated_date, u.user_id, u.vehicle_type, u.status
+FROM user_detail AS u
+WHERE u.user_id = @__user_Id_0
+LIMIT 2
+2023-06-10 23:44:11.855 +03:00 [INF] ----------------Token Oluşturuldu-------------------:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJlbWFpbCI6Im9tZXJAZ21haWwuY29tIiwibmJmIjoxNjg2NDI5ODUxLCJleHAiOjE2ODkwMjE4NTEsImlhdCI6MTY4NjQyOTg1MX0.rPehm_63tnPmylxqqzD5YJ8ZLM7LFjkb7Tiacc2UPD0
+2023-06-10 23:44:11.870 +03:00 [INF] Executing OkObjectResult, writing value of type 'AllrideApiService.Response.CustomResponse`1[[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-06-10 23:44:11.906 +03:00 [INF] Executed action AllrideApi.Controllers.Version_1.User.LoginController.Login (AllrideApi) in 3861.0356ms
+2023-06-10 23:44:11.910 +03:00 [INF] Executed endpoint 'AllrideApi.Controllers.Version_1.User.LoginController.Login (AllrideApi)'
+2023-06-10 23:44:12.118 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 23:44:12.190 +03:00 [INF] Request finished HTTP/1.1 POST http://10.0.2.2:5000/api/Login/login application/json;+charset=utf-8 50 - 200 - application/json;+charset=utf-8;+touride-media-type-api-vers=1.0 5356.3626ms
+2023-06-10 23:44:12.242 +03:00 [INF] Request starting HTTP/1.1 POST http://10.0.2.2:5000/ChatHubs/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0
+2023-06-10 23:44:12.246 +03:00 [INF] Executing endpoint '/chatHubs/negotiate'
+2023-06-10 23:44:12.274 +03:00 [INF] Executed endpoint '/chatHubs/negotiate'
+2023-06-10 23:44:12.287 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = DateTime), @p6='?' (DbType = Int32), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO api_log (api_type, client_ip, created_date, request_param, response, response_date, response_status, service_name)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING id;
+2023-06-10 23:44:12.313 +03:00 [INF] Request finished HTTP/1.1 POST http://10.0.2.2:5000/ChatHubs/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0 - 200 316 application/json 70.6367ms
+2023-06-10 23:44:12.771 +03:00 [INF] Request starting HTTP/1.1 GET http://10.0.2.2:5000/ChatHubs?id=M3ElKv4IwyULs1IQBklGvA - -
+2023-06-10 23:44:12.786 +03:00 [INF] Executing endpoint '/chatHubs'
+2023-06-10 23:44:13.273 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO online_users ("userId")
+VALUES (@p0)
+RETURNING "Id";

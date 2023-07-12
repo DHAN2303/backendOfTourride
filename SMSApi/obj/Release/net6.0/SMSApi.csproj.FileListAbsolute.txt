@@ -1,0 +1,84 @@
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\SMSApi\bin\Release\net6.0\SMSApi.deps.json
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\SMSApi\bin\Release\net6.0\SMSApi.dll
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\SMSApi\bin\Release\net6.0\SMSApi.pdb
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\SMSApi\obj\Release\net6.0\SMSApi.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\SMSApi\obj\Release\net6.0\SMSApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\SMSApi\obj\Release\net6.0\SMSApi.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\SMSApi\obj\Release\net6.0\SMSApi.AssemblyInfo.cs
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\SMSApi\obj\Release\net6.0\SMSApi.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\SMSApi\obj\Release\net6.0\SMSApi.dll
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\SMSApi\obj\Release\net6.0\refint\SMSApi.dll
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\SMSApi\obj\Release\net6.0\SMSApi.pdb
+C:\Users\User\Desktop\allrideBackend_11_NISAN_Yedek\SMSApi\obj\Release\net6.0\ref\SMSApi.dll
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\SMSApi\bin\Release\net6.0\SMSApi.deps.json
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\SMSApi\bin\Release\net6.0\SMSApi.dll
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\SMSApi\bin\Release\net6.0\SMSApi.pdb
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\SMSApi\obj\Release\net6.0\SMSApi.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\SMSApi\obj\Release\net6.0\SMSApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\SMSApi\obj\Release\net6.0\SMSApi.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\SMSApi\obj\Release\net6.0\SMSApi.AssemblyInfo.cs
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\SMSApi\obj\Release\net6.0\SMSApi.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\SMSApi\obj\Release\net6.0\SMSApi.dll
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\SMSApi\obj\Release\net6.0\refint\SMSApi.dll
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\SMSApi\obj\Release\net6.0\SMSApi.pdb
+C:\Users\User\Desktop\allrideBackend_12_NISAN_Yedek\SMSApi\obj\Release\net6.0\ref\SMSApi.dll
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\SMSApi\bin\Release\net6.0\SMSApi.deps.json
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\SMSApi\bin\Release\net6.0\SMSApi.dll
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\SMSApi\bin\Release\net6.0\SMSApi.pdb
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\SMSApi\obj\Release\net6.0\SMSApi.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\SMSApi\obj\Release\net6.0\SMSApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\SMSApi\obj\Release\net6.0\SMSApi.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\SMSApi\obj\Release\net6.0\SMSApi.AssemblyInfo.cs
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\SMSApi\obj\Release\net6.0\SMSApi.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\SMSApi\obj\Release\net6.0\SMSApi.dll
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\SMSApi\obj\Release\net6.0\refint\SMSApi.dll
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\SMSApi\obj\Release\net6.0\SMSApi.pdb
+C:\Users\User\Desktop\allrideBackend_13_NISAN_Yedek\SMSApi\obj\Release\net6.0\ref\SMSApi.dll
+D:\Work\touride\current\current\SMSApi\bin\Release\net6.0\SMSApi.deps.json
+D:\Work\touride\current\current\SMSApi\bin\Release\net6.0\SMSApi.dll
+D:\Work\touride\current\current\SMSApi\bin\Release\net6.0\SMSApi.pdb
+D:\Work\touride\current\current\SMSApi\obj\Release\net6.0\SMSApi.csproj.AssemblyReference.cache
+D:\Work\touride\current\current\SMSApi\obj\Release\net6.0\SMSApi.GeneratedMSBuildEditorConfig.editorconfig
+D:\Work\touride\current\current\SMSApi\obj\Release\net6.0\SMSApi.AssemblyInfoInputs.cache
+D:\Work\touride\current\current\SMSApi\obj\Release\net6.0\SMSApi.AssemblyInfo.cs
+D:\Work\touride\current\current\SMSApi\obj\Release\net6.0\SMSApi.csproj.CoreCompileInputs.cache
+D:\Work\touride\current\current\SMSApi\obj\Release\net6.0\SMSApi.dll
+D:\Work\touride\current\current\SMSApi\obj\Release\net6.0\refint\SMSApi.dll
+D:\Work\touride\current\current\SMSApi\obj\Release\net6.0\SMSApi.pdb
+D:\Work\touride\current\current\SMSApi\obj\Release\net6.0\ref\SMSApi.dll
+D:\Work\touride\current\allride_26_Nisan_Yedek\SMSApi\bin\Release\net6.0\SMSApi.deps.json
+D:\Work\touride\current\allride_26_Nisan_Yedek\SMSApi\bin\Release\net6.0\SMSApi.dll
+D:\Work\touride\current\allride_26_Nisan_Yedek\SMSApi\bin\Release\net6.0\SMSApi.pdb
+D:\Work\touride\current\allride_26_Nisan_Yedek\SMSApi\obj\Release\net6.0\SMSApi.csproj.AssemblyReference.cache
+D:\Work\touride\current\allride_26_Nisan_Yedek\SMSApi\obj\Release\net6.0\SMSApi.GeneratedMSBuildEditorConfig.editorconfig
+D:\Work\touride\current\allride_26_Nisan_Yedek\SMSApi\obj\Release\net6.0\SMSApi.AssemblyInfoInputs.cache
+D:\Work\touride\current\allride_26_Nisan_Yedek\SMSApi\obj\Release\net6.0\SMSApi.AssemblyInfo.cs
+D:\Work\touride\current\allride_26_Nisan_Yedek\SMSApi\obj\Release\net6.0\SMSApi.csproj.CoreCompileInputs.cache
+D:\Work\touride\current\allride_26_Nisan_Yedek\SMSApi\obj\Release\net6.0\SMSApi.dll
+D:\Work\touride\current\allride_26_Nisan_Yedek\SMSApi\obj\Release\net6.0\refint\SMSApi.dll
+D:\Work\touride\current\allride_26_Nisan_Yedek\SMSApi\obj\Release\net6.0\SMSApi.pdb
+D:\Work\touride\current\allride_26_Nisan_Yedek\SMSApi\obj\Release\net6.0\ref\SMSApi.dll
+C:\Users\User\Desktop\current (2)\current\SMSApi\bin\Release\net6.0\SMSApi.deps.json
+C:\Users\User\Desktop\current (2)\current\SMSApi\bin\Release\net6.0\SMSApi.dll
+C:\Users\User\Desktop\current (2)\current\SMSApi\bin\Release\net6.0\SMSApi.pdb
+C:\Users\User\Desktop\current (2)\current\SMSApi\obj\Release\net6.0\SMSApi.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\current (2)\current\SMSApi\obj\Release\net6.0\SMSApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\current (2)\current\SMSApi\obj\Release\net6.0\SMSApi.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\current (2)\current\SMSApi\obj\Release\net6.0\SMSApi.AssemblyInfo.cs
+C:\Users\User\Desktop\current (2)\current\SMSApi\obj\Release\net6.0\SMSApi.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\current (2)\current\SMSApi\obj\Release\net6.0\SMSApi.dll
+C:\Users\User\Desktop\current (2)\current\SMSApi\obj\Release\net6.0\refint\SMSApi.dll
+C:\Users\User\Desktop\current (2)\current\SMSApi\obj\Release\net6.0\SMSApi.pdb
+C:\Users\User\Desktop\current (2)\current\SMSApi\obj\Release\net6.0\ref\SMSApi.dll
+C:\Users\User\Desktop\Backend\SMSApi\bin\Release\net6.0\SMSApi.deps.json
+C:\Users\User\Desktop\Backend\SMSApi\bin\Release\net6.0\SMSApi.dll
+C:\Users\User\Desktop\Backend\SMSApi\bin\Release\net6.0\SMSApi.pdb
+C:\Users\User\Desktop\Backend\SMSApi\obj\Release\net6.0\SMSApi.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Backend\SMSApi\obj\Release\net6.0\SMSApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Backend\SMSApi\obj\Release\net6.0\SMSApi.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Backend\SMSApi\obj\Release\net6.0\SMSApi.AssemblyInfo.cs
+C:\Users\User\Desktop\Backend\SMSApi\obj\Release\net6.0\SMSApi.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Backend\SMSApi\obj\Release\net6.0\SMSApi.dll
+C:\Users\User\Desktop\Backend\SMSApi\obj\Release\net6.0\refint\SMSApi.dll
+C:\Users\User\Desktop\Backend\SMSApi\obj\Release\net6.0\SMSApi.pdb
+C:\Users\User\Desktop\Backend\SMSApi\obj\Release\net6.0\ref\SMSApi.dll

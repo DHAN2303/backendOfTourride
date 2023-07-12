@@ -1,0 +1,13 @@
+2023-06-18 13:41:48.598 +03:00 [INF] User profile is available. Using 'C:\Users\omera\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-06-18 13:41:49.109 +03:00 [INF] Now listening on: http://localhost:5000
+2023-06-18 13:41:49.115 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-18 13:41:49.130 +03:00 [INF] Hosting environment: Development
+2023-06-18 13:41:49.133 +03:00 [INF] Content root path: D:\Work\touride\current\current\current\AllrideApi\
+2023-06-18 13:41:53.511 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - -
+2023-06-18 13:41:55.476 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 1981.2743ms
+2023-06-18 13:41:55.786 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink - -
+2023-06-18 13:41:55.808 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - -
+2023-06-18 13:41:55.894 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - - - 200 11990 application/javascript;+charset=utf-8 86.8491ms
+2023-06-18 13:41:56.133 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 347.8891ms
+2023-06-18 13:41:56.413 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - -
+2023-06-18 13:41:57.155 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 742.6377ms
