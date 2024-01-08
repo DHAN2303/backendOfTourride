@@ -1,4 +1,6 @@
-﻿using AllrideApiCore.Dtos.ResponseDtos;
+﻿using AllrideApiCore.Dtos.ResponseDto;
+using AllrideApiCore.Dtos.ResponseDtos;
+using AllrideApiCore.Entities.Chat;
 using AllrideApiService.Response;
 
 namespace AllrideApiService.Services.Abstract.GroupsInfo
@@ -10,13 +12,10 @@ namespace AllrideApiService.Services.Abstract.GroupsInfo
         CustomResponse<GlobalGroupResponseDto> GetGlobalGroups(int GroupId, int Type);
         CustomResponse<GlobalGroupResponseDto> DeleteGroup(int GroupId);
         CustomResponse<GlobalGroupResponseDto> DeleteUserInGroup(int GroupId, int UserId);
-        CustomResponse<UserResponseDto> GetGroupUserDetail(int GroupId);
+        CustomResponse<Object> GetGroupUserDetail(int GroupId);
         CustomResponse<List<string>> SearchUserGroup(string userName, int GroupId);
-        CustomResponse<LastActivityResponseDto> GetLastActivity(int GroupId);
-        CustomResponse<List<GroupResponseDto>> GetUsersGroupList(int userId);
-        CustomResponse<List<GroupSocialMediaPostsResponseDto>> GetGroupsUsersSocialMediaLast3Post(int groupId);
-        CustomResponse<List<UserProfileResponseDto>> GetFollowers(int groupId);
-
+        public CustomResponse<Object> GetMemberedGroupsByUser(int userId);
+        public CustomResponse<Object> GetGroupMessage(int groupId);
 
     }
 }

@@ -2,7 +2,7 @@
 {
     public interface IUsageTrackerService
     {
-        public string CanUseService(int userId, int serviceId);
+        public string CanUseService(string email, int serviceId);
 
     }
 }

@@ -1,3 +1,5 @@
+﻿using System;
+
 namespace SMSApi.Api
 {
     public class ClientOAuth : ClientBase,

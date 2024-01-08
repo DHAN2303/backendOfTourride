@@ -24,14 +24,13 @@ namespace AllrideApiRepository.Configurations
             builder.Property(p => p.UpdatedDate).HasColumnName("updated_date");
             builder.Property(p => p.UpdatedDate).HasColumnName("updated_date");
             builder.Property(p => p.EditorAdvice).HasColumnName("editor_advice");
-
             builder.HasOne(a=>a.RouteInstruction)
-                   .WithOne(b=>b.Route)
-                   .HasForeignKey<RouteInstruction>(b=>b.RouteId);
-
+                .WithOne(b=>b.Route)
+                .HasForeignKey<RouteInstruction>(b=>b.RouteId);
             builder.HasOne(a => a.RouteDetail)
-                   .WithOne(b => b.Route)
-                   .HasForeignKey<RouteDetail>(b => b.RouteId);
+                .WithOne(b => b.Route)
+                .HasForeignKey<RouteDetail>(b => b.RouteId);
+
         }
     }
 }

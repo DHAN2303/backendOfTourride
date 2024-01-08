@@ -17,12 +17,10 @@ namespace AllrideApi.Controllers.Version_1.SocialMedia
     public class RoutesController : ControllerBase
     {
         private readonly IRoutesServices _routeServices;
-        private readonly ILogger<RoutesController> _logger;
 
-        public RoutesController(IRoutesServices routeServices, ILogger<RoutesController> logger)
+        public RoutesController(IRoutesServices routeServices)
         {
             _routeServices = routeServices;
-            _logger = logger;
         }
 
         [HttpGet]
@@ -94,40 +92,19 @@ namespace AllrideApi.Controllers.Version_1.SocialMedia
             }
         }
 
-        [HttpGet("fetchUsersRouteDetail")]
-        public IActionResult GetUsersRouteDetail([FromQuery] FetchUsersRouteRequestDto fetchUsersRouteDto)
+        [HttpGet("routeDetail")]
+        public IActionResult GetRouteDetail([FromQuery]FetchUsersRouteRequestDto fetchUsersRouteDto)
         {
-            var userId = HttpContext.User.Claims.First()?.Value;
-            if (string.IsNullOrEmpty(userId))
+            var result = _routeServices.FetchUsersRoute(fetchUsersRouteDto);
+            if (result.Status)
             {
-                return Unauthorized();
+                return Ok(CustomResponse<object>.Success(result, true));
             }
-            //// UserId'yi kullanarak yapmak istediğiniz işlemler
-            bool isUserIdTypeInt = int.TryParse(userId, out int UserId);
-
-            if (isUserIdTypeInt == false)
+            else
             {
-                return Unauthorized();
-            }
-            try
-            {
-
-                var result = _routeServices.FetchUsersRoute(fetchUsersRouteDto);
-                if (result.Status)
-                {
-                    return Ok(CustomResponse<object>.Success(result, true));
-                }
-                else
-                {
-                    return Ok(CustomResponse<object>.Success(ErrorEnumResponse.BadRequest, false));
-                }
-
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(" ROUTES CONTROLLER ERROR GetUsersRouteDetail METHOD ERROR: " + ex.Message);
                 return Ok(CustomResponse<object>.Success(ErrorEnumResponse.BadRequest, false));
             }
+
         }
         [HttpGet("editorialAdvice")]
         public IActionResult GetEditorsAdviceRoute(int recommendedType)
@@ -146,7 +123,7 @@ namespace AllrideApi.Controllers.Version_1.SocialMedia
         [HttpGet("userLastRoutes")]
         public IActionResult GetUserLast3Route()
         {
-            var userId = HttpContext.User.Claims.First()?.Value;
+            var userId = HttpContext.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
             if (string.IsNullOrEmpty(userId))
             {
                 return Unauthorized();

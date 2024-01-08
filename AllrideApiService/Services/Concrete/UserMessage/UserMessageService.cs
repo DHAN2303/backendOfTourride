@@ -83,37 +83,6 @@ namespace AllrideApiService.Services.Concrete.UserMessage
                 Status = false
             };
         }
-        public CustomResponse<Object> GetGroupUserMessages(int groupId)
-        {
-            List<GroupMessage> _lastMessages = new();
-            List<UserDetail> _userInfoList = new();
-            try
-            {
-                _lastMessages = _userMessagesRepository.GetGroupMessage(groupId);
-                _userInfoList = _userMessagesRepository.GetGroupMessagedUser(groupId).ToList();
-
-                var data = new
-                {
-                    lastMessage = _lastMessages,
-                    usersData = _userInfoList
-                };
-
-                return new CustomResponse<Object>
-                {
-                    Data = data,
-                    Status = true
-                };
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError("HAS ERROR USER MESSAGE SERVICE IN GetGroupUserMessages METOD: " + ex.Message);
-            }
-            return new CustomResponse<Object>
-            {
-                Data = null,
-                Status = false
-            };
-        }
 
     }
 }

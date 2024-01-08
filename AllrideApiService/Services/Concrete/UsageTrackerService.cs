@@ -1,4 +1,5 @@
-﻿using AllrideApiCore.Entities.ServiceLimit;
+﻿
+using AllrideApiCore.Entities.ServiceLimit;
 using AllrideApiRepository;
 using AllrideApiService.Services.Abstract;
 using Microsoft.Extensions.Logging;
@@ -14,12 +15,12 @@ namespace AllrideApiService.Services.Concrete
             _context = context;
             _logger = logger;
         }
-        public string CanUseService(int userId, int serviceId)
+        public string CanUseService(string email, int serviceId)
         {
 
             try
             {
-                var user = _context.user.FirstOrDefault(u => u.Id == userId);
+                var user = _context.user.FirstOrDefault(u => u.Email == email);
                 var user_type = user.user_type;
                 var service = _context.service_types.FirstOrDefault(s => s.service_id == serviceId);
                 var service_name = service.service_name;
@@ -27,11 +28,10 @@ namespace AllrideApiService.Services.Concrete
                 var user_types = _context.user_types.FirstOrDefault(ut => ut.type == user_type);
                 var limit = serviceId == 0 ? user_types.tomtom_nearby_limit : serviceId == 1 ? user_types.tomtom_along_limit : serviceId == 2 ? user_types.here_nearby_limit : serviceId == 3 ? user_types.tomtom_routing_limit : serviceId == 4 ? user_types.weather_limit : user_types.here_route_limit;
 
-                var usage = _context.service_usage
-                    .FirstOrDefault(su => su.user_id == userId && su.service_id == serviceId);
+                var usage = _context.service_usage.FirstOrDefault(su => su.user_id == email && su.service_id == serviceId);
                 if (usage == null)
                 {
-                    usage = new ServiceUsage { user_id = userId, service_id = serviceId, usage_count = 0 };
+                    usage = new ServiceUsage { user_id = email, service_id = serviceId, usage_count = 0 };
                     _context.service_usage.Add(usage);
                 }
 

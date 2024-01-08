@@ -127,18 +127,3 @@ C:\Users\User\Desktop\current (2)\current\AllrideApiCore\obj\Release\net6.0\Allr
 C:\Users\User\Desktop\current (2)\current\AllrideApiCore\obj\Release\net6.0\refint\AllrideApiCore.dll
 C:\Users\User\Desktop\current (2)\current\AllrideApiCore\obj\Release\net6.0\AllrideApiCore.pdb
 C:\Users\User\Desktop\current (2)\current\AllrideApiCore\obj\Release\net6.0\ref\AllrideApiCore.dll
-C:\Users\User\Desktop\Backend\AllrideApiCore\bin\Release\net6.0\AllrideApiCore.deps.json
-C:\Users\User\Desktop\Backend\AllrideApiCore\bin\Release\net6.0\AllrideApiCore.dll
-C:\Users\User\Desktop\Backend\AllrideApiCore\bin\Release\net6.0\AllrideApiCore.pdb
-C:\Users\User\Desktop\Backend\AllrideApiCore\bin\Release\net6.0\FlexiblePolyline.dll
-C:\Users\User\Desktop\Backend\AllrideApiCore\bin\Release\net6.0\FlexiblePolyline.pdb
-C:\Users\User\Desktop\Backend\AllrideApiCore\obj\Release\net6.0\AllrideApiCore.csproj.AssemblyReference.cache
-C:\Users\User\Desktop\Backend\AllrideApiCore\obj\Release\net6.0\AllrideApiCore.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\User\Desktop\Backend\AllrideApiCore\obj\Release\net6.0\AllrideApiCore.AssemblyInfoInputs.cache
-C:\Users\User\Desktop\Backend\AllrideApiCore\obj\Release\net6.0\AllrideApiCore.AssemblyInfo.cs
-C:\Users\User\Desktop\Backend\AllrideApiCore\obj\Release\net6.0\AllrideApiCore.csproj.CoreCompileInputs.cache
-C:\Users\User\Desktop\Backend\AllrideApiCore\obj\Release\net6.0\AllrideApiCore.csproj.CopyComplete
-C:\Users\User\Desktop\Backend\AllrideApiCore\obj\Release\net6.0\AllrideApiCore.dll
-C:\Users\User\Desktop\Backend\AllrideApiCore\obj\Release\net6.0\refint\AllrideApiCore.dll
-C:\Users\User\Desktop\Backend\AllrideApiCore\obj\Release\net6.0\AllrideApiCore.pdb
-C:\Users\User\Desktop\Backend\AllrideApiCore\obj\Release\net6.0\ref\AllrideApiCore.dll

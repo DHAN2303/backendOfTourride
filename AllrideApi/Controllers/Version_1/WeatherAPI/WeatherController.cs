@@ -5,6 +5,8 @@ using AllrideApiService.Services.Abstract;
 using AllrideApiService.Services.Abstract.Weather;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Nest;
+using System.Security.Claims;
 
 namespace AllrideApi.Controllers.Version_1.WeatherAPI
 {
@@ -26,105 +28,41 @@ namespace AllrideApi.Controllers.Version_1.WeatherAPI
         [Route("weatherSave")]
         public async Task<IActionResult> WeatherPost(WeatherRequestDto weatherReqDto)
         {
-            // var userEmail = HttpContext.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
-            var userId = HttpContext.User.Claims.First().Value;
+            var userEmail = HttpContext.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
 
-            if (string.IsNullOrEmpty(userId))
+            if (string.IsNullOrEmpty(userEmail))
             {
                 return Ok(CustomResponse<object>.Success(ErrorEnumResponse.TokenIsInValid, false));
             }
-
-            bool isUserIdTypeInt = int.TryParse(userId, out int Admin);
-
-            if (isUserIdTypeInt == false)
-            {
-                return Unauthorized();
-            }
-
+            
             int service_id = Convert.ToInt16(_config.GetValue<string>("ServiceId:weather_limit"));
-            var result = _usageTrackerService.CanUseService(Admin, service_id);
+            var result = _usageTrackerService.CanUseService(userEmail, service_id);
 
             if (result == "1")
             {
                 var response = await _weatherService.SaveWeather(weatherReqDto);
-
-                if (response.Status)
+                if (response.StatusCode == (int)ErrorEnumResponse.NewsIdNullOrEmpty)
                 {
-                    return StatusCode(201,response);
+                    return Ok(CustomResponse<object>.Success(ErrorEnumResponse.NewsIdNullOrEmpty, false));
+                }
+
+                else if (response.Data == null && response.Status)
+                {
+                    return Ok(CustomResponse<object>.Success(ErrorEnumResponse.NullData, false));
                 }
                 else
                 {
-                    return StatusCode(500, response);
+                    return Ok(CustomResponse<object>.Success(SuccessEnumResponse.RegisterSuccessfull, false));
+                   // return StatusCode(500, response.ErrorEnums);
                 }
 
             }
             else
             {
-                //return Ok(CustomResponse<object>.Success(ErrorEnumResponse.NoPermissionToAccessWeatherService, false));
-                return StatusCode(403, ErrorEnumResponse.NoPermissionToAccessWeatherService);
+                return Ok(CustomResponse<object>.Success(ErrorEnumResponse.NoPermissionToAccessWeatherService, false));
+                //return StatusCode(403, ErrorEnumResponse.NoPermissionToAccessWeatherService);
             }
 
         }
-
-        [HttpGet("weatherRequestForRoute")]
-        public async Task<IActionResult> WeatherRequestForRoute([FromQuery] WeatherRequestDto weatherRequestDto)
-        {
-            var userId = HttpContext.User.Claims.First().Value;
-
-            if (string.IsNullOrEmpty(userId))
-            {
-                return StatusCode(500, ErrorEnumResponse.TokenIsInValid);
-            }
-
-            bool isUserIdTypeInt = int.TryParse(userId, out int Admin);
-
-            if (isUserIdTypeInt == false)
-            {
-                return Unauthorized();
-            }
-
-            //int service_id = Convert.ToInt16(_config.GetValue<string>("ServiceId:weather_limit"));
-            //var result = _usageTrackerService.CanUseService(Admin, service_id);
-            try
-            {
-                var response = await _weatherService.WeatherRequestForRoute(weatherRequestDto);
-
-                if (response.Status)
-                {
-                    return StatusCode(201, response);
-                }
-                else
-                {
-                    return StatusCode(500, response);
-                }
-
-            }
-            catch (Exception ex)
-            {
-                
-                return StatusCode(403, ErrorEnumResponse.NoPermissionToAccessWeatherService);
-            }
-
-            //if (result == "1")
-            //{
-            //    var response = await _weatherService.SaveWeather(weatherRequestDto);
-
-            //    if (response.Status)
-            //    {
-            //        return StatusCode(201, response);
-            //    }
-            //    else
-            //    {
-            //        return StatusCode(500, response);
-            //    }
-
-            //}
-            //else
-            //{
-            //    //return Ok(CustomResponse<object>.Success(ErrorEnumResponse.NoPermissionToAccessWeatherService, false));
-            //    return StatusCode(403, ErrorEnumResponse.NoPermissionToAccessWeatherService);
-            //}
-        }
-
     }
 }

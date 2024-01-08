@@ -1082,8 +1082,7 @@
         "dependencies": {
           "FlexiblePolyline": "1.0.0",
           "Microsoft.AspNetCore.Http.Features": "5.0.17",
-          "NetTopologySuite": "2.5.0",
-          "Swashbuckle.AspNetCore.Annotations": "6.4.0"
+          "NetTopologySuite": "2.5.0"
         },
         "runtime": {
           "AllrideApiCore.dll": {}

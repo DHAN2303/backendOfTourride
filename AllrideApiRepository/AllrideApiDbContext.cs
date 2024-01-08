@@ -1,14 +1,10 @@
-﻿using System.Reflection;
-using AllrideApiCore.Entities;
-using AllrideApiCore.Entities.Activities;
+﻿using AllrideApiCore.Entities;
 using AllrideApiCore.Entities.Buys;
 using AllrideApiCore.Entities.Chat;
+using AllrideApiCore.Entities.Chat.Clubs;
 using AllrideApiCore.Entities.Clubs;
 using AllrideApiCore.Entities.Commons;
-using AllrideApiCore.Entities.Groups;
 using AllrideApiCore.Entities.Here;
-using AllrideApiCore.Entities.Newss;
-using AllrideApiCore.Entities.RoutePlanners;
 using AllrideApiCore.Entities.Routes;
 using AllrideApiCore.Entities.ServiceLimit;
 using AllrideApiCore.Entities.SocialMedia;
@@ -17,6 +13,10 @@ using AllrideApiCore.Entities.Weathers;
 using AllrideApiRepository.Configurations;
 using AllrideApiRepository.Repositories.Concrete;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
+using System.Reflection.Emit;
+using Group = AllrideApiCore.Entities.Chat.Group;
+using Route = AllrideApiCore.Entities.Here.Route;
 
 namespace AllrideApiRepository
 {
@@ -32,10 +32,10 @@ namespace AllrideApiRepository
         public DbSet<UserBlock> user_block { get; set; }
         public DbSet<UserInvites> user_invites { get; set; }
 
+
         // for News
         public DbSet<News> news { get; set; }
         public DbSet<UserNewsReaction> user_news_reaction { get; set; }
-        public DbSet<NewsTags> news_tags { get; set; }
 
         // for Route
         public DbSet<RouteCalculate> route_calculate { get; set; }
@@ -44,9 +44,6 @@ namespace AllrideApiRepository
         public DbSet<RouteInstruction> route_instruction { get; set; }
         public DbSet<RouteInstructionDetail> route_instruction_detail { get; set; }
         public DbSet<RouteDetail> route_detail { get; set; }
-        public DbSet<RoutePlanner> route_planner { get; set; }
-        public DbSet<UsersInRoutePlanning> users_InRoutePlanning { get; set; }
-        public DbSet<TasksRoutePlanner> tasks_route_planner { get; set; }
 
         // for Weather
         public DbSet<Weather> weather { get; set; }
@@ -58,19 +55,14 @@ namespace AllrideApiRepository
         public DbSet<GroupMember> group_member { get; set; }
 
         //for club
-        public DbSet<Club> club { get; set; }
+        public DbSet<Club> clubs { get; set; }
         public DbSet<ClubMember> club_member { get; set; }
-        public DbSet<ClubSocialPost> clubsocial_post { get; set; }
-        public DbSet<ClubSocialPostComment> clubsocial_postcomment { get; set; }
+        public DbSet<ClubMessage> club_messages { get; set; }
+
         //public DbSet<GroupMessage> group_messages { get; set; }
 
         //for log
         public DbSet<LogApi> api_log { get; set; }
-
-        // group social media
-        public DbSet<GroupSocialPost> groupsocial_post { get; set; }
-        public DbSet<GroupSocialPostComment> groupsocial_postcomment { get; set; }
-
 
         //for social media
         public DbSet<SocialMediaPosts> social_media_posts { get; set; }
@@ -91,7 +83,6 @@ namespace AllrideApiRepository
 
         // Buy
         public DbSet<TouridePackage> touridePackage { get; set; }
-        public DbSet<Activity> activity { get; set; }
 
         //Notification person
         public DbSet<PersonNotification> person_notification { get; set; }
@@ -157,7 +148,8 @@ namespace AllrideApiRepository
             builder.Entity<PublishedRoutes>()
             .HasNoKey();
 
-            builder.Entity<Group>().ToTable("group");
+            //builder.Entity<Group>().ToTable("groups");
+            //builder.Entity<Club>().ToTable("club");
 
             //UserBlock table///////////////////////
             builder.Entity<UserBlock>()
@@ -174,10 +166,12 @@ namespace AllrideApiRepository
                 .WithMany(u => u.BlockedUserBlocks)
                 .HasForeignKey(b => b.BlockedUserId)
                 .OnDelete(DeleteBehavior.Restrict);
+            ////////////////////////////////////////
+
 
             //UserInvites table///////////////////
             builder.Entity<UserInvites>()
-                .HasKey(b => new { b.inveting_id, b.invited_id });
+                .HasKey(b => new { b.inveting_id, b.invited_id, b.Id});
 
             builder.Entity<UserInvites>()
                 .HasOne<UserEntity>(b => b.UserInviting)
@@ -186,91 +180,15 @@ namespace AllrideApiRepository
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder.Entity<UserInvites>()
-                .HasOne<UserEntity>(b => b.UserInvited)
-                .WithMany(u => u.InvitedUser)
-                .HasForeignKey(b => b.invited_id)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            builder.Entity<Activity>()
-                .HasOne<Group>(o => o.Group)
-                .WithMany(c => c.activities)
-                .HasForeignKey(o => o.group_id);
-
-            builder.Entity<Activity>()
-                   .HasOne<Club>(o => o.Club)
-                   .WithMany(c => c.activities)
-                   .HasForeignKey(o => o.club_id);
-
-            builder.Entity<Activity>()
-                   .HasOne<UserEntity>(o => o.Users)
-                   .WithOne(c => c.act)
-                   .HasForeignKey<Activity>(o => o.creator_user_id);
-
-            builder.Entity<Activity>()
-                   .HasOne<Route>(o => o.Route)
-                   .WithOne(c => c.Activity)
-                   .HasForeignKey<Activity>(o => o.route_id);
-
-            builder.Entity<ActivityMember>()
-                   .HasOne<Activity>(x => x.Activitiy)
-                   .WithMany(x => x.ActivityMembers)
-                   .HasForeignKey(x => x.ActivityId);
-
-            builder.Entity<ServiceUsage>()
-                   .HasOne<UserEntity>(x => x.User)
-                   .WithMany(x => x.ServiceUsages)
-                   .HasForeignKey(x => x.user_id);
-
-            builder.Entity<ServiceUsage>()
-                   .HasOne<ServiceTypes>(x => x.ServiceTypes)
-                   .WithMany(x => x.service_usages)
-                   .HasForeignKey(x => x.service_id);
-
-            builder.Entity<MemberShip>()
-                  .HasOne<UserEntity>(x => x.User)
-                  .WithOne(x => x.MemberShip)
-                  .HasForeignKey<MemberShip>(x => x.UserId);
-
-            builder.Entity<RouteAltitude>()
-                   .HasOne<Route>(x => x.Route)
-                   .WithMany(x => x.RouteAltitudes)
-                   .HasForeignKey(x => x.RouteId);
-            
-            builder.Entity<RoutePlanner>()
-                   .HasOne<UserEntity>(x => x.UserEntities)
-                   .WithMany(x => x.RoutePlanners)
-                   .HasForeignKey(x => x.UserId);
-
-
-            builder.Entity<TasksRoutePlanner>()
-                .HasOne<RoutePlanner>(o => o.RoutePlanner)
-                .WithMany(c => c.TasksRoutePlanners)
-                .HasForeignKey(o => o.RoutePlannerId);
-
-
-            builder.Entity<Route>()
-                .HasOne<RouteTransportMode>(o => o.RouteTransportMode)
-                .WithMany()
-                .HasForeignKey(o => o.RouteTransportModeId);
-
+            .HasOne<UserEntity>(b => b.UserInvited)
+            .WithMany(u => u.InvitedUser)
+            .HasForeignKey(b => b.invited_id)
+            .OnDelete(DeleteBehavior.Restrict);
+            ////////////////////////////////////
         }
     }
 }
 
-//builder.Entity<RoutePlanner>()
-//    .HasOne<Group>(x => x.Group)
-//    .WithMany(x => x.RoutePlanners)
-//    .HasForeignKey(x => x.GroupId);
-
-//builder.Entity<RoutePlanner>()
-//    .HasOne<Club>(x => x.Club)
-//    .WithMany(x => x.RoutePlanners)
-//    .HasForeignKey(x => x.ClubId);
-
-//builder.Entity<UsersInRoutePlanning>()
-//            .HasOne(u => u.TasksRoutePlanner)
-//            .WithOne(t => t.UsersInRoutePlanning)
-//            .HasForeignKey<TasksRoutePlanner>(t => t.UsersInRoutePlanningId);
 
 //builder.HasPostgresExtension("postgis");
 //builder.Entity<UserDetail>().ToTable("user_detail");

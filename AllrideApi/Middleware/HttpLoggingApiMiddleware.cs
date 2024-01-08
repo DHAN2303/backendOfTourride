@@ -1,8 +1,5 @@
-
-using AllrideApiService.Services.Abstract.Log;
-using System.Net;
-using System.Net.Sockets;
 using System.Text;
+using AllrideApiService.Services.Abstract.Log;
 
 namespace AllrideApi.Middleware
 {
@@ -50,25 +47,6 @@ namespace AllrideApi.Middleware
             string responseText = await new StreamReader(httpContext.Response.Body, Encoding.UTF8).ReadToEndAsync();
             int response_status = httpContext.Response.StatusCode;
             string client_ip = httpContext.Request.HttpContext.Connection.RemoteIpAddress.ToString();
-   
-            if (string.IsNullOrEmpty(client_ip))
-            {
-                string localIP;
-                using (var socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, 0))
-                {
-                    socket.Connect("127.0.0.1", 65530);
-                    var endPoint = socket.LocalEndPoint as IPEndPoint;
-                    if (endPoint != null)
-                    {
-                        localIP = endPoint.Address.ToString();
-                    }
-                    else
-                    {
-                        // Yerel IP adresi al�namad�
-                        localIP = "Belirtilmedi";
-                    }
-                }
-            }
             int serviceName_length = httpContext.GetEndpoint().DisplayName.Split(".").Length;
             string service_name = httpContext.GetEndpoint().DisplayName.Split(".")[serviceName_length - 1];
             string request_param = httpContext.Request.Method;
@@ -81,8 +59,6 @@ namespace AllrideApi.Middleware
 
             _logApi.LogApiSave(client_ip, service_name, request_param, response_status, responseText, api_type);
 
-            //_logger.LogInformation($"resp Keys: {requestText}");
-            //_logger.LogInformation($"req Keys: {Newtonsoft.Json.JsonConvert.DeserializeObject(responseText)}");
         }
     }
 }

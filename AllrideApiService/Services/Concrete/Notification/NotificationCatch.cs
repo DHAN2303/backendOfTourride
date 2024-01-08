@@ -1,6 +1,13 @@
+﻿using AllrideApi.Hubs;
 using AllrideApiRepository;
 using AllrideApiRepository.Repositories.Concrete;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Hosting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace AllrideApiService.Services.Concrete.Notification
 {

@@ -1,16 +1,11 @@
 ﻿using AllrideApiCore.Dtos.Insert;
-using AllrideApiCore.Dtos.RequestDto.RoutePlanner;
 using AllrideApiCore.Dtos.ResponseDto;
-using AllrideApiCore.Dtos.ResponseDto.RoutePlannerResponseDto;
 using AllrideApiCore.Dtos.ResponseDtos;
 using AllrideApiCore.Dtos.Select;
-using AllrideApiCore.Dtos.Update;
 using AllrideApiCore.Dtos.Weather;
 using AllrideApiCore.Entities;
 using AllrideApiCore.Entities.Clubs;
-using AllrideApiCore.Entities.Groups;
 using AllrideApiCore.Entities.Here;
-using AllrideApiCore.Entities.RoutePlanners;
 using AllrideApiCore.Entities.Routes;
 using AllrideApiCore.Entities.Users;
 using AllrideApiCore.Entities.Weathers;
@@ -18,6 +13,7 @@ using AutoMapper;
 using DTO.Insert;
 using DTO.Select;
 using NetTopologySuite.Geometries;
+using SMSApi.Api.Response;
 using System.Globalization;
 
 namespace AllrideApiService.Configuration
@@ -47,28 +43,12 @@ namespace AllrideApiService.Configuration
                 ForMember(x => x.Direction, x => x.MapFrom(y => y.direction));
             CreateMap<WeatherResponseDto, Weather>().ReverseMap();
             CreateMap<LoginUserResponseDto, UserDetail>().ReverseMap();
-            CreateMap<NewsReactionResponseDto, News>().ReverseMap();
+            CreateMap<NewsResponseDto,News>().ReverseMap();
             CreateMap<NewsDetailResponseDto,News>().ReverseMap();
             CreateMap<CreateActionTypeNewsDto,UserNewsReaction>().ReverseMap();
             CreateMap<RouteDetailResponseDto,RouteDetail>().ReverseMap();
-           // CreateMap<GroupResponseDto, Group>().ReverseMap();
+            CreateMap<GroupResponseDto,Group>().ReverseMap();
             CreateMap<ClubResponseDto,Club>().ReverseMap();
-            CreateMap<UserProfileResponseDto, UserDetail>().ReverseMap();
-            CreateMap<GroupMemberResponseDto, GroupMember>().ReverseMap();
-            CreateMap<ClubSocialPostDto, ClubSocialPost>().ReverseMap();
-            CreateMap<GroupResponseDto, Group>().ReverseMap();
-            CreateMap<CreateRoutePlannerDto, RoutePlanner>().ReverseMap();
-            CreateMap<AddFriendsRoutePlannerDto, UsersInRoutePlanning>().ReverseMap();
-            CreateMap<CreateTasksInRoutePlanner, TasksRoutePlanner>().ReverseMap();
-            CreateMap<UserHaveRoutePlannerResponseDto, RoutePlanner>().ReverseMap();
-            CreateMap<TasksRoutePlannerResponseDto, TasksRoutePlanner>().ReverseMap();
-            CreateMap<UsersInRoutePlanningResponseDto, UsersInRoutePlanning>().ReverseMap();
-            CreateMap<AddFriendsRoutePlannerDto, RoutePlanner>().ReverseMap();
-            CreateMap<ForgotPasswordDto, UserEntity>().
-                ForMember(x => x.Email, x => x.MapFrom(y => y.Email)).
-                ForMember(x => x.forgot_password_code, x => x.MapFrom(y => y.ResetCode));
-            CreateMap<GetAllNewsResponseDto, News>().ReverseMap();
-            CreateMap<GetLastNewsResponseDto, News>().ReverseMap();
 
         }
     }

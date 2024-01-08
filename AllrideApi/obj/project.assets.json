@@ -1756,8 +1756,7 @@
         "dependencies": {
           "FlexiblePolyline": "1.0.0",
           "Microsoft.AspNetCore.Http.Features": "5.0.17",
-          "NetTopologySuite": "2.5.0",
-          "Swashbuckle.AspNetCore.Annotations": "6.4.0"
+          "NetTopologySuite": "2.5.0"
         },
         "compile": {
           "bin/placeholder/AllrideApiCore.dll": {}
@@ -5310,34 +5309,33 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "/Users/dhan/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\Backend\\AllrideApi\\AllrideApi.csproj",
+      "projectUniqueName": "/Users/dhan/Desktop/current/AllrideApi/AllrideApi.csproj",
       "projectName": "AllrideApi",
-      "projectPath": "C:\\Users\\User\\Desktop\\Backend\\AllrideApi\\AllrideApi.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\Backend\\AllrideApi\\obj\\",
+      "projectPath": "/Users/dhan/Desktop/current/AllrideApi/AllrideApi.csproj",
+      "packagesPath": "/Users/dhan/.nuget/packages/",
+      "outputPath": "/Users/dhan/Desktop/current/AllrideApi/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/dhan/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "/Users/dhan/.dotnet/sdk/7.0.304/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\User\\Desktop\\Backend\\AllrideApiService\\AllrideApiService.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\Backend\\AllrideApiService\\AllrideApiService.csproj"
+            "/Users/dhan/Desktop/current/AllrideApiService/AllrideApiService.csproj": {
+              "projectPath": "/Users/dhan/Desktop/current/AllrideApiService/AllrideApiService.csproj"
             }
           }
         }
@@ -5430,6 +5428,20 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.18, 6.0.18]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.osx-x64",
+            "version": "[6.0.18, 6.0.18]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.18, 6.0.18]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -5438,7 +5450,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/Users/dhan/.dotnet/sdk/7.0.304/RuntimeIdentifierGraph.json"
       }
     }
   }

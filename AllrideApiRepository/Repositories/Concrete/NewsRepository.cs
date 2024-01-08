@@ -2,8 +2,6 @@
 using AllrideApiCore.Entities.Users;
 using AllrideApiRepository.Repositories.Abstract;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
-
 
 namespace AllrideApiRepository.Repositories.Concrete
 {
@@ -22,31 +20,11 @@ namespace AllrideApiRepository.Repositories.Concrete
             return _context.news.Find(Id);
         }
 
-        public List<News> GetAll()
-        {
-            var pageSize = 100;
-            var pageNumber = 1;
-            return _context.news.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
 
-        }
-
-        public int NewsTotalCount()
-        {
-            return _context.news.Count();
-        }
-
-
-        public List<News> GetLast2News()
-        {
-            var lastTwoNews = _context.news
-            .Include(news => news.NewsTags)
-            .ThenInclude(newsTags => newsTags.Tags)
-            .OrderByDescending(news => news.Id)
-            .Take(2)
-            .ToList();
-
-            return lastTwoNews;
-        }
+        //public IEnumerable<News> GetLast2News()
+        //{
+        //    return _context.news.OrderByDescending(e => e.CreatedDate).Take(2);
+        //}
 
         public News Post(News news)
         {
@@ -101,19 +79,3 @@ namespace AllrideApiRepository.Repositories.Concrete
     }
 }
 
-//public void GetLast2News()
-//{
-//    var lastTwoNews = _context.News
-//        .OrderByDescending(n => n.CreatedDate)
-//        .Take(2)
-//        .Include(n => n.NewsTags)
-//            .ThenInclude(nt => nt.Tags)
-//        .Select(n => new
-//        {
-//            n.Title,
-//            n.Description,
-//            n.Image,
-//            Tags = n.NewsTags.Select(nt => nt.Tags)
-//        })
-//        .ToList();
-//}

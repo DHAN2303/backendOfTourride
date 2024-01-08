@@ -1,7 +1,4 @@
-
-using System.Globalization;
-using AllrideApiCore.Dtos;
-using AllrideApiCore.Dtos.ResponseDtos;
+﻿using AllrideApiCore.Dtos;
 using AllrideApiCore.Entities.Users;
 using AllrideApiRepository;
 using AllrideApiRepository.Repositories.Abstract;
@@ -14,16 +11,18 @@ using AutoMapper;
 using DTO.Insert;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using System.Diagnostics;
+using System.Globalization;
 
 namespace AllrideApiService.Services.Concrete.UserCommon
 {
     public class UserService : IUserService
     {
-        protected readonly AllrideApiDbContext _context;
         private const string V = "User Register Log Error: ";
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
         private readonly ILogger<LoginService> _logger;
+        protected readonly AllrideApiDbContext _context;
 
         public UserService(IUserRepository userRepository, IMapper mapper, ILogger<LoginService> logger, AllrideApiDbContext context)
         {
@@ -35,16 +34,17 @@ namespace AllrideApiService.Services.Concrete.UserCommon
 
         public CustomResponse<NoContentDto> Add(CreateUserDto userDto)
         {
-            List<ErrorEnumResponse> registerEnumRespList = new();
+            List<ErrorEnumResponse> registerEnumRespList = new List<ErrorEnumResponse>();
             //BaseResponse commandResponse = new();
 
             // KULLANICIDAN GELEN DOĞUM TARİHİNİ COVERT ETME
             try
             {
                 DateTime userDate = ConvertDateTime(userDto.DateOfBirth);
+                Debug.WriteLine(" Convert to DateOfBirth: " + userDate.ToString());
                 var validator = new CreateUserValidation();
                 var response = validator.Validate(userDto).ThrowIfException();
-                if (userDto.Gender != 0 && userDto.Gender != 1 && userDto.Gender != 2)
+                if (userDto.Gender != "0" && userDto.Gender != "1" && userDto.Gender != "2")
                 {
                     bool isConvert = int.TryParse("80", out int errorCode);
                     if (isConvert)
@@ -84,7 +84,6 @@ namespace AllrideApiService.Services.Concrete.UserCommon
                 userDetail = _mapper.Map<UserDetail>(userDto);
                 user.UserDetail = userDetail;
                 user.ActiveUser = true;  // Active User alanı kullanıcının hesabı silinmişse 0 aktifse 1 anlamına gelir
-                //userDetail.status = true;
                 var result = _userRepository.Add(user);
                 _userRepository.SaveChanges();
             }
@@ -95,10 +94,10 @@ namespace AllrideApiService.Services.Concrete.UserCommon
             }
 
             // Kullanıcı kayıt edildikten sonra bu alan çalışacak
-            //if (userDto.Phone.IsNullOrEmpty() == false)
-            //{
-            //    SmsApi(_logger);//userDto.Phone
-            //}
+            if (userDto.Phone.IsNullOrEmpty() == false)
+            {
+                SmsApi(_logger);//userDto.Phone
+            }
             return CustomResponse<NoContentDto>.Success(true);
 
 
@@ -150,10 +149,10 @@ namespace AllrideApiService.Services.Concrete.UserCommon
             {
                 userDate = DateTime.ParseExact(date, "dd.MM.yyyy", provider);
             }
-
+             
             return userDate;
         }
-
+       
 
         public static void SmsApi(ILogger<LoginService> _logger) // telefon numarası olacak parametrede string Phone
         {
@@ -164,7 +163,7 @@ namespace AllrideApiService.Services.Concrete.UserCommon
                 var smsApi = new SMSApi.Api.SMSFactory(client);
                 Random rnd = new();
                 int activationCode = rnd.Next(0, 9999);
-                _logger.LogInformation("" + activationCode);
+                _logger.LogInformation(""+activationCode);
                 //var result =
                 //    smsApi.ActionSend()
                 //        .SetText("TGLabs selam nabüünüz ayanlar, korkmayın bu bir dolandırıcı mesajı değil." +
@@ -218,16 +217,16 @@ namespace AllrideApiService.Services.Concrete.UserCommon
                  */
 
             }
-
+            
 
         }
 
-        public CustomResponse<Object> GetOnlineUsers(int type, int id, int userId) //0:group || 1:club || 2:person
+        public CustomResponse<Object> GetOnlineUsers(int type, int id, int userId) //0:group || 2:club || 1:person
         {
             List<ErrorEnumResponse> registerEnumRespList = new();
             try
             {
-                if (type == 0)
+                if(type == 0)
                 {
                     var data = from ou in _context.online_users
                                join gu in _context.group_member
@@ -236,7 +235,7 @@ namespace AllrideApiService.Services.Concrete.UserCommon
                                select ou;
                     return GetOnlineUsersReturn(data);
                 }
-                else if (type == 1)
+                else if (type == 2)
                 {
                     var data = from ou in _context.online_users
                                join cu in _context.club_member
@@ -280,60 +279,11 @@ namespace AllrideApiService.Services.Concrete.UserCommon
             }
         }
 
-        public CustomResponse<List<UserProfileResponseDto>> GetFollowers(int UserId)
-        {
-            List<ErrorEnumResponse> registerEnumRespList = new();
-            try
-            {
-                if (UserId < 0)
-                {
-                    registerEnumRespList.Add(ErrorEnumResponse.UserIdCannotBeEqualTo0AndLessThanZero);
-                    return CustomResponse<List<UserProfileResponseDto>>.Fail(registerEnumRespList, false);
 
-                }
-                var followers = _userRepository.GetFollowersUsers(UserId);
-                if (followers == null)
-                {
-                    registerEnumRespList.Add(ErrorEnumResponse.UserFollowersIsNull);
-                    return CustomResponse<List<UserProfileResponseDto>>.Fail(registerEnumRespList, true);
-                }
-                return CustomResponse<List<UserProfileResponseDto>>.Success(followers, true);
-
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(" USER SERVICE GET FOLLOWERS METHOD ERROR  " + ex.Message);
-                return CustomResponse<List<UserProfileResponseDto>>.Fail(registerEnumRespList, false);
-            }
-
-        }
-        public CustomResponse<List<UserProfileResponseDto>> GetFollowing(int UserId)
-        {
-            List<ErrorEnumResponse> registerEnumRespList = new();
-            try
-            {
-                if (UserId < 0)
-                {
-                    registerEnumRespList.Add(ErrorEnumResponse.UserIdCannotBeEqualTo0AndLessThanZero);
-                    return CustomResponse<List<UserProfileResponseDto>>.Fail(registerEnumRespList, false);
-
-                }
-                var followers = _userRepository.GetFollowingUsers(UserId);
-                if (followers == null)
-                {
-                    registerEnumRespList.Add(ErrorEnumResponse.UserFollowersIsNull);
-                    return CustomResponse<List<UserProfileResponseDto>>.Fail(registerEnumRespList, true);
-                }
-                return CustomResponse<List<UserProfileResponseDto>>.Success(followers, true);
-
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(" USER SERVICE GET FOLLOWING METHOD ERROR  " + ex.Message);
-                return CustomResponse<List<UserProfileResponseDto>>.Fail(registerEnumRespList, false);
-            }
-
-        }
+        //public CustomResponse<Object> GetUsersForInvite()
+        //{
+        //    var response = 
+        //}
 
         //public static CustomResponse<NoContentDto> VehicleTypeValidation(string vehicleType)
         //{

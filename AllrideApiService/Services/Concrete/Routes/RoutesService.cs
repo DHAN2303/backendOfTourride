@@ -62,7 +62,7 @@ namespace AllrideApiService.Services.Concrete.Routes
 
             return favoriteRoutes;
         }
-        public CustomResponse<RouteDetailResponseDto> FetchUsersRoute(FetchUsersRouteRequestDto fetchUsersRouteDto, int UserId)
+        public CustomResponse<RouteDetailResponseDto> FetchUsersRoute(FetchUsersRouteRequestDto fetchUsersRouteDto)
         {
             // RouteId tablosudna 
             RouteDetailResponseDto _fetchUsersResponseDto = new();
@@ -76,7 +76,7 @@ namespace AllrideApiService.Services.Concrete.Routes
                 {
                     return CustomResponse<RouteDetailResponseDto>.Fail(isValid.ErrorEnums);
                 }
-                var routeDetail = _userFetchRepository.GetUsersRouteDetail(fetchUsersRouteDto.RouteId, UserId);
+                var routeDetail = _userFetchRepository.GetRouteDetail(fetchUsersRouteDto.RouteId);
                 if (routeDetail == null)
                 {
                     _errors.Add(ErrorEnumResponse.RouteDetailDoesntRegisterDb);
@@ -185,9 +185,6 @@ namespace AllrideApiService.Services.Concrete.Routes
             return CustomResponse<List<Last3RoutesUserResponseDto>>.Success(lastRouteResponseDtoList, true);
         }
 
-        public CustomResponse<RouteDetailResponseDto> FetchUsersRoute(FetchUsersRouteRequestDto fetchUsersRouteDto)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }

@@ -8,8 +8,5 @@ namespace AllrideApiRepository.Repositories.Abstract
         //public IEnumerable<News> GetLast2News();
         public News Post(News news);
         public void SaveChanges();
-        public List<News> GetAll();
-        public int NewsTotalCount();
-        public List<News> GetLast2News();
     }
 }

@@ -1,7 +1,4 @@
-
-using AllrideApiCore.Dtos;
-using AllrideApiCore.Dtos.Insert;
-using AllrideApiCore.Dtos.ResponseDtos;
+﻿using AllrideApiCore.Dtos.ResponseDtos;
 using AllrideApiCore.Dtos.Update;
 using AllrideApiCore.Entities.Users;
 using AllrideApiRepository.Repositories.Abstract;
@@ -9,8 +6,7 @@ using AllrideApiService.Authentication;
 using AllrideApiService.Configuration.Extensions;
 using AllrideApiService.Configuration.Validator;
 using AllrideApiService.Response;
-using AllrideApiService.Services.Abstract.Mail;
-using AllrideApiService.Services.Abstract.Users;
+using AllrideApiService.Services.Abstract.Log;
 using AutoMapper;
 using DTO.Select;
 using Microsoft.Extensions.Configuration;
@@ -29,21 +25,19 @@ namespace AllrideApiService.Services.Concrete.UserCommon
         private readonly IConfiguration _configuration;
         private readonly ILogger<LoginService> _logger;
         private readonly IMapper _mapper;
-        private readonly IMailService _mailService;
 
         public LoginService(ILoginRepository loginRepository,
-            IConfiguration configuration, IMapper mapper, ILogger<LoginService> logger, IMailService mailService)
+            IConfiguration configuration, IMapper mapper, ILogger<LoginService> logger)
         {
             _logger = logger;
             _loginRepository = loginRepository;
             _configuration = configuration;
             _mapper = mapper;
-            _mailService = mailService;
         }
 
         public CustomResponse<LoginUserResponseDto> Login(LoginUserDto userDto)
         {
-            LoginUserResponseDto responseDto = new();
+            LoginUserResponseDto responseDto = new LoginUserResponseDto();
             List<ErrorEnumResponse> _enumListErrorResponse = new();
             string token = null;
             try
@@ -90,13 +84,14 @@ namespace AllrideApiService.Services.Concrete.UserCommon
             }
             else
             {
-                _enumListErrorResponse.Add(ErrorEnumResponse.FailedToCreateToken);
+                _enumListErrorResponse.Add(ErrorEnumResponse.FailedToCreateToken); 
                 _logger.LogError(" ----------------Token Oluşmadı---------------- ");
                 return CustomResponse<LoginUserResponseDto>.Fail(_enumListErrorResponse, false);
             }
             return CustomResponse<LoginUserResponseDto>.Success(responseDto, true);
 
         }
+
         private string generateJwtToken(UserEntity user)
         {
             // generate token that is valid for 7 days
@@ -117,6 +112,7 @@ namespace AllrideApiService.Services.Concrete.UserCommon
             var token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token);
         }
+
         public CustomResponse<UserEntity> VerifyPassword(LoginUserDto userDto)
         {
             UserEntity user = _mapper.Map<UserEntity>(userDto);
@@ -147,14 +143,15 @@ namespace AllrideApiService.Services.Concrete.UserCommon
             user = _loginRepository.GetUserWithPassword(user);
             return user;
         }
+
         public UserEntity GetUserById(int Id)
         {
             return _loginRepository.GetUserById(Id);
         }
 
-        // ŞİFREMİ UNUTTUM MAİLİ GÖNDERME
-        public async Task<CustomResponse<UserUpdateDto>> ForgotPassword(ForgotPasswordDto userUpdateDto)
+        public CustomResponse<UserUpdateDto> ForgotPassword(ForgotPasswordDto userUpdateDto)
         {
+
             List<ErrorEnumResponse> _enumListErrorResponse = new();
             try
             {
@@ -165,11 +162,10 @@ namespace AllrideApiService.Services.Concrete.UserCommon
                 CustomResponse<UserUpdateDto> customResponse = new();
 
                 // validasyon ile ilgili bir hata varsa response olarak dönüldü
-                if (isValid.Status == false)
+                if (isValid.Errors.Count > 0)
                 {
                     return CustomResponse<UserUpdateDto>.Fail(isValid.Errors);
                 }
-
                 // Veritabanında bu mail adresi var mı kontrol edildi
                 UserEntity user = _mapper.Map<UserEntity>(userUpdateDto);
                 user = _loginRepository.ForgotPassword(user);
@@ -179,124 +175,19 @@ namespace AllrideApiService.Services.Concrete.UserCommon
                     return CustomResponse<UserUpdateDto>.Fail(_enumListErrorResponse, false);
                 }
 
-                // Eğer veritabanında mail adresi varsa. Kullanıcının mail adresine mail göndericek
-                var actCode = RandomActivationCode();
-                await _mailService.SendMessageAsync(user.Email, $"{actCode}", "<b> Bu bir test mailidir <b>");
+                // Şifresi değişecek mail adresi varsa mail gönderecek
+
                 return CustomResponse<UserUpdateDto>.Success(true);
 
             }
             catch (Exception ex)
             {
                 _logger.LogError(V + ex.Message);
-                return CustomResponse<UserUpdateDto>.Fail(_enumListErrorResponse, false);
             }
 
+            return CustomResponse<UserUpdateDto>.Success(true);
         }
 
-        // ŞİFREMİ UNUTTUM MAİLİ İÇİN GÖNDERİLEN RESET CODE U DOĞRULAMA
-        // Önce Kodu Doğrulayacak Daha sonra User Password Reset Servisine istek göndericek
-        public CustomResponse<object> VerifyResetCode(ForgotPasswordDto forgotPasswordDto)
-        {
-            List<ErrorEnumResponse> errors = new();
-            try
-            {
-                // Veritabanındaki reset code kullanıcıdan gelen reset code ile aynı değil ise  hata dönüyor
-                // Bu da şu demek kullanıcı maile gelen kodu yanlış girmiş.
-                // Eğer Code doğruysa Code u sıfırlamasın burası o code u dönsün
-
-                if (forgotPasswordDto.ResetCode <= 1000 && forgotPasswordDto.ResetCode >= 10000)
-                {
-                    errors.Add(ErrorEnumResponse.FailedToActivationCode);
-                    return CustomResponse<object>.Fail(errors, false);
-                }
-
-                var validator = new UpdateUserValidation();
-                var isValid = validator.Validate(forgotPasswordDto).ThrowIfException();
-
-                if (isValid.Status == false)
-                {
-                    return CustomResponse<object>.Fail(isValid.Errors);
-                }
-                // Veritabanında bu mail adresine ait reset code var mı kontrol edildi
-
-                UserEntity user = _mapper.Map<UserEntity>(forgotPasswordDto);
-
-                var resultUser = _loginRepository.GetUser(user);
-                if (resultUser.forgot_password_code != forgotPasswordDto.ResetCode)
-                {
-                    errors.Add(ErrorEnumResponse.FailedToActivationCode);
-                    return CustomResponse<object>.Fail(errors, false);
-                }
-                else
-                {
-                    return CustomResponse<object>.Success(resultUser.forgot_password_code, true);
-                }
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(" LOGIN SERVICE LOG ERROR VERIFY ACTVIVATION CODE " + ex.Message);
-                return CustomResponse<object>.Fail(errors, false);
-            }
-        }
-
-        // Kullanıcının Şifresini Güncelleme
-        public CustomResponse<NoContentDto> UserPasswordReset(CreateUserResetPasswordDto createUserResetPasswordDto)
-        {
-            List<ErrorEnumResponse> errors = new();
-            try
-            {
-                var validator = new CreateUserPasswordValidation();
-                var response = validator.Validate(createUserResetPasswordDto).ThrowIfException();
-                if (response.Status == false)
-                {
-                    return response;
-                }
-                UserEntity user = _mapper.Map<UserEntity>(createUserResetPasswordDto);
-                var isExistUserEmail = _loginRepository.GetUserMail(user.Email);
-                if (isExistUserEmail == null)
-                {
-                    errors.Add(ErrorEnumResponse.EmailIsNotRegistered);
-                    return CustomResponse<NoContentDto>.Fail(errors, false);
-                }
-                if (createUserResetPasswordDto.Password == createUserResetPasswordDto.PasswordConfirm)
-                {
-                    byte[] passwordHash, passwordSalt;  // Şifreleme bilgilerini tutacak için hash ve salt değişkenleri
-
-                    HashHelper.CreatePasswordHash(createUserResetPasswordDto.Password, out passwordHash, out passwordSalt);
-                    user.UserPassword.SaltPass = passwordSalt;
-                    user.UserPassword.HashPass = passwordHash;
-                    _loginRepository.SaveChanges();
-                }
-
-                errors.Add(ErrorEnumResponse.PasswordConfirmMismatch);
-                return CustomResponse<NoContentDto>.Fail(errors, false);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(" LOGIN SERVICE LOG ERROR UserPasswordReset METHOD:  " + ex.Message);
-                return CustomResponse<NoContentDto>.Fail(errors, false);
-            }
-        }           
-      
-        public Task<CustomResponse<NoContentDto>> SendForgotPasswordMail(string UserMail)
-        {
-            throw new NotImplementedException();
-        }
-
-        public static int StringToInt(string code)
-        {
-            bool Convert = int.TryParse(code, out int actCode);
-            if (Convert)
-                return actCode;
-            return 0;
-        }
-        public static string RandomActivationCode()
-        {
-            var random = new Random();
-            int activationCode = random.Next(1000, 10000);
-            return activationCode.ToString();
-
-        }
         public int? TokenValidate(string token)
         {
             if (token == null)
@@ -322,7 +213,7 @@ namespace AllrideApiService.Services.Concrete.UserCommon
                 // return user id from JWT token if validation successful
                 return userId;
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 _logger.LogError(V + ex.Message);
                 // return null if validation fails

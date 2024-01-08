@@ -29,7 +29,7 @@ namespace AllrideApi.Controllers.Version_1.SocialMedia
         [Route("post")]
         public async Task<IActionResult> SocialMediaPost([FromForm] SocialMediaPostsDto socialPosts)
         {
-            var userId = HttpContext.User.Claims.First()?.Value;
+            var userId = HttpContext.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
             var file = socialPosts.file;
             SocialMediaPostsImageCompress imageCompress = new SocialMediaPostsImageCompress(_posts);
             SocialMediaPostVideoCompress videoCompress = new SocialMediaPostVideoCompress(_posts);

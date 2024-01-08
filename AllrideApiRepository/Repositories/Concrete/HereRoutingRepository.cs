@@ -5,7 +5,7 @@ namespace AllrideApiRepository.Repositories.Concrete
 {
     public class HereRoutingRepository : IHereRoutingRepository
     {
-        protected readonly AllrideApiDbContext _context;
+        private readonly AllrideApiDbContext _context;
         public HereRoutingRepository(AllrideApiDbContext context)
         {
             _context = context;

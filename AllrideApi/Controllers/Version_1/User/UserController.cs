@@ -1,5 +1,4 @@
-﻿
-using AllrideApiCore.Dtos.Select;
+﻿using AllrideApiCore.Dtos.Select;
 using AllrideApiCore.Entities.Users;
 using AllrideApiService.Response;
 using AllrideApiService.Services.Abstract.Users;
@@ -7,7 +6,6 @@ using DTO.Insert;
 using DTO.Select;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 
 namespace AllrideApi.Controllers.Version_1.User
@@ -20,15 +18,14 @@ namespace AllrideApi.Controllers.Version_1.User
         private readonly IUserDeleteService _userDeleteService;
         private readonly IUserUpdateService _userUpdateService;
         private readonly IUserGeneralService _userGeneralService;
-        private readonly ILogger<UserController> _logger;
-        public UserController(ILogger<UserController> logger, IUserGeneralService userGeneralService, IUserService service, IUserDeleteService userDeleteService,
+
+        public UserController(IUserGeneralService userGeneralService, IUserService service, IUserDeleteService userDeleteService, 
             IUserUpdateService userUpdateService)
         {
             _userService = service;
             _userDeleteService = userDeleteService;
             _userUpdateService = userUpdateService;
             _userGeneralService = userGeneralService;
-            _logger = logger;
         }
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -37,24 +34,17 @@ namespace AllrideApi.Controllers.Version_1.User
         [Route("register")]
         public IActionResult Register([FromBody] CreateUserDto request)
         {
-            try
+            var response = _userService.Add(request);
+            if (response != null)
             {
-                var response = _userService.Add(request);
-                if (response != null)
-                {
-                    return Ok(response);
-                }
-                else
-                {
-                    return StatusCode(500, response);
-                }
+                return Ok(CustomResponse<object>.Success(response.Data, true));
             }
-            catch (Exception ex)
+            else
             {
-                _logger.LogError(ex.Message + "  UserController -->  Register METHOD ERROR: " + ex.InnerException.ToString());
-                return StatusCode(500, ErrorEnumResponse.ApiServiceFail);
+                return Ok(CustomResponse<object>.Success(ErrorEnumResponse.BadRequest, false));
             }
         }
+
 
         [HttpDelete]
         [Route("deleteUser")]
@@ -88,6 +78,7 @@ namespace AllrideApi.Controllers.Version_1.User
         public IActionResult UserUpdate([FromBody] UserUpdate user)
         {
             var user_email = HttpContext.User.Claims.Last()?.Value;
+            
 
             if (user_email == user.email)
             {
@@ -103,10 +94,11 @@ namespace AllrideApi.Controllers.Version_1.User
             }
             else
             {
-                return Ok(CustomResponse<object>.Success(ErrorEnumResponse.BadRequest, false));
+               return Ok(CustomResponse<object>.Success(ErrorEnumResponse.BadRequest, false));
             }
 
         }
+
 
         [HttpGet]
         [Route("fetchUser")]
@@ -115,28 +107,27 @@ namespace AllrideApi.Controllers.Version_1.User
         {
             var user_id = HttpContext.Request.Headers["id"];
             var response = _userUpdateService.FetcUserData(Convert.ToInt32(user_id));
-
+            
             if (response != null)
             {
-                return Ok(CustomResponse<object>.Success(response, true));
+               return Ok(CustomResponse<object>.Success(response, true));
             }
             else
             {
-                return Ok(CustomResponse<object>.Success(ErrorEnumResponse.NullData, false));
+               return Ok(CustomResponse<object>.Success(ErrorEnumResponse.NullData, false));
             }
         }
 
         [HttpPut("vehicleType")]
-        public IActionResult SaveUserVehicleType([FromBody] string VehicleType)
+        public IActionResult SaveUserVehicleType([FromBody] string VehicleType) 
         {
-            //var userId = HttpContext.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
-            var userId = HttpContext.User.Claims.First()?.Value;
+            var userId = HttpContext.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
             var userEmail = HttpContext.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
             bool isUserIdTypeInt = int.TryParse(userId, out int UserId);
 
             if (string.IsNullOrEmpty(userId) || isUserIdTypeInt == false)
             {
-                return StatusCode(500, ErrorEnumResponse.TokenIsInValid);
+                return Ok(CustomResponse<object>.Success(ErrorEnumResponse.TokenIsInValid, false));
             }
 
             var response = _userService.UpdateUserVehicleType(VehicleType, UserId);
@@ -154,7 +145,7 @@ namespace AllrideApi.Controllers.Version_1.User
             else
             {
                 return Ok(CustomResponse<object>.Success(response.ErrorEnums, false));
-                // return StatusCode(500, response.ErrorEnums);
+               // return StatusCode(500, response.ErrorEnums);
             }
         }
 
@@ -165,109 +156,25 @@ namespace AllrideApi.Controllers.Version_1.User
         [Route("getAllUsers")]
         public ActionResult<IList<UserGeneralDto>> Get()
         {
-            try
+            var response = _userGeneralService.GetAll();
+            if (response.Status)
             {
-
-                var response = _userGeneralService.GetAll();
-                if (response.Status)
-                {
-                    return Ok(response);
-                }
-                else
-                {
-                    return StatusCode(500, response);
-                }
-
+                return Ok(CustomResponse<object>.Success(response, true));
             }
-            catch (Exception ex)
+            else
             {
-                return BadRequest(ex.Message);
+                return Ok(CustomResponse<object>.Success(ErrorEnumResponse.BadRequest, false));
             }
+
         }
 
         [HttpGet]
         [Route("getOnlineUsers")]
-        public ActionResult GetOnlineUsers(int type, int id)
+        public ActionResult GetOnlineUsers(int whereType, int whereId) 
         {
-            var userId = HttpContext.User.Claims.First()?.Value;
-            var response = _userService.GetOnlineUsers(type, id, Convert.ToInt32(userId));
-            if (response.Status)
-            {
-                return Ok(CustomResponse<object>.Success(response.Data, true));
-            }
-            else
-            {
-                return Ok(CustomResponse<object>.Success(response.ErrorEnums, false));
-            }
-        }
-
-        // 13 Haziran  
-        [HttpGet("getFollowers")]
-        public IActionResult GetFollowers()
-        {
-            try
-            {
-                var userId = HttpContext.User.Claims.First()?.Value;
-                if (userId.IsNullOrEmpty())
-                {
-                    return Unauthorized();
-                }
-                bool isUserIdTypeInt = int.TryParse(userId, out int Admin);
-
-                if (isUserIdTypeInt == false)
-                {
-                    return Unauthorized();
-                }
-
-                var result = _userService.GetFollowers(Admin);
-                if (result.Status)
-                {
-                    return Ok(result);
-                }
-                else
-                {
-                    return StatusCode(500, result);
-                }
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex.Message + "  UserController --> GetFollowers ERROR METHOD:  " + ex.InnerException.ToString());
-                return StatusCode(500, ErrorEnumResponse.ApiServiceFail);
-            }
-        }
-        // 13 Haziran  
-        [HttpGet("getFollowing")]
-        public IActionResult GetFollowing()
-        {
-            try
-            {
-                var userId = HttpContext.User.Claims.First()?.Value;
-                if (userId.IsNullOrEmpty())
-                {
-                    return Unauthorized();
-                }
-                bool isUserIdTypeInt = int.TryParse(userId, out int Admin);
-
-                if (isUserIdTypeInt == false)
-                {
-                    return Unauthorized();
-                }
-
-                var result = _userService.GetFollowing(Admin);
-                if (result.Status)
-                {
-                    return Ok(result);
-                }
-                else
-                {
-                    return StatusCode(500, result);
-                }
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex.Message + "  UserController --> GetFollowers ERROR METHOD:  " + ex.InnerException.ToString());
-                return StatusCode(500, ErrorEnumResponse.ApiServiceFail);
-            }
+            var userId = HttpContext.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+            var response = _userService.GetOnlineUsers(whereType, whereId, Convert.ToInt32(userId));
+            return Ok(response);
         }
 
     }

@@ -1,6 +1,4 @@
-using AllrideApiCore.Dtos.ResponseDto;
-using AllrideApiCore.Dtos.ResponseDtos;
-using AllrideApiCore.Entities.Chat;
+﻿using AllrideApiCore.Entities.Chat;
 using AllrideApiCore.Entities.Users;
 using AllrideApiRepository.Repositories.Abstract;
 using Microsoft.EntityFrameworkCore;
@@ -18,25 +16,9 @@ namespace AllrideApiRepository.Repositories.Concrete
             _context = context;
             _logger = logger;
         }
-        public List<UserProfileResponseDto> GetClubsUsers(int UserId)
-        {
-            //return _context.group_member.Where(x=>x.group_id == GroupId).Select(x=>x.user_id).FirstOrDefault();
 
-            var userList = (
-                  from u in _context.user
-                  join ud in _context.user_detail on u.Id equals ud.UserId
-                  where u.Id == UserId
-                  select new UserProfileResponseDto
-                  {
-                      Name = ud.Name,
-                      LastName = ud.LastName,
-                      PpPath = ud.PpPath
-                  }
-                  ).ToList();
-            return userList;
-        }
         public UserEntity Add(UserEntity user)
-        {
+        {           
             return _context.user.Add(user).Entity;
         }
         public UserDetail AddUserDetail(UserDetail userDetail)
@@ -60,7 +42,7 @@ namespace AllrideApiRepository.Repositories.Concrete
         }
         public bool IsExistUserPhone(string phone)
         {
-            return _context.user_detail.Any(ud => ud.Phone == phone);
+            return  _context.user_detail.Any(ud => ud.Phone == phone);
         }
 
         public bool Update(string VehicleType, int userId)
@@ -68,11 +50,11 @@ namespace AllrideApiRepository.Repositories.Concrete
             try
             {
                 var result = _context.user_detail.SingleOrDefault(x => x.UserId == userId);
-                if (result == null)
+                if(result == null)
                 {
                     return false;
                 }
-                result.VehicleType = VehicleType;
+                result.VehicleType = VehicleType;   
 
             }
             catch (Exception e)
@@ -90,17 +72,12 @@ namespace AllrideApiRepository.Repositories.Concrete
 
         public List<Message> GetUserFriendsLastMessage(int UserId)
         {
-            return _context.messages.OrderByDescending(m => m.created_at).Take(UserId).ToList();
+           return _context.messages.OrderByDescending(m => m.created_at).Take(UserId).ToList();
         }
 
         public List<Message> GetPeerToPeerMessage(int userId, int clientId)
         {
             return _context.messages.Where(m => m.sender_id == userId || m.recipient_id == userId).ToList();
-        }
-
-        public List<GroupMessage> GetGroupMessage(int groupId)
-        {
-            return _context.group_messages.Where(m => m.group_id == groupId).ToList();
         }
 
         public List<UserDetail> GetMessagedUser(int userId)
@@ -120,64 +97,6 @@ namespace AllrideApiRepository.Repositories.Concrete
                 LastName = j.UserDetail.LastName,
             }).Distinct()
             .ToList();
-        }
-        public List<UserDetail> GetGroupMessagedUser(int groupId)
-        {
-            return _context.group_messages
-            .Where(m => m.group_id == groupId)
-            .Join(
-                _context.user_detail,
-                m => m.sender_id,
-                u => u.UserId,
-                (m, u) => new { Message = m, UserDetail = u }
-            )
-            .Select(j => new UserDetail
-            {
-                UserId = j.UserDetail.UserId,
-                Name = j.UserDetail.Name,
-                LastName = j.UserDetail.LastName,
-            }).Distinct()
-            .ToList();
-        }
-
-        public List<UserDetail> GetSearchUser(string input)
-        {
-            return _context.user_detail.Where(x => x.Equals(input)).ToList();
-        }
-
-        // 13 Haziran
-        public List<UserProfileResponseDto> GetFollowersUsers(int UserId)
-        {
-            var userList = (
-                   from u in _context.user
-                   join ud in _context.user_detail on u.Id equals ud.UserId
-                   join smf in _context.social_media_follows on ud.UserId equals smf.follower_id
-                   where u.Id == UserId
-                   select new UserProfileResponseDto
-                   {
-                       Name = ud.Name,
-                       LastName = ud.LastName,
-                       PpPath = ud.PpPath
-                   }
-                   ).ToList();
-            return userList;
-        }
-        // 13 Haziran
-        public List<UserProfileResponseDto> GetFollowingUsers(int UserId)
-        {
-            var userList = (
-                   from u in _context.user
-                   join ud in _context.user_detail on u.Id equals ud.UserId
-                   join smf in _context.social_media_follows on ud.UserId equals smf.followed_id
-                   where u.Id == UserId
-                   select new UserProfileResponseDto
-                   {
-                       Name = ud.Name,
-                       LastName = ud.LastName,
-                       PpPath = ud.PpPath
-                   }
-                   ).ToList();
-            return userList;
         }
     }
 }

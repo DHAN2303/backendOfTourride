@@ -1,5 +1,4 @@
-using AllrideApiCore.Dtos.ResponseDtos;
-using AllrideApiCore.Entities.Chat;
+﻿using AllrideApiCore.Entities.Chat;
 using AllrideApiCore.Entities.Users;
 
 namespace AllrideApiRepository.Repositories.Abstract
@@ -17,17 +16,10 @@ namespace AllrideApiRepository.Repositories.Abstract
         public List<Message> GetUserFriendsLastMessage(int UserId);
         public List<UserDetail> GetMessagedUser(int userId);
         public List<Message> GetPeerToPeerMessage(int userId, int clientId);
-        public List<GroupMessage> GetGroupMessage(int groupId);
-        public List<UserDetail> GetGroupMessagedUser(int groupId);
-        public List<UserDetail> GetSearchUser(string input);
-        public List<UserProfileResponseDto> GetFollowersUsers(int UserId);
-        public List<UserProfileResponseDto> GetFollowingUsers(int UserId);
-
 
 
     }
 }
-
 
 
 

@@ -5,8 +5,7 @@ namespace AllrideApiRepository.Repositories.Concrete.Buys
 {
     public class BuyRepository : IBuyRepository
     {
-
-        protected readonly AllrideApiDbContext _context;
+        private readonly AllrideApiDbContext _context;
         public BuyRepository(AllrideApiDbContext context)
         {
             _context = context;

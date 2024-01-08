@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\Backend\\SMSApi\\SMSApi.csproj": {}
+    "/Users/dhan/Desktop/current/SMSApi/SMSApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\Backend\\SMSApi\\SMSApi.csproj": {
+    "/Users/dhan/Desktop/current/SMSApi/SMSApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Backend\\SMSApi\\SMSApi.csproj",
+        "projectUniqueName": "/Users/dhan/Desktop/current/SMSApi/SMSApi.csproj",
         "projectName": "SMSApi",
-        "projectPath": "C:\\Users\\User\\Desktop\\Backend\\SMSApi\\SMSApi.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Backend\\SMSApi\\obj\\",
+        "projectPath": "/Users/dhan/Desktop/current/SMSApi/SMSApi.csproj",
+        "packagesPath": "/Users/dhan/.nuget/packages/",
+        "outputPath": "/Users/dhan/Desktop/current/SMSApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/dhan/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -56,12 +54,22 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.18, 6.0.18]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.18, 6.0.18]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/dhan/.dotnet/sdk/7.0.304/RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -9,7 +9,6 @@ namespace AllrideApiService.Response
         public string Value { get; set; }
 
         public List<ErrorEnumResponse> ErrorEnums { get; set; }
-        public ErrorEnumResponse ErrorEnum { get; set; }
         public List<SuccessEnumResponse> SuccessEnums { get; set; }
 
         [JsonIgnore]
@@ -45,6 +44,10 @@ namespace AllrideApiService.Response
         {
             return new CustomResponse<T> { Status = status };
         }
+        public static CustomResponse<T> Success(bool status, SuccessEnumResponse successEnum)
+        {
+            return new CustomResponse<T> { Status = status };
+        }
         public static CustomResponse<T> Success(string value, bool status)
         {
             return new CustomResponse<T> { Value = value, Status = status };
@@ -57,17 +60,21 @@ namespace AllrideApiService.Response
         {
             return new CustomResponse<T> { ErrorEnums = listErrorEnums, Status = status};
         }
-        public static CustomResponse<T> Fail(ErrorEnumResponse errorEnum, bool status)
-        {
-            return new CustomResponse<T> { ErrorEnum = errorEnum, Status = status };
-        }
 
+        // Bu yapılar Factory Design Pattern'ından Static Factory Metotlardır
+        // new anahtar sözcüğü kullanmadan nesne üretme operasyonunu burada  gerçekleştiriyoruz
+        public static CustomResponse<T> Fail(int statusCode, List<string> errors)
+        {
+            return new CustomResponse<T> { StatusCode = statusCode, Errors = errors};
+        }
         public static CustomResponse<T> Fail(List<string> errors)
         {
             return new CustomResponse<T> { Errors = errors };
         }
-
-       
+        public static CustomResponse<T> Fail(List<int> errors)
+        {
+            return new CustomResponse<T> { ErrorsCodes = errors };
+        }
         public static CustomResponse<T> Fail(string error)
         {
             return new CustomResponse<T> {Errors = new List<string> { error } }; 
@@ -76,21 +83,17 @@ namespace AllrideApiService.Response
         {
             return new CustomResponse<T> { StatusCode = status, Errors = new List<string> { error }};
         }
-        public static CustomResponse<T> Fail(T Data, List<ErrorEnumResponse> listErrorEnums, bool status)
+        public static CustomResponse<T> Fail(bool status, List<string> erors )
         {
-            return new CustomResponse<T> { Data = Data, ErrorEnums = listErrorEnums, Status = status };
+            return new CustomResponse<T> { Status = status, Errors = erors };
         }
-
-        public static CustomResponse<T> Warning(T Data, List<ErrorEnumResponse> listErrorEnums, List<SuccessEnumResponse> successEnumResponses, bool status)
-        {
-            return new CustomResponse<T> { Data = Data, ErrorEnums = listErrorEnums, SuccessEnums = successEnumResponses, Status = status };
-        }
-
+        //public static CustomResponse<T> Fail(bool status, EnumResponse errorEnums)
+        //{
+        //    return new CustomResponse<T> { Status = status, errorEnum = errorEnums };
+        //}
         public static CustomResponse<T> Fail(List<ErrorEnumResponse> erors)
         {
             return new CustomResponse<T> { ErrorEnums = erors };
         }
-
-  
     }
 }

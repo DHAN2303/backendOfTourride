@@ -7,24 +7,19 @@ using AllrideApiRepository.Repositories.Abstract;
 using AllrideApiRepository.Repositories.Abstract.Buys;
 using AllrideApiRepository.Repositories.Abstract.Clubs;
 using AllrideApiRepository.Repositories.Abstract.GroupsClubs;
-using AllrideApiRepository.Repositories.Abstract.RoutePlannerRepo;
-using AllrideApiRepository.Repositories.Abstract.Search;
 using AllrideApiRepository.Repositories.Abstract.SocailMedia;
 using AllrideApiRepository.Repositories.Concrete;
 using AllrideApiRepository.Repositories.Concrete.Buys;
 using AllrideApiRepository.Repositories.Concrete.GroupsClubs;
-using AllrideApiRepository.Repositories.Concrete.RoutePlannerRepoConcrete;
 using AllrideApiRepository.Repositories.Concrete.SocialMedia;
 using AllrideApiService.Authentication;
 using AllrideApiService.Configuration;
 using AllrideApiService.Configuration.Validator;
 using AllrideApiService.Services.Abstract;
 using AllrideApiService.Services.Abstract.ClubsInfo;
-using AllrideApiService.Services.Abstract.GraphHoperRoundTripRouteApi;
 using AllrideApiService.Services.Abstract.GroupsInfo;
 using AllrideApiService.Services.Abstract.HereApi;
 using AllrideApiService.Services.Abstract.Log;
-using AllrideApiService.Services.Abstract.Mail;
 using AllrideApiService.Services.Abstract.News;
 using AllrideApiService.Services.Abstract.Routes;
 using AllrideApiService.Services.Abstract.SocialMedia;
@@ -34,11 +29,10 @@ using AllrideApiService.Services.Abstract.Users;
 using AllrideApiService.Services.Abstract.Weather;
 using AllrideApiService.Services.Concrete;
 using AllrideApiService.Services.Concrete.Clubs;
-using AllrideApiService.Services.Concrete.GraphHoperRoundTripRouteApi;
 using AllrideApiService.Services.Concrete.Groups;
 using AllrideApiService.Services.Concrete.HereApi;
+using AllrideApiService.Services.Concrete.Hubs;
 using AllrideApiService.Services.Concrete.Log;
-using AllrideApiService.Services.Concrete.Mail;
 using AllrideApiService.Services.Concrete.Newss;
 using AllrideApiService.Services.Concrete.Notification;
 using AllrideApiService.Services.Concrete.Routes;
@@ -70,10 +64,6 @@ using System.Text;
 
 
 // string[] args--> komut sat�r� arg�manlar�n� i�eriye almay� sa�l�yor. Yani input lar� i�eriye almam�z� sa�l�yor.
-
-
-
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers()
@@ -325,18 +315,6 @@ builder.Services.AddScoped(typeof(IGroupService),typeof(GroupService));
 builder.Services.AddScoped(typeof(IClubService), typeof(ClubService));
 builder.Services.AddScoped(typeof(IClubRepository), typeof(ClubRepository));
 builder.Services.AddScoped(typeof(IBuyRepository), typeof(BuyRepository));
-builder.Services.AddScoped(typeof(ISearchService), typeof(SearchService));
-builder.Services.AddScoped(typeof(ISearchRepository), typeof(SearchRepository));
-builder.Services.AddScoped(typeof(IClubSettingsRepository), typeof(ClubSettingsRepository));
-builder.Services.AddScoped(typeof(IClubSettingsService), typeof(ClubSettingsService));
-builder.Services.AddScoped(typeof(IGroupSettingsService), typeof(GroupSettingsService));
-builder.Services.AddScoped(typeof(IGroupSettingsRepository), typeof(GroupSettingsRepository));
-builder.Services.AddScoped(typeof(IMailService), typeof(MailService));
-builder.Services.AddScoped(typeof(IRoutePlannerService), typeof(RoutePlannerService));
-builder.Services.AddScoped(typeof(IRoutePlannerRepository), typeof(RoutePlannerRepository));
-builder.Services.AddScoped(typeof(IRoundTripRouteService), typeof(RoundTripRouteService));
-
-
 // for notification
 builder.Services.AddScoped(typeof(IPushNotificationService), typeof(PushNotificationService));
 builder.Services.AddScoped<NotificationService>();

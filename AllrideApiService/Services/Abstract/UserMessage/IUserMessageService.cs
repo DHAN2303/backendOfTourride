@@ -1,5 +1,6 @@
 ﻿using AllrideApiCore.Entities.Chat;
 using AllrideApiService.Response;
+using System.Security.Claims;
 
 namespace AllrideApiService.Services.Abstract.UserMessage
 {
@@ -7,7 +8,6 @@ namespace AllrideApiService.Services.Abstract.UserMessage
     {
         public CustomResponse<List<Message>> GetUserFriendsMessages(int UserId); //Claim userId
         public CustomResponse<Object> GetUserMessages(int userId, int clientId);
-        public CustomResponse<Object> GetGroupUserMessages(int groupId);
 
     }
 }

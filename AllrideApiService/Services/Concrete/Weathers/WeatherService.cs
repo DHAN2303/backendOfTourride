@@ -6,6 +6,7 @@ using AllrideApiService.Services.Abstract.Weather;
 using AutoMapper;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using NetTopologySuite.Geometries;
 using System.Text.Json;
 using Point = NetTopologySuite.Geometries.Point;
 
@@ -146,47 +147,6 @@ namespace AllrideApiService.Services.Concrete.Weathers
             }
             return CustomResponse<WeatherResponseDto>.Success(weatherResponse, true);
         }
-      
-        public async Task<CustomResponse<object>> WeatherRequestForRoute(WeatherRequestDto weatherReqDto)
-        {
-            List<ErrorEnumResponse> errors = new();
-            try
-            {
-                using var client = new HttpClient();
-                var url = _config.GetSection("OpenWeather").GetSection("WeatherBaseUrl").Value + "?";
-                url += "lat=" + weatherReqDto.Latitude;
-                url += "&lon=" + weatherReqDto.Longitude;
-                url += "&appid=" + _config.GetSection("OpenWeather").GetSection("ApiKey").Value;
-                var response = await client.GetAsync(url);
-                if (!response.IsSuccessStatusCode)
-                {
-                    errors.Add(ErrorEnumResponse.WeatherServiceResponseError);
-                    return CustomResponse<object>.Fail(errors, false);
-                }
-                var responseContent = await response.Content.ReadAsStringAsync();
-                //JsonSerializerOptions options = new()
-                //{
-                //    NumberHandling = JsonNumberHandling.AllowNamedFloatingPointLiterals,
-                //    ReferenceHandler = ReferenceHandler.Preserve,
-                //    MaxDepth = 64
-                //};
-                var metadata = JsonSerializer.Deserialize<WeatherResultDto>(responseContent); //,options
-
-                if (metadata.Count <= 0)
-                {
-                    errors.Add(ErrorEnumResponse.WeatherServiceJsonNotDeserialize);
-                    return CustomResponse<object>.Fail(errors, false);
-                }
-                return CustomResponse<object>.Success(metadata, true);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError("Weather Servisi Log Error: " + ex.Message, ex);
-                return CustomResponse<object>.Fail(errors, false);
-            }
-
-        }
-
         public static double CalculateDistance(double lat1, double lon1, double lat2, double lon2)
         {
             const double R = 6371; // Earth radius in km
@@ -204,6 +164,5 @@ namespace AllrideApiService.Services.Concrete.Weathers
         {
             return Math.PI * angle / 180.0;
         }
-
     }
 }

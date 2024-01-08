@@ -1,4 +1,5 @@
-﻿using AllrideApiService.Services.Abstract;
+﻿using AllrideApiService.Response;
+using AllrideApiService.Services.Abstract;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AllrideApi.Controllers
@@ -18,11 +19,11 @@ namespace AllrideApi.Controllers
             var response = _searchService.GetClub(Keyword);
             if (response.Status)
             {
-                return Ok(response);
+                return Ok(CustomResponse<object>.Success(response.Data, true));
             }
             else
             {
-                return StatusCode(500,response);
+                return StatusCode(500,CustomResponse<object>.Success(response.ErrorEnums, false));
             }
         }
     }

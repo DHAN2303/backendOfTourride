@@ -1,4 +1,4 @@
-﻿using AllrideApiCore.Entities.Weathers;
+﻿using AllrideApiCore.Entities.Weathers;  
 using AllrideApiRepository.Repositories.Abstract;
 using Microsoft.Extensions.Logging;
 
@@ -6,7 +6,7 @@ namespace AllrideApiRepository.Repositories.Concrete
 {
     public class WeatherRepository : IWeatherRepository
     {
-        protected readonly AllrideApiDbContext _context;
+        private readonly AllrideApiDbContext _context;
         private readonly ILogger<WeatherRepository> _logger;
 
         public WeatherRepository(AllrideApiDbContext context, ILogger<WeatherRepository> logger)
@@ -30,11 +30,6 @@ namespace AllrideApiRepository.Repositories.Concrete
             }
         }
 
-        public bool AddWeatherResultInRoute()
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Weather> Get(double lat, double lon)
         {
             return  _context.weather
@@ -47,7 +42,7 @@ namespace AllrideApiRepository.Repositories.Concrete
             return _context.weather.FirstOrDefault(w => w.Date >= Date);
         }
 
-        public IEnumerable<Weather> GetWeathers()
+        public ICollection<Weather> GetWeathers()
         {
             return _context.weather.OrderBy(p => p.Id).ToList();
         }

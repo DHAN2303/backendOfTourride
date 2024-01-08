@@ -2,7 +2,7 @@
 
 namespace AllrideApiCore.Dtos.Here
 {
-    public class HereDirectRequestResponseDto
+    public class HereUIResultResponseDto
     {
         public List<List<LatLngZ>> polyline { get; set; }
         public int[] duration { get; set; }

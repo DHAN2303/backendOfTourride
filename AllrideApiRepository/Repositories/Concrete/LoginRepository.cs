@@ -16,11 +16,6 @@ namespace AllrideApiRepository.Repositories.Concrete
         {
             return _context.user.SingleOrDefault(x => x.Email == user.Email);  // Bu sorgu hem Userı hemde usera bağlı user detail bilgilerini çekiyor
         }
-        public UserEntity GetUserMail(string Mail)
-        {
-            return _context.user.SingleOrDefault(x => x.Email == Mail);
-         
-        }
         public UserEntity GetUserById(int id)
         {
             return _context.user.SingleOrDefault(x => x.Id == id);
@@ -41,14 +36,10 @@ namespace AllrideApiRepository.Repositories.Concrete
             // return _context.user.Include(x => x.UserDetail).SingleOrDefault(x => x.Id == user.Id);  // User datası dönüyor
         }
 
-        public async Task<UserEntity> ForgotPassword(UserUpdate useUpdatePassword)
-        {
-            return await _context.user.SingleOrDefaultAsync(x => x.Email == useUpdatePassword.email);
-        }
-        public void SaveChanges()
-        {
-           _context.SaveChanges();
-        }
+        //public async Task<User> ForgotPassword(UserUpdate userPassword)
+        //{
+        //    return await _context.user.SingleOrDefaultAsync(x => x.Email == userPassword.Email);
+        //}
     }
 }
 

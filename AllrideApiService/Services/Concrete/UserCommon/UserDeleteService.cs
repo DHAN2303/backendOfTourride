@@ -1,5 +1,4 @@
-﻿
-using AllrideApiCore.Entities.Users;
+﻿using AllrideApiCore.Entities.Users;
 using AllrideApiRepository;
 using AllrideApiRepository.Repositories.Abstract;
 using AllrideApiService.Authentication;
@@ -14,7 +13,8 @@ namespace AllrideApiService.Services.Concrete.UserCommon
     public class UserDeleteService : IUserDeleteService
     {
         protected readonly AllrideApiDbContext _context;
-        private const string V = "User Delete Servis Katmanındaki Error Log: "; 
+        private const string V = "User Delete Servis Katmanındaki Error Log: ";
+        private LoginService _loginService;
         private readonly IMapper _mapper;
         private readonly ILoginRepository _loginRepository;
         private readonly ILogger<UserDeleteService> _logger;

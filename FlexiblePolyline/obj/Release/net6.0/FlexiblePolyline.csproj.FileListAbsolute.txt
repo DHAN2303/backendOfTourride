@@ -82,15 +82,3 @@ C:\Users\User\Desktop\current (2)\current\FlexiblePolyline\obj\Release\net6.0\Fl
 C:\Users\User\Desktop\current (2)\current\FlexiblePolyline\obj\Release\net6.0\refint\FlexiblePolyline.dll
 C:\Users\User\Desktop\current (2)\current\FlexiblePolyline\obj\Release\net6.0\FlexiblePolyline.pdb
 C:\Users\User\Desktop\current (2)\current\FlexiblePolyline\obj\Release\net6.0\ref\FlexiblePolyline.dll
-C:\Users\User\Desktop\Backend\FlexiblePolyline\bin\Release\net6.0\FlexiblePolyline.deps.json
-C:\Users\User\Desktop\Backend\FlexiblePolyline\bin\Release\net6.0\FlexiblePolyline.dll
-C:\Users\User\Desktop\Backend\FlexiblePolyline\bin\Release\net6.0\FlexiblePolyline.pdb
-C:\Users\User\Desktop\Backend\FlexiblePolyline\obj\Release\net6.0\FlexiblePolyline.csproj.AssemblyReference.cache
-C:\Users\User\Desktop\Backend\FlexiblePolyline\obj\Release\net6.0\FlexiblePolyline.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\User\Desktop\Backend\FlexiblePolyline\obj\Release\net6.0\FlexiblePolyline.AssemblyInfoInputs.cache
-C:\Users\User\Desktop\Backend\FlexiblePolyline\obj\Release\net6.0\FlexiblePolyline.AssemblyInfo.cs
-C:\Users\User\Desktop\Backend\FlexiblePolyline\obj\Release\net6.0\FlexiblePolyline.csproj.CoreCompileInputs.cache
-C:\Users\User\Desktop\Backend\FlexiblePolyline\obj\Release\net6.0\FlexiblePolyline.dll
-C:\Users\User\Desktop\Backend\FlexiblePolyline\obj\Release\net6.0\refint\FlexiblePolyline.dll
-C:\Users\User\Desktop\Backend\FlexiblePolyline\obj\Release\net6.0\FlexiblePolyline.pdb
-C:\Users\User\Desktop\Backend\FlexiblePolyline\obj\Release\net6.0\ref\FlexiblePolyline.dll

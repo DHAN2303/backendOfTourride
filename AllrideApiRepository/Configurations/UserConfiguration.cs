@@ -1,4 +1,5 @@
 ﻿using AllrideApiCore.Entities;
+using AllrideApiCore.Entities.Here;
 using AllrideApiCore.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -11,10 +12,10 @@ namespace AllrideApiRepository.Configurations
         {
 
             builder.ToTable("user");
+            builder.HasKey(x => x.Id).HasName("user_pkey"); 
             builder.Property(p => p.Id).HasColumnName("id");
             builder.Property(p => p.Email).HasColumnName("email");
             builder.Property(p => p.FacebookId).HasColumnName("facebook_id");
-            builder.Property(p => p.forgot_password_code).HasColumnName("forgot_password_code");
             builder.Property(p => p.GoogleId).HasColumnName("google_id");
             builder.Property(p => p.InstagramId).HasColumnName("instagram_id");
             builder.Property(p => p.AppleId).HasColumnName("apple_id");
@@ -32,6 +33,9 @@ namespace AllrideApiRepository.Configurations
             builder.HasOne(x => x.SmsVerification)
                 .WithOne(x=>x.User)
                 .HasForeignKey<SmsVerification>(b => b.UserId);
+            builder.HasOne(x => x.Route)
+                .WithOne(x => x.User)
+                .HasForeignKey<Route>(b => b.UserId);
         }
     }        
 }

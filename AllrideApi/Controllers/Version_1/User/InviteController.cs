@@ -1,5 +1,4 @@
-﻿
-using AllrideApiService.Response;
+﻿using AllrideApiService.Response;
 using AllrideApiService.Services.Abstract;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -19,9 +18,10 @@ namespace AllrideApi.Controllers.Version_1.User
 
         [HttpPost]
         [Route("invite")]
-        public IActionResult InviteUser(int senderUserId, int receiveUserId, int where, int whereId)
+        public IActionResult InviteUser([FromForm] string receiveUserIds, [FromForm] int where, [FromForm] int whereId)
         {
-            var response = where == 0 ? _notificationService.InviteGroup(senderUserId, receiveUserId, whereId) : _notificationService.InviteClub(senderUserId, receiveUserId, whereId);
+            int senderUserId = Convert.ToInt32(HttpContext.User.Claims.First().Value);
+            var response = where == 0 ? _notificationService.InviteGroup(senderUserId, receiveUserIds, whereId) : _notificationService.InviteClub(senderUserId, receiveUserIds, whereId);
             if (response.Status)
             {
                 return Ok(CustomResponse<object>.Success(true));

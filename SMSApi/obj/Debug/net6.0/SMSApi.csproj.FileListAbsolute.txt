@@ -142,15 +142,3 @@ D:\Work\touride\current\current\current\SMSApi\obj\Debug\net6.0\SMSApi.dll
 D:\Work\touride\current\current\current\SMSApi\obj\Debug\net6.0\refint\SMSApi.dll
 D:\Work\touride\current\current\current\SMSApi\obj\Debug\net6.0\SMSApi.pdb
 D:\Work\touride\current\current\current\SMSApi\obj\Debug\net6.0\ref\SMSApi.dll
-C:\Users\User\Desktop\Backend\SMSApi\bin\Debug\net6.0\SMSApi.deps.json
-C:\Users\User\Desktop\Backend\SMSApi\bin\Debug\net6.0\SMSApi.dll
-C:\Users\User\Desktop\Backend\SMSApi\bin\Debug\net6.0\SMSApi.pdb
-C:\Users\User\Desktop\Backend\SMSApi\obj\Debug\net6.0\SMSApi.csproj.AssemblyReference.cache
-C:\Users\User\Desktop\Backend\SMSApi\obj\Debug\net6.0\SMSApi.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\User\Desktop\Backend\SMSApi\obj\Debug\net6.0\SMSApi.AssemblyInfoInputs.cache
-C:\Users\User\Desktop\Backend\SMSApi\obj\Debug\net6.0\SMSApi.AssemblyInfo.cs
-C:\Users\User\Desktop\Backend\SMSApi\obj\Debug\net6.0\SMSApi.csproj.CoreCompileInputs.cache
-C:\Users\User\Desktop\Backend\SMSApi\obj\Debug\net6.0\SMSApi.dll
-C:\Users\User\Desktop\Backend\SMSApi\obj\Debug\net6.0\refint\SMSApi.dll
-C:\Users\User\Desktop\Backend\SMSApi\obj\Debug\net6.0\SMSApi.pdb
-C:\Users\User\Desktop\Backend\SMSApi\obj\Debug\net6.0\ref\SMSApi.dll

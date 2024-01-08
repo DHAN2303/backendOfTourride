@@ -1,5 +1,4 @@
 ﻿using AllrideApiCore.Dtos.Here;
-using AllrideApiCore.Dtos.ResponseDto.HereRoute;
 using AllrideApiCore.Entities.Here;
 using AllrideApiRepository.Repositories.Abstract;
 using AllrideApiService.Response;
@@ -9,9 +8,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using NetTopologySuite.Geometries;
-using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Diagnostics;
 using System.Text.Json;
 using Point = NetTopologySuite.Geometries.Point;
+//using Point = NetTopologySuite.Geometries.Point;
+
 namespace AllrideApiService.Services.Concrete.HereApi
 {
     public class HereRoutingService : IHereRoutingService
@@ -36,7 +38,7 @@ namespace AllrideApiService.Services.Concrete.HereApi
             _routeInstructionDetailRepository = routeInstructionDetailRepository;
         }
 
-        public async Task<CustomResponse<HereDirectRequestResponseDto>> SendRequestHere(Dictionary<string, string> param, int UserId)
+        public async Task<CustomResponse<HereUIResultResponseDto>> SendRequestHere(Dictionary<string, string> param)
         {
             // Url i oluştur
            
@@ -75,24 +77,24 @@ namespace AllrideApiService.Services.Concrete.HereApi
                 if (hereRouteUrl.IsNullOrEmpty())
                 {
                     ErrorEnums.Add(ErrorEnumResponse.CouldNotCreateRouteUrl);
-                    return CustomResponse<HereDirectRequestResponseDto>.Fail(ErrorEnums, false);
+                    return CustomResponse<HereUIResultResponseDto>.Fail(ErrorEnums, false);
 
                 }
 
                 var response = await _httpClient.GetAsync(hereRouteUrl);
 
                 if (!response.IsSuccessStatusCode)
-                    return CustomResponse<HereDirectRequestResponseDto>.Fail("Başarısız");
+                    return CustomResponse<HereUIResultResponseDto>.Fail("Başarısız");
 
                 var jsonOptions = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
                 string responseJson = await response.Content.ReadAsStringAsync();
                 Root resultResponseRootDto = new();
-                resultResponseRootDto = System.Text.Json.JsonSerializer.Deserialize<Root>(responseJson, jsonOptions);
+                resultResponseRootDto = JsonSerializer.Deserialize<Root>(responseJson, jsonOptions);
                 if (resultResponseRootDto == null)
                 {
                     // Eğer Json değeri Deserialize olamamışsa burada bir hata döndürmem gerekiyor
                     ErrorEnums.Add(ErrorEnumResponse.NoResponseReturnedFromHereApi);
-                    CustomResponse<HereDirectRequestResponseDto>.Fail(ErrorEnums, false);
+                    CustomResponse<HereUIResultResponseDto>.Fail(ErrorEnums, false);
                 }
 
                 foreach (RouteDto route in resultResponseRootDto.routes) // Bir tane route nesnesi geldi
@@ -135,29 +137,20 @@ namespace AllrideApiService.Services.Concrete.HereApi
                         polyLineGeoloc.Add(PolylineEncoderDecoder.Decode(section.polyline));
                     }
                 }
-                
-                var IsExistRegisterRoute = SaveParametersFromHereToTable(param, newRoute, routeInstructionDetail, polyLineGeoloc, UserId, viaList);
+                SaveParametersFromHereToTable(param, newRoute, routeInstructionDetail, polyLineGeoloc, viaList);
 
-                if (IsExistRegisterRoute.Status == false)
-                {
-                    return IsExistRegisterRoute;
-                }
-
-
-                HereDirectRequestResponseDto uıResponseDto = new()
-                {
-                    polyline = polyLineGeoloc,
-                    duration = routeInstructionDetail.Duration,
-                    length = routeInstructionDetail.Leng
-                };
-
-                return CustomResponse<HereDirectRequestResponseDto>.Success(uıResponseDto, true);
             }
             catch (Exception ex)
             {
                 _logger.LogError("Here Rotalama Servisi Log Error: " + ex.Message, ex);
-                return CustomResponse<HereDirectRequestResponseDto>.Fail(ErrorEnums,false);
             }
+            HereUIResultResponseDto uıResponseDto = new()
+            {
+                polyline = polyLineGeoloc,
+                duration = routeInstructionDetail.Duration,
+                length = routeInstructionDetail.Leng
+            };
+            return CustomResponse<HereUIResultResponseDto>.Success(uıResponseDto, true);
         }
 
         private string CreateUrl(Dictionary<string, string> parameters)
@@ -285,7 +278,7 @@ namespace AllrideApiService.Services.Concrete.HereApi
                         else
                         {
                             parameters.Remove(key);
-                            _logger.LogError($"Uygun olmayan bir değer {key} için alındı: '{value}'");
+                            _logger.LogError($"Uygun olmayan bir değer 'transportMode' için alındı: '{value}'");
                         }
                     }
                 }
@@ -307,9 +300,9 @@ namespace AllrideApiService.Services.Concrete.HereApi
             return url;
         }
 
-        public CustomResponse<HereDirectRequestResponseDto> SaveParametersFromHereToTable(Dictionary<string, string> param,
+        public void SaveParametersFromHereToTable(Dictionary<string, string> param,
             Route newRoute, RouteInstructionDetail routeInstructionDetail,
-            List<List<LatLngZ>> polyLine, int UserId, List<double> viaList = null)
+            List<List<LatLngZ>> polyLine, List<double> viaList = null)
         {
             try
             {
@@ -368,21 +361,12 @@ namespace AllrideApiService.Services.Concrete.HereApi
                      ).ToArray()
                      );
 
-
                     // Rota Kaydı
-
-                    // Not Rota Kaydı Yaparken Group veya Club Id varsa bunu  
-
                     newRoute.Geoloc = lineGeoloc;
                     newRoute.Waypoints = new LineString(coordinates.ToArray());
                     var tMode = _routeTransportModeRepository.Get(transportMode);
-
-                    if (string.IsNullOrEmpty(tMode.Mode))
-                    {
-                        return CustomResponse<HereDirectRequestResponseDto>.Fail(ErrorEnumResponse.NoTransportModeRegisteredInDatabase, false);
-                    }
-                    newRoute.RouteTransportModeId = tMode.Id;
-                    newRoute.UserId = UserId;  // BURASI TOKEN DAN GELİCEK
+                    newRoute.RouteTransportModeId = tMode.Type;
+                    newRoute.UserId = 49;  // BURASI TOKEN DAN GELİCEK
                     _hereRepository.Add(newRoute);
                     _hereRepository.SaveChanges();
                     var lastRegister = _hereRepository.GetLastByRoute();
@@ -395,94 +379,63 @@ namespace AllrideApiService.Services.Concrete.HereApi
                     _routeInstructionDetailRepository.Save();
                 }
 
-                return CustomResponse<HereDirectRequestResponseDto>.Success(true);
             }
             catch (Exception ex)
             {
                 _logger.LogError("ROTA KAYDETME HATASI:" + ex.Message);
-                return CustomResponse<HereDirectRequestResponseDto>.Fail(ErrorEnumResponse.ApiServiceFail, false);
             }
         }
-        public async Task<CustomResponse<object>> HereRequestForLiveRoute(Dictionary<string, string> param)
-        {
-           // var newRoute = new Route();
-           // var routeInstructionDetail = new RouteInstructionDetail();
-            List<List<LatLngZ>> polyLineGeoloc = new List<List<LatLngZ>>();
-            List<double> viaList = new();
-            List<ErrorEnumResponse> ErrorEnums = new();
-            try
-            {
-                if (param.TryGetValue("via", out string vias))
-                {
-                    string[] viaLatLong = vias.Split(',');
-                    if (viaLatLong.Length < 2)
-                    {
-                        viaList = null;
-                    }
-                    foreach (var l in viaLatLong)
-                    {
-                        bool response1 = double.TryParse(l, out var result);
-                        if (response1)
-                        {
-                            viaList.Add(double.Parse(l));
-                        }
-                        else
-                        {
-                            viaList = null;
-                        }
-                    };
-                }
 
-                var hereRouteUrl = CreateUrl(param);
-
-                if (hereRouteUrl.IsNullOrEmpty())
-                {
-                    ErrorEnums.Add(ErrorEnumResponse.CouldNotCreateRouteUrl);
-                    return CustomResponse<object>.Fail(ErrorEnums, false);
-
-                }
-
-                var response = await _httpClient.GetAsync(hereRouteUrl);
-
-                if (!response.IsSuccessStatusCode)
-                    return CustomResponse<object>.Fail("Başarısız");
-
-                var jsonOptions = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-                string responseJson = await response.Content.ReadAsStringAsync();
-                Root2 resultResponseRootDto = new();
-                resultResponseRootDto = System.Text.Json.JsonSerializer.Deserialize<Root2>(responseJson, jsonOptions);
-                if (resultResponseRootDto == null)
-                {
-                    ErrorEnums.Add(ErrorEnumResponse.NoResponseReturnedFromHereApi);
-                    CustomResponse<object>.Fail(ErrorEnums, false);
-                }
-                //List<HereDirectApiResponse> hereDirectApiResponses= new List<HereDirectApiResponse>();
-
-                //var hereResponse = new HereDirectApiResponse()
-                //{
-                //    Root = new Root2
-                //    {
-                //        routes = new List<Route2>()
-                //        {
-                //            new Route2
-                //            {
-                //                id = resultResponseRootDto.routes[0].id, 
-                //                sections = resultResponseRootDto.routes[0].sections,
-
-                //            }
-                //        }
-                //    },
-                //};
-
-                var jsonObject = JsonConvert.DeserializeObject<Root2>(responseJson);
-                return CustomResponse<object>.Success(jsonObject, true);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError("Here Rotalama Servisi Log Error: " + ex.Message, ex);
-                return CustomResponse<object>.Fail(ErrorEnums, false);
-            }
-        }
     }
 }
 
+
+//https://router.hereapi.com/v8/routes?transportMode=car&origin=36.788405691567654,34.52082110568881&destination=36.95423059486147,34.56788683310151&via=36.79136004614785,34.542901050299406&via=36.81186798197976,34.55410564318299&via=36.85390801774949,34.57913165912032&routingMode=fast&return=polyline,elevation,actions,instructions,turnByTurnActions,summary,travelSummary,incidents&apiKey=RLe-nFj46bfdzlvvlBCFuLrj3ZHYkJoxgjDrPnnY_-Q
+
+//https://router.hereapi.com/v8/routes?transportMode=car&origin=36.79082630598165,34.53437564894557&destination=39.82125825017974,32.77551256120205&via=36.95934184253092,34.899179711937904&via=37.29139486141986,34.82552692294121&via=37.846853051855305,34.71925478428602&routingMode=fast&return=polyline,elevation,actions,instructions,turnByTurnActions,summary,travelSummary,incidents&apiKey=RLe-nFj46bfdzlvvlBCFuLrj3ZHYkJoxgjDrPnnY_-Q
+//case "return":
+//    // Gelen returndeki string içerisinde , var mı kontrol et 
+//    string[] returnType = { "polyline", "actions", "instructions", "summary", "travelSummary", "turnByTurnActions", "mlDuration", "typicalDuration", "elevation",
+//    "routeHandle", "passthrough", "incidents",  "routingZones", "truckRoadTypes", "tolls", "routeLabels" };
+
+//    bool isExistComma = value.Contains(",");
+//    if (isExistComma)
+//    {
+//        string[] words = value.Split(',');
+//        foreach (string word in words)
+//        {
+//            index = Array.FindIndex(returnType, x => x.Equals(word, StringComparison.OrdinalIgnoreCase));
+//            if (index != -1) acceptedValue = string.Join(",", returnType[index]);
+//        }
+
+//    }
+//    index = Array.FindIndex(returnType, x => x.Equals(value, StringComparison.OrdinalIgnoreCase));
+//    if (index != -1) acceptedValue = returnType[index];
+//    break;
+
+
+//     case "destination": // required
+
+//                                //queryParams["via"] = string.Join("&via=", wayPoints.Select(wayPoint => PointToStrForApi(wayPoint)));
+//                                // destination=52.52332,13.42800&via=52.52426,13.43000
+//                                //if (desLatLong.Length < 2)
+//                                //{
+//                                //    acceptedValue = "0,0";
+//                                //}
+//                                string[] desLatLong = value.Split(',');
+//acceptedValue = desLatLong.Length < 2 ? "0,0" : acceptedValue;
+
+//if (desLatLong.Length > 2 && desLatLong.Length % 2 != 0)
+//{
+//    Array.Resize(ref desLatLong, desLatLong.Length - 1);
+//}
+//int counter = 0;
+//foreach (var l in desLatLong)
+//{
+//    bool response = double.TryParse(l, out var result);
+//    counter = response == false ? counter++ : counter;
+//}
+
+//acceptedValue = counter == 0 ? value : "0,0";
+
+//break;

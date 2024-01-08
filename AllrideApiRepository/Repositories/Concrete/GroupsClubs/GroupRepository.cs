@@ -1,6 +1,6 @@
 ﻿using AllrideApiCore.Dtos.ResponseDto;
 using AllrideApiCore.Dtos.ResponseDtos;
-using AllrideApiCore.Entities.Groups;
+using AllrideApiCore.Entities.Chat;
 using AllrideApiRepository.Repositories.Abstract.GroupsClubs;
 using Microsoft.Extensions.Logging;
 
@@ -8,7 +8,7 @@ namespace AllrideApiRepository.Repositories.Concrete.GroupsClubs
 {
     public class GroupRepository : IGroupRepository // <T> : IGroupClubBaseRepository<T>
     {
-        protected readonly AllrideApiDbContext _context;
+        private readonly AllrideApiDbContext _context;
         private readonly ILogger<GroupRepository> _logger;
         public GroupRepository(AllrideApiDbContext context, ILogger<GroupRepository> logger)
         {
@@ -16,37 +16,14 @@ namespace AllrideApiRepository.Repositories.Concrete.GroupsClubs
             _logger = logger;
         }
 
-        // 13 Haziran
-        public List<UserProfileResponseDto> GetGroupsUsers(int GroupId)
-        {
-            //return _context.group_member.Where(x=>x.group_id == GroupId).Select(x=>x.user_id).FirstOrDefault();
-
-            var userList = (
-                  from g in _context.group_member
-                  join u in _context.user_detail on g.user_id equals u.UserId
-                  where g.id == GroupId
-                  select new UserProfileResponseDto
-                  {
-                      Name = u.Name,
-                      LastName = u.LastName,
-                      PpPath = u.PpPath
-                  }
-                  ).ToList();
-            return userList;
-        }
-
-        public GroupMember  GetGroupMember(int GroupId)
-        {
-            return _context.group_member.SingleOrDefault(x=>x.group_id== GroupId);
-        }
-
         public bool DeleteUserInGroup(int GroupId, int UserId)
         {
             try
             {
-                var expiredStories = _context.group_member.FirstOrDefault(e => e.group_id == GroupId && e.user_id == UserId);
+                var expiredStories = _context.group_member.FirstOrDefault(e => e.group_id == GroupId&& e.user_id == UserId);
                 _context.Remove(expiredStories);
                 _context.SaveChanges();
+                checkGroupAdmin(GroupId);
                 return true;
             }
             catch (Exception ex)
@@ -69,9 +46,9 @@ namespace AllrideApiRepository.Repositories.Concrete.GroupsClubs
                 var expiredStories = _context.groups.FirstOrDefault(e => e.id == GroupId);
                 _context.Remove(expiredStories);
                 _context.SaveChanges();
-                return true;
+              return true;
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 _logger.LogError(ex.Message);
                 return false;
@@ -85,12 +62,12 @@ namespace AllrideApiRepository.Repositories.Concrete.GroupsClubs
         }
 
 
-        public List<GlobalGroupResponseDto> GetGlobalGroups(int GroupId, int Type)
+        public List<GlobalGroupResponseDto>  GetGlobalGroups(int GroupId, int Type)
         {
             using (_context)
             {
                 return _context.groups
-                    .Where(e => e.id == GroupId && e.type == Type)
+                    .Where(e => e.id== GroupId && e.type==Type)
                     .Select(e => new GlobalGroupResponseDto
                     {
                         id = e.id,
@@ -110,10 +87,10 @@ namespace AllrideApiRepository.Repositories.Concrete.GroupsClubs
                 where g.id == GroupId
                 select new GroupResponseDto
                 {
+                    Id = g.id,
                     name = g.name,
-                    backgroundCover_path = g.image_path,
-                    image_path = g.image_path,
-                    description = g.description,
+                    image_path= g.image_path,
+                    description= g.description,
                     created_date = g.created_date,
                     group_rank = g.group_rank,
                     group_admin = ud.Name
@@ -134,14 +111,13 @@ namespace AllrideApiRepository.Repositories.Concrete.GroupsClubs
                     .Select(e => new GroupResponseDto
                     {
                         name = e.name,
-                        backgroundCover_path = e.image_path,
                         image_path = e.image_path,
                         description = e.description
                     }).ToList();
             }
         }
 
-        public UserResponseDto GetGroupUserDetail(int GroupId)
+        public List<UserResponseDto> GetGroupUserDetail(int GroupId)
         {
             var item = (
               from g in _context.group_member
@@ -149,15 +125,16 @@ namespace AllrideApiRepository.Repositories.Concrete.GroupsClubs
               where (g.group_id == GroupId)
               select new UserResponseDto
               {
-                  Name = u.Name,
-                  LastName = u.LastName,
+                  Id = u.UserId,
+                  Name=u.Name,
+                  LastName=u.LastName,
                   DateOfBirth = u.DateOfBirth,
                   Gender = u.Gender,
                   Phone = u.Phone,
                   Country = u.Country,
                   Language = u.Language,
                   PpPath = u.PpPath
-              }).FirstOrDefault();
+              }).ToList();
             return item;
         }
 
@@ -177,71 +154,48 @@ namespace AllrideApiRepository.Repositories.Concrete.GroupsClubs
         {
             return _context.groups.Where(x => x.Equals(groupName)).ToList();
         }
-        public List<GroupResponseDto> GetUsersGroupList(int userId)
-        {
-            var getUserGroupList = (
-                   from g in _context.groups
-                   join gm in _context.group_member on g.id equals gm.group_id
-                   join u in _context.user on gm.user_id equals u.Id
-                   join ud in _context.user_detail on u.Id equals ud.UserId
-                   where gm.user_id == userId && gm.role == 0
-                   group new { g, ud } by g into grp
-                   select new GroupResponseDto
-                   {
-                       name = grp.Key.name,
-                       backgroundCover_path = grp.Key.backgroundCover_path,
-                       description = grp.Key.description,
-                       group_rank = grp.Key.group_rank,
-                       group_admin = grp.Select(x => x.ud.Name).FirstOrDefault(),  // Kullanıcı adını al
-                       created_date = grp.Key.created_date,
-                       member_count = grp.Count()  // Grup üye sayısını al
-                   }
-                   ).ToList();
-            return getUserGroupList;
-        }
-        public List<GroupSocialMediaPostsResponseDto> GetGroupsUsersSocialMediaLast3Post(int groupId)
-        {
-            var result = (
-              from gm in _context.group_member
-              join g in _context.groups on gm.group_id equals g.id
-              join u in _context.user on gm.user_id equals u.Id
-              join ud in _context.user_detail on u.Id equals ud.UserId
-              join gsp in _context.groupsocial_post on gm.id equals gsp.GroupMemberId
-              join gspc in _context.groupsocial_postcomment on gsp.Id equals gspc.GroupSocialPostId
-              where (gm.group_id == groupId)
-              where (gm.user_id == u.Id && gm.user_id == ud.UserId)
-              where (gspc.GroupMemberId == gm.user_id && gsp.GroupMemberId == gm.user_id)
-              orderby gsp.CreatedDate descending
-              select new GroupSocialMediaPostsResponseDto
-              {
-                  UserName = ud.Name,
-                  Description = gsp.Description,
-                  HashTag = gsp.HashTag,
-                  ImagePath = ud.PpPath,
 
-                  GroupSocialPostCommentDtos = new List<GroupSocialPostCommentDto>
-                  {
-                        new GroupSocialPostCommentDto
-                        {
-                            UserName = ud.Name,
-                            UserPp = ud.PpPath,
-                            Comment = gspc.Comment
-                        }
-                  }
-              })
-              .Take(6)
-              .ToList();
-            return result;
+
+
+        public List<Group> GetGroupsForUser(int userId)
+        {
+           var groups = _context.group_member
+               .Where(gm => gm.user_id == userId)
+               .Join(_context.groups,
+                   gm => gm.group_id,
+                   g => g.id,
+                   (gm, g) => g)
+               .ToList();
+           return groups;
         }
 
-        public LastActivityResponseDto GetLastActivity(int GroupId)
+        public List<GroupMessage> GetGroupMessage(int groupId)
         {
-            throw new NotImplementedException();
+            return _context.group_messages.Where(m => m.group_id == groupId).ToList();
         }
 
-        public string UpdateProfileOrBacgroundImage(int groupId)
+        public void checkGroupAdmin(int groupId)
         {
-            throw new NotImplementedException();
+            var members = _context.group_member.Where(member => member.group_id == groupId).ToList();
+
+            if (members.Count > 0)
+            {
+                var response = _context.group_member.Any(member =>
+                member.group_id == groupId && member.role == 0);
+                
+                if (!response)
+                {
+                    members[0].role = 0;
+                    _context.SaveChanges();
+                }
+
+            }
+            else
+            {
+                var group = _context.groups.FirstOrDefault(b => b.id == groupId);
+                _context.groups.Remove(group);
+                _context.SaveChanges();
+            }
         }
     }
 }

@@ -14,13 +14,11 @@ namespace AllrideApi.Controllers.Version_1.Here
         private readonly IHereRoutingService _routeCalculation;
         private readonly IUsageTrackerService _usageTrackerService;
         private readonly IConfiguration _config;
-        private readonly ILogger<HereRouteController> _logger;
-        public HereRouteController(ILogger<HereRouteController> logger, IHereRoutingService routeCalculation, IUsageTrackerService usageTrackerService, IConfiguration config)
+        public HereRouteController(IHereRoutingService routeCalculation, IUsageTrackerService usageTrackerService, IConfiguration config)
         {
             _routeCalculation = routeCalculation;
             _usageTrackerService = usageTrackerService;
             _config = config;
-            _logger= logger;
         }
 
         /*
@@ -30,98 +28,29 @@ namespace AllrideApi.Controllers.Version_1.Here
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Dictionary<string, string> parameters)
         {
-           // var uId = HttpContext.User.Claims.FirstOrDefault(c=>c.Type == ClaimTypes.NameIdentifier)?.Value; 
-            var uId = HttpContext.User.Claims.First()?.Value;
+            var user_email = parameters["email"].ToString();
+            int service_id = Convert.ToInt16(_config.GetValue<string>("ServiceId:tomtom_routing_limit"));
+            var result = _usageTrackerService.CanUseService(user_email, service_id);
 
-            if (string.IsNullOrEmpty(uId))
+            if (result == "1")
             {
-                return Unauthorized();
+                var response = await _routeCalculation.SendRequestHere(parameters);
+                return Ok(CustomResponse<object>.Success(response, true, true));
             }
-            //// UserId'yi kullanarak yapmak istediğiniz işlemler
-            bool isUserIdTypeInt = int.TryParse(uId, out int UserId);
-
-            if (isUserIdTypeInt == false)
+            else
             {
-                return Unauthorized();
-            }
-
-            try
-            {
-                //int service_id = Convert.ToInt16(_config.GetValue<string>("ServiceId:tomtom_routing_limit"));
-                //var result = _usageTrackerService.CanUseService(UserId, service_id);
-
-                var response = await _routeCalculation.SendRequestHere(parameters,UserId);
-                if (response.Status)
-                    return Ok(response);
+                if (result != "0")
+                {
+                    return Ok(CustomResponse<object>.Success(result, true, false));
+                }
                 else
-                    return StatusCode(500, response);
-                //if (result == "1")
-                //{
-                //    var response = await _routeCalculation.SendRequestHere(parameters);
-                //    return Ok(response);
-                //}
-                //else
-                //{
-                //    return StatusCode(500, ErrorEnumResponse.LimitExpired);
-                //    //if (result != "0")
-                //    //{
-                //    //    return StatusCode(500, ErrorEnumResponse.LimitExpired);
-                //    //}
-                //    //else
-                //    //{
-                //    //    return StatusCode(500,);
-                //    //}
+                {
+                    return Ok(CustomResponse<object>.Success(ErrorEnumResponse.LimitExpired, false, false));
+                }
 
-                //}
-
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex.Message + " HereRouteController  -->  Post METHOD  ERROR: " + ex.InnerException.ToString());
-                return StatusCode(500, ErrorEnumResponse.ApiServiceFail);
             }
 
         }
-
-        [HttpPost("HereRequestForLiveRoute")]
-
-        public async Task<IActionResult> HereRequestForLiveRoute([FromBody] Dictionary<string, string> parameters) 
-        {
-            // var uId = HttpContext.User.Claims.FirstOrDefault(c=>c.Type == ClaimTypes.NameIdentifier)?.Value; 
-            var uId = HttpContext.User.Claims.First()?.Value;
-
-            if (string.IsNullOrEmpty(uId))
-            {
-                return Unauthorized();
-            }
-            //// UserId'yi kullanarak yapmak istediğiniz işlemler
-            bool isUserIdTypeInt = int.TryParse(uId, out int UserId);
-
-            if (isUserIdTypeInt == false)
-            {
-                return Unauthorized();
-            }
-
-            try
-            {
-                // AŞAĞIDAKİ YORUM SATIRINI KALDIRMAYI UNUTMA
-                //int service_id = Convert.ToInt16(_config.GetValue<string>("ServiceId:tomtom_routing_limit"));
-                //var result = _usageTrackerService.CanUseService(UserId, service_id);
-
-                var response = await _routeCalculation.HereRequestForLiveRoute(parameters);
-                if (response.Status)
-                    return Ok(response.Data);
-                else
-                    return StatusCode(500, response);
-
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex.Message + " HereRouteController  -->  Post METHOD  ERROR: " + ex.InnerException.ToString());
-                return StatusCode(500, ErrorEnumResponse.ApiServiceFail);
-            }
-
-        }
-
+       
     }
 }

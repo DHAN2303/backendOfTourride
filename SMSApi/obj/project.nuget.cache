@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "gCP22lO7FnNTlDNxu7adU9S18cDxdblnzScpgf27UQ44nOE05wla/Q+w/7MPCLMCQJH5hGXlw9fmheIFiykplw==",
+  "dgSpecHash": "BRsdJcmYZ8iE3B9yNbkS7NYSXv1jbtozv1Of+Gleg9aU9qYjQgn9X8UIx4icCn32+0QbR0AUvkZs+/GsDd9hCA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\Desktop\\Backend\\SMSApi\\SMSApi.csproj",
+  "projectFilePath": "/Users/dhan/Desktop/current/SMSApi/SMSApi.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\User\\.nuget\\packages\\restsharp\\108.0.3\\restsharp.108.0.3.nupkg.sha512"
+    "/Users/dhan/.nuget/packages/restsharp/108.0.3/restsharp.108.0.3.nupkg.sha512",
+    "/Users/dhan/.nuget/packages/microsoft.netcore.app.ref/6.0.18/microsoft.netcore.app.ref.6.0.18.nupkg.sha512",
+    "/Users/dhan/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.18/microsoft.aspnetcore.app.ref.6.0.18.nupkg.sha512"
   ],
   "logs": []
 }

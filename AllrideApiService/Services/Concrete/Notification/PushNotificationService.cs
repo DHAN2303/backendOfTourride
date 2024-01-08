@@ -1,6 +1,6 @@
 ﻿using AllrideApi.Hubs;
-using AllrideApiCore.Entities.Clubs;
-using AllrideApiCore.Entities.Groups;
+using AllrideApiCore.Entities.Chat;
+using AllrideApiCore.Entities.Chat.Clubs;
 using AllrideApiCore.Entities.Users;
 using AllrideApiRepository;
 using AllrideApiService.Response;
@@ -9,6 +9,14 @@ using AllrideApiService.Services.Concrete.UserCommon;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Nest;
+using Newtonsoft.Json;
+using SixLabors.ImageSharp;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace AllrideApiService.Services.Concrete.Notification
 {
@@ -26,31 +34,47 @@ namespace AllrideApiService.Services.Concrete.Notification
             _logger = logger;
         }
 
-        public CustomResponse<Object> GetCanInviteUsers(int userId, int where, int whereId)
+        public CustomResponse<Object> GetCanInviteUsers(int userId, int where, int whereId) // 0: group || 2: club || 1: new creatin club or group
         {
             try
             {
-                if (where == 1)
+                if (where == 0) 
                 {
                     var friendsToInvite = from follow in _context.social_media_follows
                                           join member in _context.group_member
-                                          on new { FriendId = follow.followed_id, GroupId = whereId } equals new { FriendId = member.user_id, GroupId = member.group_id } into gj
+                                          on new { FriendId = follow.follower_id, GroupId = whereId } equals new { FriendId = member.user_id, GroupId = member.group_id } into gj
                                           from submember in gj.DefaultIfEmpty()
-                                          where follow.follower_id == userId && submember == null
-                                          select follow.followed_id;
-
-                    return CustomResponse<object>.Success(friendsToInvite, true);
+                                          where follow.followed_id == userId || submember == null
+                                          join userDetail in _context.user_detail on follow.follower_id equals userDetail.UserId
+                                          where userDetail.UserId != userId && follow.follower_id != userId
+                                          select userDetail ;
+                    var response = friendsToInvite.ToList();
+                    return CustomResponse<object>.Success(response, true);
                 }
-                else
+                else if(where == 2)
                 {
                     var friendsToInvite = from follow in _context.social_media_follows
                                           join member in _context.club_member
-                                          on new { FriendId = follow.followed_id, GroupId = whereId } equals new { FriendId = member.user_id, GroupId = member.club_id } into gj
+                                          on new { FriendId = follow.follower_id, ClubId = whereId } equals new { FriendId = member.user_id, ClubId = member.club_id } into gj
                                           from submember in gj.DefaultIfEmpty()
-                                          where follow.follower_id == userId && submember == null
-                                          select follow.followed_id;
-
-                    return CustomResponse<object>.Success(friendsToInvite, true);
+                                          where follow.followed_id == userId || submember == null
+                                          join userDetail in _context.user_detail on follow.follower_id equals userDetail.UserId
+                                          where userDetail.UserId != userId && follow.follower_id != userId
+                                          select userDetail ;
+                    var response = friendsToInvite.ToList();
+                    return CustomResponse<object>.Success(response, true);
+                }else if(where == 1)
+                {
+                    var friendsToInvite = from follow in _context.social_media_follows
+                                          join userDetail in _context.user_detail on follow.follower_id equals userDetail.UserId
+                                          where userDetail.UserId != userId && follow.follower_id != userId
+                                          select userDetail;
+                    var response = friendsToInvite.ToList();
+                    return CustomResponse<object>.Success(response, true);
+                }
+                else
+                {
+                    return CustomResponse<object>.Success(null, true);
                 }
             }
             catch(Exception ex)
@@ -66,67 +90,91 @@ namespace AllrideApiService.Services.Concrete.Notification
 
         }
 
-        public CustomResponse<object> InviteGroup(int senderId, int receiveId, int groupId)
+        public CustomResponse<object> InviteGroup(int senderId, string receiveIds, int groupId)
         {
-            try
+
+
+            var group = _context.groups.Where(b => b.id == groupId).FirstOrDefault();
+            int error = 0;
+            List<string> list = new List<string>();
+            foreach (var Id in receiveIds.Split(","))
             {
-                var newInvite = new UserInvites
+                try
                 {
-                    inveting_id = senderId,
-                    invited_id = receiveId,
-                    where = 0,
-                    status = false,
-                    invitedDateTime = DateTime.UtcNow
-                };
-                _context.user_invites.Add(newInvite);
-                _context.SaveChanges();
-
-                var group = _context.groups.Where(b => b.id == groupId).First();
-                var inviteId = _context.user_invites.First().Id;
-
-                _hubContext.Clients.User(receiveId.ToString()).SendAsync("ReceiveGroupInviteNotification", group, inviteId);
-
+                    var newInvite = new UserInvites
+                    {
+                        inveting_id = senderId,
+                        invited_id = Convert.ToInt32(Id),
+                        where = 0,
+                        whereId = groupId,
+                        status = false,
+                        invitedDateTime = DateTime.UtcNow
+                    };
+                    _context.user_invites.Add(newInvite);
+                    _context.SaveChanges();
+                    var invitedId = _context.user_invites.FirstOrDefault().invited_id;
+                    _hubContext.Clients.User(Id).SendAsync("ReceiveGroupInviteNotification", group, invitedId);
+                }
+                catch (Exception ex)
+                {
+                    error++;
+                    _logger.LogError("Error occured when user with " + senderId + " id is trying to invite user with " + groupId + " id to group with " + Id + " id. Error is " + ex.Message + " " + ex.InnerException);
+                }
+            }
+            if (error == 0)
+            {
                 return CustomResponse<object>.Success(true);
             }
-            catch (Exception ex)
+            else
             {
-                _logger.LogError("Error occured when user with " + senderId + " id is trying to invite user with " + groupId + " id to group with " + receiveId + " id. Error is " + ex.Message + " " + ex.InnerException);
                 return CustomResponse<object>.Success(false);
             }
         }
 
-        public CustomResponse<object> InviteClub(int senderId, int receiveId, int clubId)
+        public CustomResponse<object> InviteClub(int senderId, string receiveIds, int clubId)
         {
-            try
+            var club = _context.clubs.Where(b => b.Id == clubId).FirstOrDefault();
+            var invitedId = _context.user_invites.FirstOrDefault().invited_id;
+            int error = 0;
+            foreach (var Id in receiveIds.Split(","))
             {
-                var newInvite = new UserInvites
+                try
                 {
-                    inveting_id = senderId,
-                    invited_id = receiveId,
-                    where = 0,
-                    status = false,
-                    invitedDateTime = DateTime.UtcNow
-                };
-                _context.user_invites.Add(newInvite);
+                    var newInvite = new UserInvites
+                    {
+                        inveting_id = senderId,
+                        invited_id = Convert.ToInt32(Id),
+                        where = 2,
+                        whereId = clubId,
+                        status = false,
+                        invitedDateTime = DateTime.UtcNow
+                    };
+                    _context.user_invites.Add(newInvite);
+                    _hubContext.Clients.User(Id).SendAsync("ReceiveGroupInviteNotification", club, invitedId);
+                }
+                catch (Exception ex)
+                {
+                    error++;
+                    _logger.LogError("Error occured when user with " + senderId + " id is trying to invite user with " + clubId + " id to club with " + Id + " id. Error is " + ex.Message + " " + ex.InnerException);
+                }
                 _context.SaveChanges();
-
-                var club = _context.club.Where(b => b.Id == clubId).First();
-                var inviteId = _context.user_invites.First().Id;
-
-                _hubContext.Clients.User(receiveId.ToString()).SendAsync("ReceiveGroupInviteNotification", club, inviteId);
-
+            }
+            if (error == 0)
+            {
                 return CustomResponse<object>.Success(true);
             }
-            catch (Exception ex)
+            else
             {
-                _logger.LogError("Error occured when user with " + senderId + " id is trying to invite user with " + clubId + " id to group with " + receiveId + " id. Error is " + ex.Message + " " + ex.InnerException);
                 return CustomResponse<object>.Success(false);
             }
+
+
+
         }
 
         public CustomResponse<bool> InviteReply(int inviteId, bool inviteRep)
         {
-            var invite = _context.user_invites.Where(b => b.Id == inviteId).First();
+            var invite = _context.user_invites.Where(b => b.Id == inviteId).FirstOrDefault();
 
             if (invite != null)
             {

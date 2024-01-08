@@ -25,83 +25,6 @@ namespace AllrideApiRepository.Migrations
             NpgsqlModelBuilderExtensions.HasPostgresExtension(modelBuilder, "postgis");
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("AllrideApiCore.Entities.Activities.Activity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<int>("club_id")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime>("created_date")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<int>("creator_user_id")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("group_id")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("name")
-                        .HasColumnType("text");
-
-                    b.Property<int>("route_id")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime>("start_date")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("club_id");
-
-                    b.HasIndex("creator_user_id")
-                        .IsUnique();
-
-                    b.HasIndex("group_id");
-
-                    b.HasIndex("route_id")
-                        .IsUnique();
-
-                    b.ToTable("activity");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.Activities.ActivityMember", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("ActivityId")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ActivityId");
-
-                    b.ToTable("ActivityMember");
-                });
-
             modelBuilder.Entity("AllrideApiCore.Entities.Buys.TouridePackage", b =>
                 {
                     b.Property<int>("Id")
@@ -119,6 +42,90 @@ namespace AllrideApiRepository.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("touridePackage");
+                });
+
+            modelBuilder.Entity("AllrideApiCore.Entities.Chat.Clubs.ClubMember", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
+
+                    b.Property<int>("club_id")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("joined_date")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int>("role")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("user_id")
+                        .HasColumnType("integer");
+
+                    b.HasKey("id");
+
+                    b.ToTable("club_member");
+                });
+
+            modelBuilder.Entity("AllrideApiCore.Entities.Chat.Group", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
+
+                    b.Property<DateTime>("created_date")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("description")
+                        .HasColumnType("text");
+
+                    b.Property<int>("group_rank")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("image_path")
+                        .HasColumnType("text");
+
+                    b.Property<string>("name")
+                        .HasColumnType("text");
+
+                    b.Property<int>("type")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("updated_date")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.HasKey("id");
+
+                    b.ToTable("groups");
+                });
+
+            modelBuilder.Entity("AllrideApiCore.Entities.Chat.GroupMember", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
+
+                    b.Property<int>("group_id")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("joined_date")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int>("role")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("user_id")
+                        .HasColumnType("integer");
+
+                    b.HasKey("id");
+
+                    b.ToTable("group_member");
                 });
 
             modelBuilder.Entity("AllrideApiCore.Entities.Chat.GroupMessage", b =>
@@ -185,52 +192,33 @@ namespace AllrideApiRepository.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<int>("CreatorId")
+                    b.Property<int>("club_rank")
                         .HasColumnType("integer");
 
-                    b.Property<DateTime>("UpdatedDate")
+                    b.Property<DateTime>("created_date")
                         .HasColumnType("timestamp without time zone");
-
-                    b.Property<string>("backgroundCover_path")
-                        .IsRequired()
-                        .HasColumnType("text");
 
                     b.Property<string>("description")
-                        .IsRequired()
                         .HasColumnType("text");
-
-                    b.Property<List<string>>("group_members")
-                        .HasColumnType("text[]");
 
                     b.Property<string>("image_path")
-                        .IsRequired()
                         .HasColumnType("text");
-
-                    b.Property<int>("is_invite")
-                        .HasColumnType("integer");
 
                     b.Property<string>("name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("profile_path")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<int>("type")
                         .HasColumnType("integer");
 
+                    b.Property<DateTime>("updated_date")
+                        .HasColumnType("timestamp without time zone");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatorId");
-
-                    b.ToTable("club");
+                    b.ToTable("clubs");
                 });
 
-            modelBuilder.Entity("AllrideApiCore.Entities.Clubs.ClubMember", b =>
+            modelBuilder.Entity("AllrideApiCore.Entities.Clubs.ClubMessage", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -238,129 +226,24 @@ namespace AllrideApiRepository.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
 
-                    b.Property<int>("ClubId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("active")
-                        .HasColumnType("integer");
-
                     b.Property<int>("club_id")
                         .HasColumnType("integer");
 
-                    b.Property<DateTime>("joined_date")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<int>("role")
+                    b.Property<int>("content_type")
                         .HasColumnType("integer");
 
-                    b.Property<int>("user_id")
+                    b.Property<DateTime>("created_at")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("message_content")
+                        .HasColumnType("text");
+
+                    b.Property<int>("sender_id")
                         .HasColumnType("integer");
 
                     b.HasKey("id");
 
-                    b.HasIndex("ClubId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("club_member");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.Clubs.ClubSocialPost", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("ClubId")
-                        .HasColumnType("integer")
-                        .HasColumnName("club_id");
-
-                    b.Property<int>("ClubMemberId")
-                        .HasColumnType("integer")
-                        .HasColumnName("club_member_id");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("timestamp without time zone")
-                        .HasColumnName("created_date");
-
-                    b.Property<DateTime>("DeletedDate")
-                        .HasColumnType("timestamp without time zone")
-                        .HasColumnName("deleted_date");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("text");
-
-                    b.Property<string>("HashTag")
-                        .HasColumnType("text")
-                        .HasColumnName("hash_tag");
-
-                    b.Property<int>("LikeUnlikeCount")
-                        .HasColumnType("integer")
-                        .HasColumnName("likeUnlike_count");
-
-                    b.Property<string[]>("PostImagePath")
-                        .HasColumnType("text[]")
-                        .HasColumnName("post_image_path");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("timestamp without time zone")
-                        .HasColumnName("updated_date");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ClubId");
-
-                    b.HasIndex("ClubMemberId");
-
-                    b.ToTable("clubsocial_post", (string)null);
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.Clubs.ClubSocialPostComment", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("ClubMemberId")
-                        .HasColumnType("integer")
-                        .HasColumnName("clubMember_id");
-
-                    b.Property<int>("ClubSocialPostId")
-                        .HasColumnType("integer")
-                        .HasColumnName("clubsocial_postid");
-
-                    b.Property<string>("Comment")
-                        .HasColumnType("text")
-                        .HasColumnName("comment");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("timestamp without time zone")
-                        .HasColumnName("created_date");
-
-                    b.Property<DateTime>("DeletedDate")
-                        .HasColumnType("timestamp without time zone")
-                        .HasColumnName("deleted_date");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("timestamp without time zone")
-                        .HasColumnName("updated_date");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ClubMemberId");
-
-                    b.HasIndex("ClubSocialPostId");
-
-                    b.ToTable("clubsocial_postcomment", (string)null);
+                    b.ToTable("club_messages");
                 });
 
             modelBuilder.Entity("AllrideApiCore.Entities.Commons.UserBlock", b =>
@@ -379,176 +262,6 @@ namespace AllrideApiRepository.Migrations
                     b.HasIndex("BlockedUserId");
 
                     b.ToTable("user_block");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.Groups.Group", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
-
-                    b.Property<int>("CreatorId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("backgroundCover_path")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("created_date")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<string>("description")
-                        .HasColumnType("text");
-
-                    b.Property<int>("group_rank")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("image_path")
-                        .HasColumnType("text");
-
-                    b.Property<int>("is_invite")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("name")
-                        .HasColumnType("text");
-
-                    b.Property<int>("type")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime>("updated_date")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.HasKey("id");
-
-                    b.HasIndex("CreatorId");
-
-                    b.ToTable("group", (string)null);
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.Groups.GroupMember", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
-
-                    b.Property<int>("active")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("group_id")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime>("joined_date")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<int>("role")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("user_id")
-                        .HasColumnType("integer");
-
-                    b.HasKey("id");
-
-                    b.HasIndex("group_id");
-
-                    b.ToTable("group_member");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.Groups.GroupSocialPost", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("timestamp without time zone")
-                        .HasColumnName("created_date");
-
-                    b.Property<DateTime>("DeletedDate")
-                        .HasColumnType("timestamp without time zone")
-                        .HasColumnName("deleted_date");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("text");
-
-                    b.Property<int>("GroupId")
-                        .HasColumnType("integer")
-                        .HasColumnName("group_id");
-
-                    b.Property<int>("GroupMemberId")
-                        .HasColumnType("integer")
-                        .HasColumnName("group_member_id");
-
-                    b.Property<string>("HashTag")
-                        .HasColumnType("text")
-                        .HasColumnName("hash_tag");
-
-                    b.Property<int>("LikeUnlikeCount")
-                        .HasColumnType("integer")
-                        .HasColumnName("likeUnlike_count");
-
-                    b.Property<string[]>("PostImagePath")
-                        .HasColumnType("text[]")
-                        .HasColumnName("post_image_path");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("timestamp without time zone")
-                        .HasColumnName("updated_date");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("GroupId");
-
-                    b.HasIndex("GroupMemberId");
-
-                    b.ToTable("groupsocial_post", (string)null);
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.Groups.GroupSocialPostComment", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Comment")
-                        .HasColumnType("text")
-                        .HasColumnName("comment");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("timestamp without time zone")
-                        .HasColumnName("created_date");
-
-                    b.Property<DateTime>("DeletedDate")
-                        .HasColumnType("timestamp without time zone")
-                        .HasColumnName("deleted_date");
-
-                    b.Property<int>("GroupMemberId")
-                        .HasColumnType("integer")
-                        .HasColumnName("groupMember_id");
-
-                    b.Property<int>("GroupSocialPostId")
-                        .HasColumnType("integer")
-                        .HasColumnName("groupsocial_postid");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("timestamp without time zone")
-                        .HasColumnName("updated_date");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("GroupMemberId");
-
-                    b.HasIndex("GroupSocialPostId");
-
-                    b.ToTable("groupsocial_postcomment", (string)null);
                 });
 
             modelBuilder.Entity("AllrideApiCore.Entities.Here.Route", b =>
@@ -580,9 +293,6 @@ namespace AllrideApiRepository.Migrations
                         .HasColumnType("geometry")
                         .HasColumnName("geoloc");
 
-                    b.Property<bool>("IsRoutePlanner")
-                        .HasColumnType("boolean");
-
                     b.Property<double>("Length")
                         .HasColumnType("double precision")
                         .HasColumnName("length");
@@ -595,15 +305,9 @@ namespace AllrideApiRepository.Migrations
                         .HasColumnType("text")
                         .HasColumnName("public");
 
-                    b.Property<int?>("RoutePlannerId")
-                        .HasColumnType("integer");
-
                     b.Property<int>("RouteTransportModeId")
                         .HasColumnType("integer")
                         .HasColumnName("transport_type");
-
-                    b.Property<int?>("RouteTransportModeId1")
-                        .HasColumnType("integer");
 
                     b.Property<DateTime>("UpdatedDate")
                         .HasColumnType("timestamp without time zone")
@@ -619,13 +323,11 @@ namespace AllrideApiRepository.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RoutePlannerId");
+                    b.HasIndex("RouteTransportModeId")
+                        .IsUnique();
 
-                    b.HasIndex("RouteTransportModeId");
-
-                    b.HasIndex("RouteTransportModeId1");
-
-                    b.HasIndex("UserId");
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
                     b.ToTable("route", (string)null);
                 });
@@ -719,17 +421,18 @@ namespace AllrideApiRepository.Migrations
 
             modelBuilder.Entity("AllrideApiCore.Entities.Here.RouteTransportMode", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("Type")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("type");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Type"));
 
                     b.Property<string>("Mode")
                         .HasColumnType("text")
                         .HasColumnName("mode");
 
-                    b.HasKey("Id");
+                    b.HasKey("Type");
 
                     b.ToTable("route_transport_mode", (string)null);
                 });
@@ -819,146 +522,6 @@ namespace AllrideApiRepository.Migrations
                     b.ToTable("news", (string)null);
                 });
 
-            modelBuilder.Entity("AllrideApiCore.Entities.Newss.NewsTags", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<int>("NewsId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("TagId")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("TagsId")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NewsId")
-                        .IsUnique();
-
-                    b.HasIndex("TagsId");
-
-                    b.ToTable("news_tags");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.RoutePlanners.RoutePlanner", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("ColorCodeHex")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<DateTime?>("EndDate")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<TimeSpan>("RouteAlertTime")
-                        .HasColumnType("interval");
-
-                    b.Property<int>("RouteId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("RouteName")
-                        .HasColumnType("text");
-
-                    b.Property<string>("RoutePlannerTitle")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime?>("StartDate")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("route_planner");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.RoutePlanners.TasksRoutePlanner", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<int>("RoutePlannerId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Tasks")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RoutePlannerId");
-
-                    b.ToTable("tasks_route_planner");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.RoutePlanners.UsersInRoutePlanning", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<int>("RoutePlannerId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("SocialMediaFollower")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("SocialMediaFollowid")
-                        .HasColumnType("integer");
-
-                    b.Property<List<int>>("TasksId")
-                        .HasColumnType("integer[]");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RoutePlannerId");
-
-                    b.HasIndex("SocialMediaFollowid");
-
-                    b.ToTable("users_InRoutePlanning");
-                });
-
             modelBuilder.Entity("AllrideApiCore.Entities.Routes.FavouriteRoutes", b =>
                 {
                     b.Property<int>("route_id")
@@ -990,33 +553,6 @@ namespace AllrideApiRepository.Migrations
                         .HasColumnType("integer");
 
                     b.ToTable("user_shared_route");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.Routes.RouteAltitude", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<Geometry>("Geoloc")
-                        .HasColumnType("geometry");
-
-                    b.Property<int>("RouteId")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RouteId");
-
-                    b.ToTable("RouteAltitude");
                 });
 
             modelBuilder.Entity("AllrideApiCore.Entities.Routes.RouteCalculate", b =>
@@ -1099,8 +635,8 @@ namespace AllrideApiRepository.Migrations
 
             modelBuilder.Entity("AllrideApiCore.Entities.ServiceLimit.ServiceUsage", b =>
                 {
-                    b.Property<int>("user_id")
-                        .HasColumnType("integer");
+                    b.Property<string>("user_id")
+                        .HasColumnType("text");
 
                     b.Property<int>("service_id")
                         .HasColumnType("integer");
@@ -1109,8 +645,6 @@ namespace AllrideApiRepository.Migrations
                         .HasColumnType("integer");
 
                     b.HasKey("user_id", "service_id");
-
-                    b.HasIndex("service_id");
 
                     b.ToTable("service_usage");
                 });
@@ -1307,7 +841,6 @@ namespace AllrideApiRepository.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("media_url")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<DateTime>("updated_at")
@@ -1319,34 +852,6 @@ namespace AllrideApiRepository.Migrations
                     b.HasKey("id");
 
                     b.ToTable("social_media_story");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.Users.MemberShip", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<string>("MemberShipType")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId")
-                        .IsUnique();
-
-                    b.ToTable("MemberShip");
                 });
 
             modelBuilder.Entity("AllrideApiCore.Entities.Users.OnlineUsers", b =>
@@ -1386,8 +891,8 @@ namespace AllrideApiRepository.Migrations
                         .HasColumnType("timestamp without time zone")
                         .HasColumnName("date_of_birth");
 
-                    b.Property<byte>("Gender")
-                        .HasColumnType("smallint")
+                    b.Property<string>("Gender")
+                        .HasColumnType("text")
                         .HasColumnName("gender");
 
                     b.Property<string>("Language")
@@ -1421,6 +926,9 @@ namespace AllrideApiRepository.Migrations
                     b.Property<string>("VehicleType")
                         .HasColumnType("text")
                         .HasColumnName("vehicle_type");
+
+                    b.Property<bool>("status")
+                        .HasColumnType("boolean");
 
                     b.HasKey("Id");
 
@@ -1481,18 +989,15 @@ namespace AllrideApiRepository.Migrations
                         .HasColumnType("timestamp without time zone")
                         .HasColumnName("updated_date");
 
-                    b.Property<bool>("VerifiedMember")
-                        .HasColumnType("boolean")
-                        .HasColumnName("verified_member");
-
-                    b.Property<int>("forgot_password_code")
+                    b.Property<int>("VerifiedMember")
                         .HasColumnType("integer")
-                        .HasColumnName("forgot_password_code");
+                        .HasColumnName("verified_member");
 
                     b.Property<int>("user_type")
                         .HasColumnType("integer");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("user_pkey");
 
                     b.ToTable("user", (string)null);
                 });
@@ -1506,7 +1011,10 @@ namespace AllrideApiRepository.Migrations
                         .HasColumnType("integer");
 
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("invitedDateTime")
                         .HasColumnType("timestamp without time zone");
@@ -1520,7 +1028,7 @@ namespace AllrideApiRepository.Migrations
                     b.Property<int>("whereId")
                         .HasColumnType("integer");
 
-                    b.HasKey("inveting_id", "invited_id");
+                    b.HasKey("inveting_id", "invited_id", "Id");
 
                     b.HasIndex("invited_id");
 
@@ -1688,28 +1196,6 @@ namespace AllrideApiRepository.Migrations
                     b.ToTable("weather", (string)null);
                 });
 
-            modelBuilder.Entity("AllrideApiCore.Tags", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("UpdatedDate")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Tags");
-                });
-
             modelBuilder.Entity("AllrideApiRepository.Repositories.Concrete.ClubNotification", b =>
                 {
                     b.Property<int>("Id")
@@ -1855,120 +1341,6 @@ namespace AllrideApiRepository.Migrations
                     b.ToTable("person_notification_mute_settings");
                 });
 
-            modelBuilder.Entity("AllrideApiCore.Entities.Activities.Activity", b =>
-                {
-                    b.HasOne("AllrideApiCore.Entities.Clubs.Club", "Club")
-                        .WithMany("activities")
-                        .HasForeignKey("club_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("AllrideApiCore.Entities.Users.UserEntity", "Users")
-                        .WithOne("act")
-                        .HasForeignKey("AllrideApiCore.Entities.Activities.Activity", "creator_user_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("AllrideApiCore.Entities.Groups.Group", "Group")
-                        .WithMany("activities")
-                        .HasForeignKey("group_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("AllrideApiCore.Entities.Here.Route", "Route")
-                        .WithOne("Activity")
-                        .HasForeignKey("AllrideApiCore.Entities.Activities.Activity", "route_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Club");
-
-                    b.Navigation("Group");
-
-                    b.Navigation("Route");
-
-                    b.Navigation("Users");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.Activities.ActivityMember", b =>
-                {
-                    b.HasOne("AllrideApiCore.Entities.Activities.Activity", "Activitiy")
-                        .WithMany("ActivityMembers")
-                        .HasForeignKey("ActivityId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Activitiy");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.Clubs.Club", b =>
-                {
-                    b.HasOne("AllrideApiCore.Entities.Users.UserEntity", "User")
-                        .WithMany()
-                        .HasForeignKey("CreatorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.Clubs.ClubMember", b =>
-                {
-                    b.HasOne("AllrideApiCore.Entities.Clubs.Club", "Club")
-                        .WithMany()
-                        .HasForeignKey("ClubId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("AllrideApiCore.Entities.Users.UserEntity", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Club");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.Clubs.ClubSocialPost", b =>
-                {
-                    b.HasOne("AllrideApiCore.Entities.Clubs.Club", "Club")
-                        .WithMany("ClubSocialPost")
-                        .HasForeignKey("ClubId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("AllrideApiCore.Entities.Clubs.ClubMember", "ClubMember")
-                        .WithMany("ClubSocialPost")
-                        .HasForeignKey("ClubMemberId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Club");
-
-                    b.Navigation("ClubMember");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.Clubs.ClubSocialPostComment", b =>
-                {
-                    b.HasOne("AllrideApiCore.Entities.Clubs.ClubMember", "ClubMember")
-                        .WithMany()
-                        .HasForeignKey("ClubMemberId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("AllrideApiCore.Entities.Clubs.ClubSocialPost", "ClubSocialPost")
-                        .WithMany("ClubSocialPostComment")
-                        .HasForeignKey("ClubSocialPostId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ClubMember");
-
-                    b.Navigation("ClubSocialPost");
-                });
-
             modelBuilder.Entity("AllrideApiCore.Entities.Commons.UserBlock", b =>
                 {
                     b.HasOne("AllrideApiCore.Entities.Users.UserEntity", "UserBlocked")
@@ -1988,89 +1360,19 @@ namespace AllrideApiRepository.Migrations
                     b.Navigation("UserBlocking");
                 });
 
-            modelBuilder.Entity("AllrideApiCore.Entities.Groups.Group", b =>
-                {
-                    b.HasOne("AllrideApiCore.Entities.Users.UserEntity", "User")
-                        .WithMany()
-                        .HasForeignKey("CreatorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.Groups.GroupMember", b =>
-                {
-                    b.HasOne("AllrideApiCore.Entities.Groups.Group", "Group")
-                        .WithMany()
-                        .HasForeignKey("group_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Group");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.Groups.GroupSocialPost", b =>
-                {
-                    b.HasOne("AllrideApiCore.Entities.Groups.Group", "Group")
-                        .WithMany("GroupSocialPost")
-                        .HasForeignKey("GroupId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("AllrideApiCore.Entities.Groups.GroupMember", "GroupMember")
-                        .WithMany("GroupSocialPost")
-                        .HasForeignKey("GroupMemberId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Group");
-
-                    b.Navigation("GroupMember");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.Groups.GroupSocialPostComment", b =>
-                {
-                    b.HasOne("AllrideApiCore.Entities.Groups.GroupMember", "GroupMember")
-                        .WithMany()
-                        .HasForeignKey("GroupMemberId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("AllrideApiCore.Entities.Groups.GroupSocialPost", "GroupSocialPost")
-                        .WithMany("GroupSocialPostComment")
-                        .HasForeignKey("GroupSocialPostId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("GroupMember");
-
-                    b.Navigation("GroupSocialPost");
-                });
-
             modelBuilder.Entity("AllrideApiCore.Entities.Here.Route", b =>
                 {
-                    b.HasOne("AllrideApiCore.Entities.RoutePlanners.RoutePlanner", "RoutePlanner")
-                        .WithMany("Route")
-                        .HasForeignKey("RoutePlannerId");
-
                     b.HasOne("AllrideApiCore.Entities.Here.RouteTransportMode", "RouteTransportMode")
-                        .WithMany()
-                        .HasForeignKey("RouteTransportModeId")
+                        .WithOne("Route")
+                        .HasForeignKey("AllrideApiCore.Entities.Here.Route", "RouteTransportModeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("AllrideApiCore.Entities.Here.RouteTransportMode", null)
-                        .WithMany("Route")
-                        .HasForeignKey("RouteTransportModeId1");
 
                     b.HasOne("AllrideApiCore.Entities.Users.UserEntity", "User")
-                        .WithMany("Routes")
-                        .HasForeignKey("UserId")
+                        .WithOne("Route")
+                        .HasForeignKey("AllrideApiCore.Entities.Here.Route", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("RoutePlanner");
 
                     b.Navigation("RouteTransportMode");
 
@@ -2099,73 +1401,6 @@ namespace AllrideApiRepository.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("AllrideApiCore.Entities.Newss.NewsTags", b =>
-                {
-                    b.HasOne("AllrideApiCore.Entities.News", "News")
-                        .WithOne("NewsTags")
-                        .HasForeignKey("AllrideApiCore.Entities.Newss.NewsTags", "NewsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("AllrideApiCore.Tags", "Tags")
-                        .WithMany("NewsTagss")
-                        .HasForeignKey("TagsId");
-
-                    b.Navigation("News");
-
-                    b.Navigation("Tags");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.RoutePlanners.RoutePlanner", b =>
-                {
-                    b.HasOne("AllrideApiCore.Entities.Users.UserEntity", "UserEntities")
-                        .WithMany("RoutePlanners")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("UserEntities");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.RoutePlanners.TasksRoutePlanner", b =>
-                {
-                    b.HasOne("AllrideApiCore.Entities.RoutePlanners.RoutePlanner", "RoutePlanner")
-                        .WithMany("TasksRoutePlanners")
-                        .HasForeignKey("RoutePlannerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("RoutePlanner");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.RoutePlanners.UsersInRoutePlanning", b =>
-                {
-                    b.HasOne("AllrideApiCore.Entities.RoutePlanners.RoutePlanner", "RoutePlanner")
-                        .WithMany("UsersInRoutePlannings")
-                        .HasForeignKey("RoutePlannerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("AllrideApiCore.Entities.SocialMedia.SocialMediaFollow", "SocialMediaFollow")
-                        .WithMany()
-                        .HasForeignKey("SocialMediaFollowid");
-
-                    b.Navigation("RoutePlanner");
-
-                    b.Navigation("SocialMediaFollow");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.Routes.RouteAltitude", b =>
-                {
-                    b.HasOne("AllrideApiCore.Entities.Here.Route", "Route")
-                        .WithMany("RouteAltitudes")
-                        .HasForeignKey("RouteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Route");
-                });
-
             modelBuilder.Entity("AllrideApiCore.Entities.Routes.RouteDetail", b =>
                 {
                     b.HasOne("AllrideApiCore.Entities.Here.Route", "Route")
@@ -2177,41 +1412,11 @@ namespace AllrideApiRepository.Migrations
                     b.Navigation("Route");
                 });
 
-            modelBuilder.Entity("AllrideApiCore.Entities.ServiceLimit.ServiceUsage", b =>
-                {
-                    b.HasOne("AllrideApiCore.Entities.ServiceLimit.ServiceTypes", "ServiceTypes")
-                        .WithMany("service_usages")
-                        .HasForeignKey("service_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("AllrideApiCore.Entities.Users.UserEntity", "User")
-                        .WithMany("ServiceUsages")
-                        .HasForeignKey("user_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ServiceTypes");
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("AllrideApiCore.Entities.SmsVerification", b =>
                 {
                     b.HasOne("AllrideApiCore.Entities.Users.UserEntity", "User")
                         .WithOne("SmsVerification")
                         .HasForeignKey("AllrideApiCore.Entities.SmsVerification", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.Users.MemberShip", b =>
-                {
-                    b.HasOne("AllrideApiCore.Entities.Users.UserEntity", "User")
-                        .WithOne("MemberShip")
-                        .HasForeignKey("AllrideApiCore.Entities.Users.MemberShip", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -2278,51 +1483,8 @@ namespace AllrideApiRepository.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("AllrideApiCore.Entities.Activities.Activity", b =>
-                {
-                    b.Navigation("ActivityMembers");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.Clubs.Club", b =>
-                {
-                    b.Navigation("ClubSocialPost");
-
-                    b.Navigation("activities");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.Clubs.ClubMember", b =>
-                {
-                    b.Navigation("ClubSocialPost");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.Clubs.ClubSocialPost", b =>
-                {
-                    b.Navigation("ClubSocialPostComment");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.Groups.Group", b =>
-                {
-                    b.Navigation("GroupSocialPost");
-
-                    b.Navigation("activities");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.Groups.GroupMember", b =>
-                {
-                    b.Navigation("GroupSocialPost");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.Groups.GroupSocialPost", b =>
-                {
-                    b.Navigation("GroupSocialPostComment");
-                });
-
             modelBuilder.Entity("AllrideApiCore.Entities.Here.Route", b =>
                 {
-                    b.Navigation("Activity");
-
-                    b.Navigation("RouteAltitudes");
-
                     b.Navigation("RouteDetail");
 
                     b.Navigation("RouteInstruction");
@@ -2335,23 +1497,7 @@ namespace AllrideApiRepository.Migrations
 
             modelBuilder.Entity("AllrideApiCore.Entities.News", b =>
                 {
-                    b.Navigation("NewsTags");
-
                     b.Navigation("UserNewsReactions");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.RoutePlanners.RoutePlanner", b =>
-                {
-                    b.Navigation("Route");
-
-                    b.Navigation("TasksRoutePlanners");
-
-                    b.Navigation("UsersInRoutePlannings");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Entities.ServiceLimit.ServiceTypes", b =>
-                {
-                    b.Navigation("service_usages");
                 });
 
             modelBuilder.Entity("AllrideApiCore.Entities.Users.UserEntity", b =>
@@ -2364,15 +1510,9 @@ namespace AllrideApiRepository.Migrations
 
                     b.Navigation("InvitingUser");
 
-                    b.Navigation("MemberShip");
-
                     b.Navigation("News");
 
-                    b.Navigation("RoutePlanners");
-
-                    b.Navigation("Routes");
-
-                    b.Navigation("ServiceUsages");
+                    b.Navigation("Route");
 
                     b.Navigation("SmsVerification");
 
@@ -2381,13 +1521,6 @@ namespace AllrideApiRepository.Migrations
                     b.Navigation("UserNewsReactions");
 
                     b.Navigation("UserPassword");
-
-                    b.Navigation("act");
-                });
-
-            modelBuilder.Entity("AllrideApiCore.Tags", b =>
-                {
-                    b.Navigation("NewsTagss");
                 });
 #pragma warning restore 612, 618
         }

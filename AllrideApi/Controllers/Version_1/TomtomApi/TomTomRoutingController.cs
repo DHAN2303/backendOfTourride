@@ -3,8 +3,7 @@ using AllrideApiService.Services.Abstract;
 using AllrideApiService.Services.Abstract.TomtomApi;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
-
+using Nest;
 
 namespace AllrideApi.Controllers.Version_1.TomtomApi
 {
@@ -27,19 +26,9 @@ namespace AllrideApi.Controllers.Version_1.TomtomApi
         [HttpPost]
         public async Task<IActionResult> PostRoute(Dictionary<string, string> parameters)
         {
-            var userId = HttpContext.User.Claims.First()?.Value;
-            if (userId.IsNullOrEmpty())
-            {
-                return Unauthorized();
-            }
-            bool isUserIdTypeInt = int.TryParse(userId, out int UserId);
-
-            if (isUserIdTypeInt == false)
-            {
-                return Unauthorized();
-            }
+            var user_email = HttpContext.User.Claims.Last()?.Value;
             int service_id = Convert.ToInt16(_config.GetValue<string>("ServiceId:tomtom_routing_limit"));
-            var result = _usageTrackerService.CanUseService(UserId, service_id);
+            var result = _usageTrackerService.CanUseService(user_email, service_id);
 
             if (result == "1")
             {

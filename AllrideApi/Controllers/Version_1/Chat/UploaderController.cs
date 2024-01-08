@@ -1,4 +1,4 @@
-﻿using AllrideApi.Controllers.Version_1.GroupsController;
+﻿using AllrideApi.Controllers.Version_1.Chat.Group;
 using AllrideApiChat.Functions.Compress;
 using AllrideApiCore.Dtos.Chat;
 using AllrideApiService.Response;
@@ -42,12 +42,12 @@ namespace AllrideApi.Controllers
                 else if (extens == ".jpg" || extens == ".png" || extens == ".tiff" || extens == ".bmp" || extens == ".ico")
                     savedPath = imageCompress.CompressImage(fileModel, 25);
 
-                return Ok(savedPath);
+                return Ok(CustomResponse<object>.Success(savedPath, true));
             }
             catch(Exception ex)
             {
-                _logger.LogError(ex.Message + "  UploaderController -->  UploadFile METHOD ERROR: " + ex.InnerException.ToString());
-                return StatusCode(500,ErrorEnumResponse.ApiServiceFail);
+                _logger.LogError(ex.Message + " " + ex.InnerException.ToString());
+                return Ok(CustomResponse<object>.Success(ErrorEnumResponse.NullData, false));
             }
         }
 

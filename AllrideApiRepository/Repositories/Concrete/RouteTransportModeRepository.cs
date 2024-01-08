@@ -5,7 +5,7 @@ namespace AllrideApiRepository.Repositories.Concrete
 {
     public class RouteTransportModeRepository : IRouteTransportModeRepository
     {
-        protected readonly AllrideApiDbContext _context;
+        private readonly AllrideApiDbContext _context;
         public RouteTransportModeRepository(AllrideApiDbContext context)
         {
             _context = context;

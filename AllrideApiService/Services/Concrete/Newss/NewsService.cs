@@ -1,5 +1,4 @@
 ﻿using AllrideApiCore.Dtos;
-using AllrideApiCore.Dtos.Here;
 using AllrideApiCore.Dtos.Insert;
 using AllrideApiCore.Dtos.Select;
 using AllrideApiCore.Entities;
@@ -88,9 +87,9 @@ namespace AllrideApiService.Services.Concrete.Newss
             }
             return CustomResponse<NewsDetailResponseDto>.Success(newsResponse, true);
         }
-        public CustomResponse<NewsReactionResponseDto> GetNews(NewsRequestDto newsDto)
+        public CustomResponse<NewsResponseDto> GetNews(NewsRequestDto newsDto)
         {
-            NewsReactionResponseDto newsResponse = new();
+            NewsResponseDto newsResponse = new();
             try
             {
 
@@ -100,7 +99,7 @@ namespace AllrideApiService.Services.Concrete.Newss
                 {
                     if (result.Status == false)
                     {
-                        return CustomResponse<NewsReactionResponseDto>.Fail(result.ErrorEnums, false);
+                        return CustomResponse<NewsResponseDto>.Fail(result.ErrorEnums, false);
                     }
                 }
 
@@ -109,14 +108,14 @@ namespace AllrideApiService.Services.Concrete.Newss
 
                 if (resultNews.Status == false)
                 {
-                    return CustomResponse<NewsReactionResponseDto>.Fail(resultNews.ErrorEnums, false);
+                    return CustomResponse<NewsResponseDto>.Fail(resultNews.ErrorEnums, false);
                 }
                 // News id sini kullanarak action type ı alıcam
 
                 var userNewsReaciton = _userNewsReactionRepository.Get(resultNews.Data.Id);
 
                 // Response dönmek için Mapleme işlemi yaptım
-                newsResponse = _mapper.Map<NewsReactionResponseDto>(resultNews);
+                newsResponse = _mapper.Map<NewsResponseDto>(resultNews);
 
                 if (userNewsReaciton != null)
                 {
@@ -128,7 +127,7 @@ namespace AllrideApiService.Services.Concrete.Newss
             {
                 _logger.LogError(V2 + e.Message, e);
             }
-            return CustomResponse<NewsReactionResponseDto>.Success(newsResponse, true);
+            return CustomResponse<NewsResponseDto>.Success(newsResponse, true);
         }
 
         // Kullanıcının habere verdiği reaksiyonu kaydetme
@@ -257,6 +256,7 @@ namespace AllrideApiService.Services.Concrete.Newss
             return CustomResponse<CreateActionTypeNewsDto>.Success(true);
         }
 
+
         public static CustomResponse<NoContentDto> Validation(NewsRequestDto newsDto, ILogger _logger)
         {
             List<ErrorEnumResponse> _enumListErrorResponse = new();
@@ -335,92 +335,6 @@ namespace AllrideApiService.Services.Concrete.Newss
             return CustomResponse<bool>.Success(true);
         }
 
-        public CustomResponse<NewsAllResponseDto> GetAllNews()
-        {
-            List<ErrorEnumResponse> errors = new();
-            try
-            {
-                var getAllNews = _newsRepository.GetAll();
-                var totalCount = _newsRepository.NewsTotalCount();
-                if (getAllNews == null || totalCount<=0)
-                {
-                    errors.Add(ErrorEnumResponse.RegisteredNoNews);
-                }
-                List<GetAllNewsResponseDto> getAllNewsResponses = new();
-                foreach(var item in getAllNews)
-                {
-                    var getAllNewsResponse = _mapper.Map<GetAllNewsResponseDto>(getAllNews);
-                    if(getAllNewsResponse == null)
-                    {
-                        break;
-                    }
-                    getAllNewsResponses.Add(getAllNewsResponse);
-                }
-                if(getAllNewsResponses.Count<=0)
-                {
-                    errors.Add(ErrorEnumResponse.MappingFailed);
-                    return CustomResponse<NewsAllResponseDto>.Fail(errors, false);
-                }
-
-                NewsAllResponseDto responseNewsList = new()
-                {
-                    _news = getAllNewsResponses,
-                    TotalCount = totalCount,
-                };
-
-                if( responseNewsList == null)
-                {
-
-                    errors.Add(ErrorEnumResponse.MappingFailed);
-                    return CustomResponse<NewsAllResponseDto>.Fail(errors, false);
-                }
-
-                return CustomResponse<NewsAllResponseDto>.Success(responseNewsList,true);
-            }
-            catch(Exception e)
-            {
-
-                _logger.LogError(" GetAllNews METHOD  Log Error: " + e.Message, e);
-                return CustomResponse<NewsAllResponseDto>.Fail(errors, false);
-            }
-        }
-
-        public CustomResponse<List<GetLastNewsResponseDto>> GetLast2News()
-        {
-            List<ErrorEnumResponse> errors = new();
-            try
-            {
-                var getLast2News = _newsRepository.GetLast2News();
-
-                if(getLast2News == null)
-                {
-                    errors.Add(ErrorEnumResponse.RegisteredNoNews);
-                    return CustomResponse<List<GetLastNewsResponseDto>>.Fail(errors, false);
-                }
-
-                List<GetLastNewsResponseDto> getLastNewsResponses = new();
-                foreach (var item in getLast2News)
-                {
-                    var mapp = _mapper.Map<GetLastNewsResponseDto>(item);
-                    if (mapp == null)
-                        break;
-                    getLastNewsResponses.Add(mapp);
-                }
-
-                if(getLastNewsResponses.Count<=0)
-                {
-                    errors.Add(ErrorEnumResponse.MappingFailed);
-                    return CustomResponse<List<GetLastNewsResponseDto>>.Fail(errors, false);
-                }
-
-                return CustomResponse<List<GetLastNewsResponseDto>>.Success(getLastNewsResponses,true);
-            }
-            catch(Exception ex)
-            {
-                _logger.LogError(" GetLast2News METHOD  Log Error: " + ex.Message, ex);
-                return CustomResponse<List<GetLastNewsResponseDto>>.Fail(errors, false);
-            }
-        }
     }
 }
 

@@ -13,25 +13,33 @@ namespace AllrideApiChat.Functions.Compress
             //rename file object
             renameFiles renamefiles = new renameFiles();
 
-            //file features
-            var file = groupImage;
-            var fileName = groupImage.FileName;
-            var rename = renamefiles.RenameFile(Path.GetFileNameWithoutExtension(fileName), Path.GetExtension(fileName));
-            var filePath = "/var/www/images/" + rename;//"/home/pardus/Pictures/" + fileName;
-
-            //compress operation
-            using (var image = Image.Load(file.OpenReadStream()))
+            if(groupImage != null)
             {
-                var encoder = new JpegEncoder
+                //file features
+                var file = groupImage;
+                var fileName = groupImage.FileName;
+                var rename = renamefiles.RenameFile(Path.GetFileNameWithoutExtension(fileName), Path.GetExtension(fileName));
+                var filePath = "/var/www/images/" + rename;//"/home/pardus/Pictures/" + fileName;
+
+                //compress operation
+                using (var image = Image.Load(file.OpenReadStream()))
                 {
-                    Quality = quality
-                };
+                    var encoder = new JpegEncoder
+                    {
+                        Quality = quality
+                    };
 
-                image.Save(filePath, encoder);
+                    image.Save(filePath, encoder);
 
-                //return file location
-                return rename;
+                    //return file location
+                    return rename;
+                }
             }
+            else
+            {
+                return null;
+            }
+
         }
     }
 }

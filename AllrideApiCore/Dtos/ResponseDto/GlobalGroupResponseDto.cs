@@ -1,4 +1,4 @@
-﻿namespace AllrideApiCore.Dtos.ResponseDtos
+﻿namespace AllrideApiCore.Dtos.ResponseDto
 {
     public class GlobalGroupResponseDto
     {

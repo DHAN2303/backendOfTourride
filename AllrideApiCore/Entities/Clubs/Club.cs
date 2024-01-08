@@ -1,29 +1,17 @@
-﻿using AllrideApiCore.Entities.Activities;
-using AllrideApiCore.Entities.Users;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace AllrideApiCore.Entities.Clubs
 {
-#nullable enable
-    public class Club : BaseEntity
+    public class Club 
     {
-        public string name { get; set; }
-        public int CreatorId { get; set; }
-        public string backgroundCover_path { get; set; }
-        public string profile_path { get; set; }
+        public int Id { get; set; }
+        public string name { get; set; }    
         public string image_path { get; set; }
         public string description { get; set; }
+        public int club_rank { get; set; }
         public int type { get; set; }
-        public int is_invite { get; set; }
-        public List<string>? group_members { get; set; }
-        public IEnumerable<Activity> activities { get; set; }
-        public IEnumerable<ClubSocialPost> ClubSocialPost { get; set; }
-        //public IEnumerable<ClubMember> ClubMembers { get; set; }
-        //public IEnumerable<RoutePlanner> RoutePlanners { get; set; }
-
-        [ForeignKey("CreatorId")]
-        public UserEntity User { get; set; }
-
+        public DateTime created_date { get; set; }
+        public DateTime updated_date { get; set;}
 
     }
 }

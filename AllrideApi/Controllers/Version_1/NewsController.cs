@@ -1,194 +1,81 @@
-﻿
-using AllrideApiCore.Dtos.Insert;
+﻿using AllrideApiCore.Dtos.Insert;
 using AllrideApiCore.Dtos.Select;
 using AllrideApiService.Response;
 using AllrideApiService.Services.Abstract.News;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
 
 namespace AllrideApi.Controllers.Version_1
 {
-    [Authorize]   
+    [Authorize]
+   
     [Route("api/[controller]")]
     [ApiController]
     public class NewsController : ControllerBase
     {
         private readonly INewsService _newsService;
-        private readonly ILogger<NewsController> _logger;
-        public NewsController(INewsService newsService,ILogger<NewsController> logger)
+        public NewsController(INewsService newsService)
         {
             _newsService= newsService;
-            _logger= logger;
         }
 
-        [HttpGet("getNews")]
-        public IActionResult GetNews([FromQuery] NewsRequestDto news)
+        [HttpGet]
+        [Route("getNews")]
+        public  IActionResult Get([FromQuery] NewsRequestDto news)
         {
-            var uId = HttpContext.User.Claims.First()?.Value;
-
-            if (string.IsNullOrEmpty(uId))
+            var response = _newsService.GetNews(news);
+            if (response.Status == false)
             {
-                return Unauthorized();
+                if (response.ErrorEnums.Contains(ErrorEnumResponse.NewsIsNotRegister))
+                    return BadRequest(response.ErrorEnums);
+                return StatusCode(406, response.ErrorEnums);
             }
-
-            bool isUserIdTypeInt = int.TryParse(uId, out int UserId);
-
-            if (isUserIdTypeInt == false)
-            {
-                return Unauthorized();
-            }
-
-            try
-            {
-                var response = _newsService.GetNews(news);
-                if (response.Status == false)
-                {
-                    if (response.ErrorEnums.Contains(ErrorEnumResponse.NewsIsNotRegister))
-                        return BadRequest(response);
-                    return StatusCode(500, response);
-                }
-                else
-                    return Ok(response);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex.Message + " NewsController  -->  GetNews METHOD  ERROR: " + ex.InnerException.ToString());
-                return StatusCode(500, ErrorEnumResponse.ApiServiceFail);
-            }
+            else
+                return  Ok(response.Data);   
         }
-        [HttpGet("getAllNews")]
-        public IActionResult Get()
-        {
-            var uId = HttpContext.User.Claims.First()?.Value;
 
-            if (string.IsNullOrEmpty(uId))
-            {
-                return Unauthorized();
-            }
-
-            bool isUserIdTypeInt = int.TryParse(uId, out int UserId);
-
-            if (isUserIdTypeInt == false)
-            {
-                return Unauthorized();
-            }
-
-            try
-            {
-                var response = _newsService.GetAllNews();
-                if (response.Status == false)
-                {
-                    //if (response.ErrorEnums.Contains(ErrorEnumResponse.NewsIsNotRegister))
-                    //    return BadRequest(response.ErrorEnums);
-                    //return StatusCode(406, response.ErrorEnums); // ????
-
-                    return StatusCode(500, response);
-                }
-                else
-                    return Ok(response);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex.Message + " NewsController  -->  Get (GetAllNews) METHOD  ERROR: " + ex.InnerException.ToString());
-                return StatusCode(500, ErrorEnumResponse.ApiServiceFail);
-            }
-        }
-        [HttpGet("getLastNews")]
-        public IActionResult GetLastNews()
-        {
-            var uId = HttpContext.User.Claims.First()?.Value;
-
-            if (string.IsNullOrEmpty(uId))
-            {
-                return Unauthorized();
-            }
-
-            bool isUserIdTypeInt = int.TryParse(uId, out int UserId);
-
-            if (isUserIdTypeInt == false)
-            {
-                return Unauthorized();
-            }
-
-            try
-            {
-                var response = _newsService.GetLast2News();
-                if (response.Status == false)
-                {
-                    //if (response.ErrorEnums.Contains(ErrorEnumResponse.NewsIsNotRegister))
-                    //    return BadRequest(response.ErrorEnums);
-                    //return StatusCode(406, response.ErrorEnums); // ????
-
-                    return StatusCode(500, response);
-                }
-                else
-                    return Ok(response);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex.Message + " NewsController  -->  GetLastNews METHOD  ERROR: " + ex.InnerException.ToString());
-                return StatusCode(500, ErrorEnumResponse.ApiServiceFail);
-            }
-        }
         [HttpGet]
         [Route("getNewsDetail")]
         public IActionResult GetNewsDetail([FromQuery] NewsRequestDto news)
         {
-
-            try
+            var response = _newsService.GetNewsDetail(news);
+            if (response.Status == false)
             {
-                var response = _newsService.GetNewsDetail(news);
-                if (response.Status == false)
-                {
-                    //if (response.ErrorEnums.Contains(ErrorEnumResponse.NewsIsNotRegister))
-                    //    return BadRequest(response.ErrorEnums);
-                    //return StatusCode(406, response.ErrorEnums);
-
-                    return StatusCode(500, response);
-                }
-                else
-                    return Ok(response);
+                if (response.ErrorEnums.Contains(ErrorEnumResponse.NewsIsNotRegister))
+                    return BadRequest(response.ErrorEnums);
+                return StatusCode(406, response.ErrorEnums);
             }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex.Message + " NewsController  -->  getNewsDetail METHOD  ERROR: " + ex.InnerException.ToString());
-                return StatusCode(500, ErrorEnumResponse.ApiServiceFail);
-            }
+            else
+                return Ok(response.Data);
         }
 
 
         [HttpPost]
-        [Route("saveNewsReaction")]
+        [Route("saveNews")]
         public IActionResult Post(CreateActionTypeNewsDto createReactionTypeNewsDto)
-        {      
-            try
+        {
+            // Gelen news ıd nin reaction type ına göre  beğenme ve beğenmeme sayısını arıtırıcaz.
+            var userId = HttpContext.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+            if (userId.IsNullOrEmpty())
             {
-                // Gelen news ıd nin reaction type ına göre  beğenme ve beğenmeme sayısını arıtırıcaz.
-                var userId = HttpContext.User.Claims.First()?.Value;
-                if (userId.IsNullOrEmpty())
-                {
-                    return Unauthorized();
-                }
-                bool isUserIdTypeInt = int.TryParse(userId, out int UserId);
-
-                if (isUserIdTypeInt == false)
-                {
-                    return Unauthorized();
-                }
-
-                var response = _newsService.PostReaction(createReactionTypeNewsDto, UserId);
-                if (response.Status == false || response == null)
-                {
-                    return StatusCode(500, response);
-                }
-                return Ok(response);
+                return Unauthorized();
             }
-            catch (Exception ex)
+            //// UserId'yi kullanarak yapmak istediğiniz işlemler
+            bool isUserIdTypeInt = int.TryParse(userId, out int UserId);
+
+            if (isUserIdTypeInt == false)
             {
-                _logger.LogError(ex.Message + " NewsController  -->  Get METHOD  ERROR: " + ex.InnerException.ToString());
-                return StatusCode(500, ErrorEnumResponse.ApiServiceFail);
+                return Unauthorized();
             }
+
+            var response = _newsService.PostReaction(createReactionTypeNewsDto, UserId);
+            if(response.Status == false || response ==null)
+            {
+                return StatusCode(500, response.ErrorEnums);
+            }
+            return Ok(response.Data);
 
         }
 

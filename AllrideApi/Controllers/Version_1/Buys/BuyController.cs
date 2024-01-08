@@ -1,5 +1,4 @@
-﻿using AllrideApiService.Response;
-using AllrideApiService.Services.Abstract.Buys;
+﻿using AllrideApiService.Services.Abstract.Buys;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AllrideApi.Controllers.Version_1.Buys
@@ -9,30 +8,19 @@ namespace AllrideApi.Controllers.Version_1.Buys
     public class BuyController : ControllerBase
     {
         private readonly IBuyService _buyService;
-        private readonly ILogger<BuyController> _logger;
-        public BuyController(IBuyService buyService, ILogger<BuyController> logger)
+        public BuyController(IBuyService buyService)
         {
-            _buyService = buyService;
-            _logger = logger;
+            _buyService= buyService;
         }
         [HttpGet]
         public IActionResult Get()
         {
-            try
+            var touridePackageData = _buyService.GetTouridePackage();
+            if(touridePackageData.Status == false)
             {
-                var touridePackageData = _buyService.GetTouridePackage();
-                if (touridePackageData.Status == false)
-                {
-                    return StatusCode(500, touridePackageData);
-                }
-                return Ok(touridePackageData);
-
+                return StatusCode(500, touridePackageData.ErrorEnums);
             }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex.Message + " BuyController  -->  Get METHOD  ERROR: " + ex.InnerException.ToString());
-                return StatusCode(500, ErrorEnumResponse.ApiServiceFail);
-            }
+            return Ok(touridePackageData.Data);
         }
     }
 }

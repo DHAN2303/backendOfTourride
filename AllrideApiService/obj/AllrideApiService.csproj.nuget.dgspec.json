@@ -1,35 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\Backend\\AllrideApiService\\AllrideApiService.csproj": {}
+    "/Users/dhan/Desktop/current/AllrideApiService/AllrideApiService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\Backend\\AllrideApiCore\\AllrideApiCore.csproj": {
+    "/Users/dhan/Desktop/current/AllrideApiCore/AllrideApiCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Backend\\AllrideApiCore\\AllrideApiCore.csproj",
+        "projectUniqueName": "/Users/dhan/Desktop/current/AllrideApiCore/AllrideApiCore.csproj",
         "projectName": "AllrideApiCore",
-        "projectPath": "C:\\Users\\User\\Desktop\\Backend\\AllrideApiCore\\AllrideApiCore.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Backend\\AllrideApiCore\\obj\\",
+        "projectPath": "/Users/dhan/Desktop/current/AllrideApiCore/AllrideApiCore.csproj",
+        "packagesPath": "/Users/dhan/.nuget/packages/",
+        "outputPath": "/Users/dhan/Desktop/current/AllrideApiCore/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/dhan/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\User\\Desktop\\Backend\\FlexiblePolyline\\FlexiblePolyline.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\Backend\\FlexiblePolyline\\FlexiblePolyline.csproj"
+              "/Users/dhan/Desktop/current/FlexiblePolyline/FlexiblePolyline.csproj": {
+                "projectPath": "/Users/dhan/Desktop/current/FlexiblePolyline/FlexiblePolyline.csproj"
               }
             }
           }
@@ -51,10 +49,6 @@
             "NetTopologySuite": {
               "target": "Package",
               "version": "[2.5.0, )"
-            },
-            "Swashbuckle.AspNetCore.Annotations": {
-              "target": "Package",
-              "version": "[6.4.0, )"
             }
           },
           "imports": [
@@ -68,41 +62,49 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.18, 6.0.18]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.18, 6.0.18]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/dhan/.dotnet/sdk/7.0.304/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\Backend\\AllrideApiRepository\\AllrideApiRepository.csproj": {
+    "/Users/dhan/Desktop/current/AllrideApiRepository/AllrideApiRepository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Backend\\AllrideApiRepository\\AllrideApiRepository.csproj",
+        "projectUniqueName": "/Users/dhan/Desktop/current/AllrideApiRepository/AllrideApiRepository.csproj",
         "projectName": "AllrideApiRepository",
-        "projectPath": "C:\\Users\\User\\Desktop\\Backend\\AllrideApiRepository\\AllrideApiRepository.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Backend\\AllrideApiRepository\\obj\\",
+        "projectPath": "/Users/dhan/Desktop/current/AllrideApiRepository/AllrideApiRepository.csproj",
+        "packagesPath": "/Users/dhan/.nuget/packages/",
+        "outputPath": "/Users/dhan/Desktop/current/AllrideApiRepository/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/dhan/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\User\\Desktop\\Backend\\AllrideApiCore\\AllrideApiCore.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\Backend\\AllrideApiCore\\AllrideApiCore.csproj"
+              "/Users/dhan/Desktop/current/AllrideApiCore/AllrideApiCore.csproj": {
+                "projectPath": "/Users/dhan/Desktop/current/AllrideApiCore/AllrideApiCore.csproj"
               }
             }
           }
@@ -147,47 +149,55 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.18, 6.0.18]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.18, 6.0.18]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/dhan/.dotnet/sdk/7.0.304/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\Backend\\AllrideApiService\\AllrideApiService.csproj": {
+    "/Users/dhan/Desktop/current/AllrideApiService/AllrideApiService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Backend\\AllrideApiService\\AllrideApiService.csproj",
+        "projectUniqueName": "/Users/dhan/Desktop/current/AllrideApiService/AllrideApiService.csproj",
         "projectName": "AllrideApiService",
-        "projectPath": "C:\\Users\\User\\Desktop\\Backend\\AllrideApiService\\AllrideApiService.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Backend\\AllrideApiService\\obj\\",
+        "projectPath": "/Users/dhan/Desktop/current/AllrideApiService/AllrideApiService.csproj",
+        "packagesPath": "/Users/dhan/.nuget/packages/",
+        "outputPath": "/Users/dhan/Desktop/current/AllrideApiService/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/dhan/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\User\\Desktop\\Backend\\AllrideApiRepository\\AllrideApiRepository.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\Backend\\AllrideApiRepository\\AllrideApiRepository.csproj"
+              "/Users/dhan/Desktop/current/AllrideApiRepository/AllrideApiRepository.csproj": {
+                "projectPath": "/Users/dhan/Desktop/current/AllrideApiRepository/AllrideApiRepository.csproj"
               },
-              "C:\\Users\\User\\Desktop\\Backend\\FlexiblePolyline\\FlexiblePolyline.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\Backend\\FlexiblePolyline\\FlexiblePolyline.csproj"
+              "/Users/dhan/Desktop/current/FlexiblePolyline/FlexiblePolyline.csproj": {
+                "projectPath": "/Users/dhan/Desktop/current/FlexiblePolyline/FlexiblePolyline.csproj"
               },
-              "C:\\Users\\User\\Desktop\\Backend\\SMSApi\\SMSApi.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\Backend\\SMSApi\\SMSApi.csproj"
+              "/Users/dhan/Desktop/current/SMSApi/SMSApi.csproj": {
+                "projectPath": "/Users/dhan/Desktop/current/SMSApi/SMSApi.csproj"
               }
             }
           }
@@ -250,33 +260,41 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.18, 6.0.18]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.18, 6.0.18]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/dhan/.dotnet/sdk/7.0.304/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\Backend\\FlexiblePolyline\\FlexiblePolyline.csproj": {
+    "/Users/dhan/Desktop/current/FlexiblePolyline/FlexiblePolyline.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Backend\\FlexiblePolyline\\FlexiblePolyline.csproj",
+        "projectUniqueName": "/Users/dhan/Desktop/current/FlexiblePolyline/FlexiblePolyline.csproj",
         "projectName": "FlexiblePolyline",
-        "projectPath": "C:\\Users\\User\\Desktop\\Backend\\FlexiblePolyline\\FlexiblePolyline.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Backend\\FlexiblePolyline\\obj\\",
+        "projectPath": "/Users/dhan/Desktop/current/FlexiblePolyline/FlexiblePolyline.csproj",
+        "packagesPath": "/Users/dhan/.nuget/packages/",
+        "outputPath": "/Users/dhan/Desktop/current/FlexiblePolyline/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/dhan/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -311,33 +329,41 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.18, 6.0.18]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.18, 6.0.18]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/dhan/.dotnet/sdk/7.0.304/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\Backend\\SMSApi\\SMSApi.csproj": {
+    "/Users/dhan/Desktop/current/SMSApi/SMSApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Backend\\SMSApi\\SMSApi.csproj",
+        "projectUniqueName": "/Users/dhan/Desktop/current/SMSApi/SMSApi.csproj",
         "projectName": "SMSApi",
-        "projectPath": "C:\\Users\\User\\Desktop\\Backend\\SMSApi\\SMSApi.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Backend\\SMSApi\\obj\\",
+        "projectPath": "/Users/dhan/Desktop/current/SMSApi/SMSApi.csproj",
+        "packagesPath": "/Users/dhan/.nuget/packages/",
+        "outputPath": "/Users/dhan/Desktop/current/SMSApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/dhan/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -372,12 +398,22 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.18, 6.0.18]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.18, 6.0.18]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/dhan/.dotnet/sdk/7.0.304/RuntimeIdentifierGraph.json"
         }
       }
     }

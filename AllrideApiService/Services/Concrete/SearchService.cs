@@ -1,13 +1,13 @@
 ﻿using AllrideApiCore.Dtos.ResponseDto;
-using AllrideApiCore.Dtos.ResponseDtos;
 using AllrideApiRepository.Repositories.Abstract;
 using AllrideApiRepository.Repositories.Abstract.Clubs;
 using AllrideApiRepository.Repositories.Abstract.GroupsClubs;
-using AllrideApiRepository.Repositories.Abstract.Search;
 using AllrideApiService.Response;
 using AllrideApiService.Services.Abstract;
 using AutoMapper;
 using Microsoft.Extensions.Logging;
+using Nest;
+
 namespace AllrideApiService.Services.Concrete
 {
     public class SearchService : ISearchService
@@ -15,18 +15,13 @@ namespace AllrideApiService.Services.Concrete
         private readonly ILogger<SearchService> _logger;
         private readonly IClubRepository _clubRepository;
         private readonly IGroupRepository _groupRepository;
-        private readonly IUserRepository _userRepos;
-        private readonly ISearchRepository _searchRepository;
         private readonly IMapper _mapper;
 
-        public SearchService(ILogger<SearchService> logger, IClubRepository clubRepository,
-            IMapper mapper, IUserRepository userRepos, ISearchRepository searchRepository)
+        public SearchService(ILogger<SearchService> logger, IClubRepository clubRepository, IMapper mapper)
         {
             _clubRepository= clubRepository;
             _logger = logger;
             _mapper = mapper;
-            _userRepos = userRepos;
-            _searchRepository = searchRepository;
         }
         public CustomResponse<List<ClubResponseDto>> GetClub(string input)
         {
@@ -92,60 +87,6 @@ namespace AllrideApiService.Services.Concrete
             }
 
             return CustomResponse<List<GroupResponseDto>>.Success(groupResponseDtoList, true);
-        }
-
-        public CustomResponse<List<UserProfileResponseDto>> GetUser(string input)
-        {
-            List<ErrorEnumResponse> errors = new List<ErrorEnumResponse>();
-            List<UserProfileResponseDto> userProfileResponseDtoList = new();
-            try
-            {
-                var userList = _userRepos.GetSearchUser(input);
-                if (userList.Count < 0 || userList == null)
-                {
-                    errors.Add(ErrorEnumResponse.GroupDntRegisterInDB);
-                    return CustomResponse<List<UserProfileResponseDto>>.Fail(errors, false);
-                }
-                foreach (var item in userList)
-                {
-                    UserProfileResponseDto userProfileResponseDto = _mapper.Map<UserProfileResponseDto>(item);
-                    if (item == null)
-                        continue;
-                    userProfileResponseDtoList.Add(userProfileResponseDto);
-                }
-                if (userList == null)
-                {
-                    errors.Add(ErrorEnumResponse.MappingFailed);
-                    return CustomResponse<List<UserProfileResponseDto>>.Fail(errors, false);
-                }
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(" SEARCH SERVICE GET CLUB ERROR GetUser METHOD " + ex.Message);
-            }
-
-            return CustomResponse<List<UserProfileResponseDto>>.Success(userProfileResponseDtoList, true);
-        }
-
-        public CustomResponse<List<SearchResponseDto>> GetUserGroupClubRoute(string input)
-        {
-            List<ErrorEnumResponse> errors = new List<ErrorEnumResponse>();
-            List<SearchResponseDto> searchResponseList = new();
-            try
-            {
-                var dataList = _searchRepository.GetAllUserGrup(input);
-                if (dataList.Count < 0 || dataList == null)
-                {
-                    errors.Add(ErrorEnumResponse.ThereIsNoData);
-                    return CustomResponse<List<SearchResponseDto>>.Fail(errors, false);
-                }
-
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(" SEARCH SERVICE GET CLUB ERROR GetUserGroupClubRoute METHOD " + ex.Message);
-            }
-            return CustomResponse<List<SearchResponseDto>>.Success(searchResponseList, true);
         }
     }
 }

@@ -20,9 +20,7 @@ namespace AllrideApiCore.Dtos.SocialMedia
     public class SocialMediaUpdateStoryDto
     {
         public int story_id { get; set; }
-#nullable enable
         public string? caption { get; set; }
-#nullable enable
         public string? location { get; set; }
     }
 }

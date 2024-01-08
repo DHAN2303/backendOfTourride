@@ -2,23 +2,27 @@
 using AllrideApiCore.Dtos.RequestDto;
 using AllrideApiCore.Entities;
 using AllrideApiCore.Entities.Chat;
+using AllrideApiCore.Entities.Chat.Clubs;
 using AllrideApiCore.Entities.Clubs;
-using AllrideApiCore.Entities.Groups;
 using AllrideApiCore.Entities.SocialMedia;
 using AllrideApiRepository;
 using AllrideApiService.Services.Abstract;
+using AllrideApiService.Services.Concrete.Clubs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace AllrideApiChat.DataBase
 {
     public class Posts : IPosts
     {
         protected readonly AllrideApiDbContext _context;
+        private readonly ILogger<ClubService> _logger;
 
-        public Posts(AllrideApiDbContext context)
+        public Posts(AllrideApiDbContext context, ILogger<ClubService> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         //specific messages
@@ -32,7 +36,7 @@ namespace AllrideApiChat.DataBase
             }
             catch (Exception ex)
             {
-                Console.WriteLine("database error: " + ex.Message + " " + ex.InnerException);
+                _logger.LogError("database error: " + ex.Message + " " + ex.InnerException);
             }
         }
         //
@@ -50,7 +54,24 @@ namespace AllrideApiChat.DataBase
             }
             catch (Exception ex)
             {
-                Console.WriteLine("database error: " + ex);
+                _logger.LogError("database error: " + ex);
+            }
+        }
+        //
+
+        //club messages
+        public async Task PostClubMessageAsync(int clubId, int senderId, int content_type, string message_content)
+        {
+            try
+            {
+                var newGroupMessage = new ClubMessage { sender_id = senderId, club_id = clubId, content_type = content_type, message_content = message_content, created_at = DateTime.UtcNow };
+                _context.Entry(newGroupMessage).State = EntityState.Added;
+                _context.SaveChanges();
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("database error: " + ex);
             }
         }
         //
@@ -74,7 +95,7 @@ namespace AllrideApiChat.DataBase
             }
             catch (Exception ex)
             {
-                Console.WriteLine("database error: " + ex);
+                _logger.LogError("database error: " + ex);
                 return ex.Message;
             }
         }
@@ -99,8 +120,8 @@ namespace AllrideApiChat.DataBase
             }
             catch (Exception ex)
             {
-                Console.WriteLine("database error: " + ex);
-                Console.WriteLine("database error: " + ex.InnerException);
+                _logger.LogError("database error: " + ex);
+                _logger.LogError("database error: " + ex.InnerException);
 
             }
 
@@ -126,13 +147,13 @@ namespace AllrideApiChat.DataBase
             }
             catch (Exception ex)
             {
-                Console.WriteLine("database error: " + ex);
+                _logger.LogError("database error: " + ex);
             }
         }
 
 
         public async Task PostNewGroup(string groupName, IFormFile groupImage, string description, List<string> groupMember, int admin)
-        {
+        { // role = 0: admin || 1: user
             try
             {
                 GroupImageCompress imageCompress = new GroupImageCompress();
@@ -156,17 +177,6 @@ namespace AllrideApiChat.DataBase
 
                 var groupMembers = groupMember;
 
-                //for gorup creator
-                var newGroupAdmin = new GroupMember
-                {
-                    user_id = admin,
-                    group_id = lastGroupId, // Use the last group ID
-                    role = 0,
-                    joined_date = DateTime.UtcNow,
-                };
-                _context.Entry(newGroupAdmin).State = EntityState.Added;
-                //
-
                 if(groupMembers != null)
                 {
                     //other member
@@ -188,11 +198,11 @@ namespace AllrideApiChat.DataBase
             }
             catch (Exception ex)
             {
-                Console.WriteLine("database error: " + ex);
+                _logger.LogError("database error: " + ex);
             }
         }
 
-        public async Task CreateNewClub(ClubRequestDto clubRequestDto, int admin)
+        public async Task CreateNewClub(ClubRequestDto clubRequestDto)
         {
             try
             {
@@ -204,8 +214,8 @@ namespace AllrideApiChat.DataBase
                     name = clubRequestDto.Name,
                     image_path = savedPath,
                     description = clubRequestDto.Description,
-                    CreatedDate = DateTime.UtcNow,
-                    UpdatedDate = DateTime.UtcNow,
+                    created_date = DateTime.UtcNow,
+                    updated_date = DateTime.UtcNow,
                 };
 
                 _context.Entry(newClub).State = EntityState.Added;
@@ -216,17 +226,6 @@ namespace AllrideApiChat.DataBase
                 var lastGroupId = newClub.Id;
 
                 var clubMembers = clubRequestDto.ClubMembers;
-
-                //for gorup creator
-                var newClubAdmin = new ClubMember
-                {
-                    user_id = admin,
-                    club_id = lastGroupId, // Use the last group ID
-                    role = 0,
-                    joined_date = DateTime.UtcNow,
-                };
-                _context.Entry(newClubAdmin).State = EntityState.Added;
-                //
 
                 if (clubMembers != null)
                 {
@@ -249,56 +248,7 @@ namespace AllrideApiChat.DataBase
             }
             catch (Exception ex)
             {
-                Console.WriteLine("database error: " + ex);
-            }
-        }
-
-        // 27 Mayıs
-        public string ClubMediaPostsAsync(int clubId, string location)
-        {
-            try
-            {
-                var newClubImage = new Club
-                {
-                    Id = clubId,
-                    profile_path = location,
-                    CreatedDate = DateTime.UtcNow,
-                    UpdatedDate = DateTime.UtcNow
-                };
-
-                _context.club.Add(newClubImage);
-                _context.SaveChanges();
-                var result = _context.club.Where(x => x.Id == clubId).Select(x => x.profile_path).FirstOrDefault();
-                return result;
-            }
-            catch (Exception ex)
-            {
-                return ex.Message;
-            }
-        }
-
-
-        // 27 Mayıs
-        public string GroupMediaPostsAsync(int groupId, string location)
-        {
-            try
-            {
-                var newGroupImage = new Group
-                {
-                    id = groupId,
-                    image_path = location,
-                    created_date = DateTime.UtcNow,
-                    updated_date = DateTime.UtcNow
-                };
-
-                _context.groups.Add(newGroupImage);
-                _context.SaveChanges();
-                var result = _context.club.Where(x => x.Id == groupId).Select(x => x.profile_path).FirstOrDefault();
-                return result;
-            }
-            catch (Exception ex)
-            {
-                return ex.Message;
+                _logger.LogError("database error: " + ex);
             }
         }
     }
